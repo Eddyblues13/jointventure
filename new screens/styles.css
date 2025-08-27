@@ -1,0 +1,1616 @@
+/* Custom Styles */
+body {
+  /* Updated to use Montserrat font */
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* Navigation */
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  height: 40px;
+}
+
+.nav-link {
+  color: #333 !important;
+  font-weight: 500;
+}
+
+.btn-dark {
+  background-color: #333;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 14px;
+}
+
+/* Updated mobile toggle to use image with arrow design */
+.custom-toggler-image {
+  border: none;
+  padding: 8px 12px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.custom-toggler-image:focus {
+  box-shadow: none;
+}
+
+.toggle-image {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.toggle-arrow {
+  font-size: 16px;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Hero Section */
+.hero-section {
+  background-color: white;
+  /* Reduced min-height to fit better in viewport */
+  min-height: 40vh;
+  padding: 2rem 0;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #333;
+  line-height: 1.2;
+  /* Reduced bottom margin for better spacing */
+  margin-bottom: 0.5rem;
+}
+
+/* Added responsive font sizing to maintain two-line layout on all screens */
+@media (max-width: 1200px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 1.8rem;
+    line-height: 1.3;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.3rem;
+    line-height: 1.3;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero-title {
+    font-size: 1.1rem;
+    line-height: 1.3;
+  }
+}
+
+.hero-subtitle {
+  color: #666;
+  font-size: 1rem;
+  /* Reduced bottom margin to fit viewport better */
+  margin-bottom: 2rem;
+}
+
+/* Updated search form styling with proper red dropdown backgrounds */
+.search-form-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  /* Reduced padding for better viewport fit */
+  padding: 1.5rem;
+  /* Added border radius to match search button */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.custom-select {
+  border: 1px solid #ddd;
+  /* Added border radius to match search button */
+  border-radius: 8px;
+  padding: 12px 40px 12px 16px;
+  font-size: 14px;
+  background-color: white;
+  position: relative;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.custom-select:focus {
+  /* Changed from rgb(220 53 69) to rgba(235, 19, 19, 1) */
+  border-color: rgba(235, 19, 19, 1);
+  /* Changed from rgb(220 53 69) to rgba(235, 19, 19, 0.25) */
+  box-shadow: 0 0 0 0.2rem rgba(235, 19, 19, 0.25);
+}
+
+/* Reverted input hover and select states to original styling */
+.custom-select:hover,
+.custom-select:focus,
+.custom-select:active {
+  background-color: white;
+  color: #333;
+  /* Changed from rgb(220 53 69) to rgba(235, 19, 19, 1) */
+  border-color: rgba(235, 19, 19, 1);
+}
+
+.form-group {
+  position: relative;
+}
+
+/* Red background dropdown arrow exactly like in design */
+.form-group::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 40px;
+  /* Changed from rgb(220 53 69) to rgba(235, 19, 19, 1) */
+  background-color: rgba(235, 19, 19, 1);
+  /* Updated border radius to match form inputs */
+  border-radius: 0 8px 8px 0;
+  pointer-events: none;
+}
+
+.form-group::before {
+  content: "";
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid white;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.search-btn {
+  background-color: #333;
+  border: none;
+  padding: 12px 40px;
+  /* Updated border radius to match form inputs */
+  border-radius: 8px;
+  font-weight: 500;
+  /* Removed min-width and made button auto-width on mobile */
+  min-width: auto;
+}
+
+.search-btn:hover {
+  background-color: #555;
+}
+
+/* Added hero property image section styling to match Figma design */
+.hero-property-section {
+  background-color: white;
+  /* Reduced padding to fit viewport better */
+  padding: 2rem 0;
+}
+
+.hero-property-image {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-property-image img {
+  width: 100%;
+  /* Reduced height to fit viewport better */
+  height: 350px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Full width hero property image section with no margins */
+.hero-property-section-fullwidth {
+  background-color: white;
+  padding: 0;
+  margin: 0;
+}
+
+.hero-property-image-fullwidth {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  position: relative;
+}
+
+.hero-property-image-fullwidth img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Added linear gradient overlay to hero property section */
+.hero-property-image-fullwidth::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(237, 41, 57, 0.23) 0%,
+    rgba(237, 41, 57, 0.1) 50%,
+    rgba(237, 41, 57, 0.23) 100%
+  );
+  pointer-events: none;
+}
+
+/* Property showcase section styling */
+.property-showcase {
+  background-color: white;
+  /* Added padding for better spacing */
+  padding: 1.5rem 0;
+}
+
+.property-image {
+  width: 100%;
+  /* Reduced height for better viewport fit */
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Trending section styling */
+.trending-section {
+  background-color: white;
+  /* Removed border-top to eliminate border line separation */
+  padding: 1.5rem 0;
+}
+
+.trending-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+/* Updated horizontal mobile navigation menu styling to match Figma design */
+.mobile-nav-horizontal {
+  width: 100%;
+  background-color: white;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.horizontal-nav-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.horizontal-nav-scroll {
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  flex: 1;
+  gap: 20px;
+  padding: 0 10px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.horizontal-nav-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.horizontal-nav-item {
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: color 0.3s ease;
+}
+
+.horizontal-nav-item:hover {
+  /* Changed from rgb(220 53 69) to rgba(235, 19, 19, 1) */
+  color: rgba(235, 19, 19, 1);
+  text-decoration: none;
+}
+
+.horizontal-nav-arrow {
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 8px 12px;
+  margin-left: 10px;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.horizontal-nav-arrow:hover {
+  /* Changed from rgb(220 53 69) to rgba(235, 19, 19, 1) */
+  color: rgba(235, 19, 19, 1);
+}
+
+/* Added dropdown menu styling for mobile toggle */
+.mobile-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  min-width: 150px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.mobile-dropdown.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.mobile-dropdown .dropdown-item {
+  display: block;
+  padding: 12px 16px;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.mobile-dropdown .dropdown-item:hover {
+  background-color: #f8f9fa;
+  /* Changed from rgb(220 53 69) to rgba(235, 19, 19, 1) */
+  color: rgba(235, 19, 19, 1);
+}
+
+.mobile-toggle-wrapper {
+  position: relative;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .search-form-container {
+    padding: 1.5rem;
+    margin: 0 1rem;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 0.5rem 0;
+  }
+
+  .property-image {
+    height: 250px;
+  }
+
+  /* Mobile responsive styling for hero property image */
+  .hero-property-section {
+    /* Reduced mobile padding */
+    padding: 1.5rem 0;
+  }
+
+  .hero-property-image img {
+    /* Reduced mobile height */
+    height: 250px;
+    border-radius: 8px;
+  }
+
+  /* Mobile form adjustments for proper 2x2 layout */
+  .col-6 {
+    margin-bottom: 1rem;
+  }
+
+  /* Adjusted custom select padding for smaller mobile columns */
+  .custom-select {
+    padding: 10px 35px 10px 12px;
+    font-size: 13px;
+  }
+
+  .form-group::after {
+    width: 35px;
+  }
+
+  .form-group::before {
+    right: 12px;
+  }
+
+  /* Mobile adjustments for full width image */
+  .hero-property-image-fullwidth img {
+    height: 250px;
+  }
+
+  /* Adjusted mobile toggle image sizing */
+  .toggle-image {
+    width: 36px;
+    height: 36px;
+  }
+
+  .toggle-arrow {
+    font-size: 14px;
+  }
+
+  /* Updated search button styling for mobile to match design width */
+  .search-btn {
+    width: auto;
+    min-width: 120px;
+    padding: 12px 30px;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .search-form-container {
+    padding: 1rem;
+  }
+
+  .search-btn {
+    /* Removed full width on mobile, keeping auto width */
+    width: auto;
+    min-width: 120px;
+    margin: 1rem auto 0;
+    display: block;
+  }
+
+  .property-image {
+    height: 200px;
+  }
+
+  /* Extra small screen adjustments for hero property image */
+  .hero-property-image img {
+    /* Further reduced height for small screens */
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero-title {
+    font-size: 1.1rem;
+  }
+}
+
+/* Remove default Bootstrap form styling */
+.form-select {
+  background-image: none;
+}
+
+/* Ensure proper spacing */
+.container {
+  max-width: 1200px;
+}
+
+/* Navigation adjustments */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    margin-top: 1rem;
+  }
+
+  .navbar-nav .nav-item {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.navbar-collapse {
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-collapse.collapsing {
+  transition: height 0.3s ease;
+}
+
+.navbar-collapse.show {
+  animation: slideDown 0.3s ease-in-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.navbar-collapse.show .nav-item {
+  animation: fadeInUp 0.4s ease-in-out;
+  animation-fill-mode: both;
+}
+
+.navbar-collapse.show .nav-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.navbar-collapse.show .nav-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.navbar-collapse.show .nav-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.navbar-collapse.show .nav-item:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Added profile icon with white circular background */
+.profile-icon-wrapper {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Added custom red text class to ensure exact red color */
+.text-red {
+  color: rgba(235, 19, 19, 1) !important;
+}
+
+/* Added styling for red arrow image in hero title */
+.property-with-arrow {
+  position: relative;
+  display: inline-block;
+}
+
+.red-arrow-image {
+  position: absolute;
+  /* Moved arrow further below property text and positioned to point at "e" */
+  bottom: -15px;
+  right: 35px;
+  width: 20px;
+  height: 16px;
+  display: inline-block;
+}
+
+@media (max-width: 768px) {
+  .red-arrow-image {
+    width: 16px;
+    height: 12px;
+    /* Adjusted mobile positioning to maintain proper spacing below text */
+    bottom: -12px;
+    right: 28px;
+  }
+}
+
+@media (max-width: 576px) {
+  .red-arrow-image {
+    width: 14px;
+    height: 10px;
+    /* Further adjusted for smaller screens */
+    bottom: -10px;
+    right: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .red-arrow-image {
+    width: 12px;
+    height: 8px;
+    /* Maintained proportional spacing on very small screens */
+    bottom: -8px;
+    right: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .red-arrow-image {
+    width: 10px;
+    height: 6px;
+    /* Final adjustment for smallest screens */
+    bottom: -6px;
+    right: 17px;
+  }
+}
+
+/* Added styling for custom text selection */
+*::selection {
+  background-color: rgba(235, 19, 19, 1) !important;
+  color: white !important;
+}
+
+*::-moz-selection {
+  background-color: rgba(235, 19, 19, 1) !important;
+  color: white !important;
+}
+
+body::selection,
+p::selection,
+h1::selection,
+h2::selection,
+h3::selection,
+h4::selection,
+h5::selection,
+h6::selection,
+span::selection,
+div::selection {
+  background-color: rgba(235, 19, 19, 1) !important;
+  color: white !important;
+}
+
+body::-moz-selection,
+p::-moz-selection,
+h1::-moz-selection,
+h2::-moz-selection,
+h3::-moz-selection,
+h4::-moz-selection,
+h5::-moz-selection,
+h6::-moz-selection,
+span::-moz-selection,
+div::-moz-selection {
+  background-color: rgba(235, 19, 19, 1) !important;
+  color: white !important;
+}
+
+/* Added property card styling to match Figma design */
+.property-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.property-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.property-image-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.property-card-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  /* Removed bottom border radius from image to keep sharp corners */
+  border-radius: 12px 12px 0 0;
+}
+
+.property-card:hover .property-card-image {
+  transform: scale(1.05);
+}
+
+.property-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: rgba(235, 19, 19, 1);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.property-details {
+  padding: 20px;
+}
+
+.property-location {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+}
+
+.location-icon {
+  font-size: 16px;
+}
+
+.property-info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.property-info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.property-info-item:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  font-weight: 500;
+  color: #666;
+  font-size: 13px;
+}
+
+.info-value {
+  font-weight: 600;
+  color: #333;
+  font-size: 13px;
+  text-align: right;
+  max-width: 60%;
+}
+
+/* Mobile responsive adjustments for property cards */
+@media (max-width: 768px) {
+  .property-card-image {
+    height: 150px;
+    /* Maintained top-only border radius on mobile */
+    border-radius: 12px 12px 0 0;
+  }
+
+  .property-details {
+    padding: 16px;
+  }
+
+  .property-info-item {
+    padding: 6px 0;
+  }
+
+  .info-label,
+  .info-value {
+    font-size: 12px;
+  }
+
+  .property-location {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 576px) {
+  .property-card-image {
+    height: 130px;
+    /* Maintained top-only border radius on small mobile */
+    border-radius: 12px 12px 0 0;
+  }
+
+  .property-badge {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+}
+
+/* Updated property card styling to match exact Figma design with location bar and structured grid */
+.property-card-figma {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 2rem;
+}
+
+.property-card-figma:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.property-image-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.property-card-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.property-card-figma:hover .property-card-image {
+  transform: scale(1.05);
+}
+
+.property-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: rgba(235, 19, 19, 1);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.location-bar {
+  /* Updated location bar to use flexbox with proper content-based sizing */
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  padding: 0;
+  background: transparent;
+  font-weight: 500;
+  /* reduced font size for smaller location bar */
+  font-size: 12px;
+}
+
+.location-section {
+  background-color: rgba(235, 19, 19, 1);
+  color: white;
+  /* further reduced padding for much smaller height */
+  padding: 4px 10px;
+  display: inline-flex;
+  align-items: center;
+  max-width: 45%;
+  /* added border radius to top right */
+  border-radius: 0 6px 0 0;
+}
+
+.location-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.premium-badge {
+  background-color: #4caf50;
+  color: white;
+  /* reduced padding to make premium badge same baseline as location */
+  padding: 4px 8px;
+  /* reduced font size for smaller premium badge */
+  font-size: 10px;
+  font-weight: 600;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  height: auto;
+  /* added border radius to top right */
+  border-radius: 0 6px 0 0;
+}
+
+.property-info-structured {
+  padding: 20px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  gap: 20px;
+}
+
+.info-row:last-child {
+  margin-bottom: 0;
+}
+
+.info-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.info-label {
+  font-weight: 600;
+  color: #333;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.info-value {
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+/* Mobile responsive adjustments for Figma-style property cards */
+@media (max-width: 768px) {
+  .property-card-image {
+    height: 200px;
+  }
+
+  .property-info-structured {
+    padding: 16px;
+  }
+
+  .info-row {
+    margin-bottom: 12px;
+    gap: 15px;
+  }
+
+  .info-label {
+    font-size: 11px;
+  }
+
+  .info-value {
+    font-size: 13px;
+  }
+
+  .location-bar {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+
+  .location-section {
+    padding: 10px 14px;
+    font-size: 13px;
+    max-width: 50%;
+  }
+
+  .premium-badge {
+    padding: 10px 12px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 576px) {
+  .property-card-image {
+    height: 180px;
+  }
+
+  .property-badge {
+    font-size: 11px;
+    padding: 6px 12px;
+  }
+
+  .info-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .info-item {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .info-item:last-child {
+    border-bottom: none;
+  }
+
+  .info-value {
+    text-align: right;
+    max-width: 60%;
+  }
+
+  .location-bar {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .location-section {
+    padding: 8px 12px;
+    font-size: 12px;
+    max-width: 55%;
+  }
+
+  .premium-badge {
+    padding: 8px 10px;
+    font-size: 10px;
+  }
+}
+
+/* Complete redesign of property cards to match exact Figma specifications */
+.property-card-exact {
+  background: white;
+  border-radius: 8px 8px 12px 12px;
+  border: none;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.property-card-exact::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  border-left: 1px solid #90ee90;
+  border-right: 1px solid #90ee90;
+  border-bottom: 1px solid #90ee90;
+  border-radius: 0 0 12px 12px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.property-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.property-content {
+  padding: 8px;
+}
+
+.top-joint-venture-badge {
+  position: absolute;
+  top: 12px;
+  right: 0;
+  background-color: rgba(235, 19, 19, 1);
+  color: white;
+  /* reduced padding for smaller badge height */
+  padding: 4px 8px;
+  border-radius: 15px 0 0 15px;
+  /* reduced font size for smaller badge */
+  font-size: 11px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.location-bar {
+  /* Fixed baseline alignment for location and premium backgrounds */
+  display: flex;
+  align-items: flex-end;
+  gap: 0;
+  padding: 0;
+  background: transparent;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.location-section {
+  background-color: rgba(235, 19, 19, 1);
+  color: white;
+  /* Aligned baseline with premium badge */
+  padding: 6px 10px;
+  display: inline-flex;
+  align-items: center;
+  max-width: 45%;
+  border-radius: 0 6px 0 0;
+}
+
+.location-info {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.premium-badge {
+  background-color: #4caf50;
+  color: white;
+  /* Made premium badge height about half of location background height */
+  padding: 3px 8px;
+  font-size: 10px;
+  font-weight: 600;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  height: auto;
+  border-radius: 0 6px 0 0;
+}
+
+.property-details-grid {
+  /* Further reduced padding to make text area smaller */
+  padding: 8px 12px;
+  background: white;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  /* reduced margin for much tighter spacing */
+  margin-bottom: 6px;
+}
+
+.detail-item {
+  flex: 1;
+  display: flex;
+  /* Added flex-wrap: nowrap to prevent wrapping and ensure single line display */
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  align-items: center;
+  /* Added min-width: 0 to allow text truncation if needed */
+  min-width: 0;
+}
+
+/* Added styling for detail labels and values to ensure horizontal layout */
+.detail-label {
+  font-weight: 500;
+  color: #666;
+  font-size: 12px;
+  margin-right: 4px;
+  flex-shrink: 0;
+  /* Prevent label from wrapping */
+  white-space: nowrap;
+}
+
+.detail-value {
+  font-weight: 600;
+  color: #333;
+  font-size: 12px;
+  /* Prevent value from wrapping */
+  white-space: nowrap;
+  /* Added flex-shrink: 0 to prevent value text from shrinking */
+  flex-shrink: 0;
+}
+
+/* Mobile responsive adjustments for exact Figma-style property cards */
+@media (max-width: 768px) {
+  .property-card-image {
+    height: 150px;
+  }
+
+  .property-content {
+    padding: 6px;
+  }
+}
+
+@media (max-width: 576px) {
+  .property-card-image {
+    height: 130px;
+  }
+}
+
+/* Added View All button styling */
+.view-all-section {
+  background-color: white;
+  /* Removed border-top to match trending section styling */
+  padding: 1.5rem 0;
+}
+
+.view-all-btn {
+  border: 1px solid #ccc; /* Made border thinner from 2px to 1px and lighter color (#ccc instead of #333) */
+  color: #333;
+  background-color: transparent;
+  padding: 12px 60px; /* Made button wider by increasing horizontal padding from 40px to 60px */
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.view-all-btn:hover {
+  background-color: #333;
+  color: white;
+  /* Updated hover border color to match the lighter theme */
+  border-color: #333;
+}
+
+@media (max-width: 576px) {
+  .view-all-btn {
+    padding: 10px 45px; /* Updated responsive padding to maintain wider button on mobile */
+    font-size: 15px;
+  }
+}
+
+/* Added footer section styling matching the Figma design */
+.footer-section {
+  background-color: #333;
+  color: white;
+  padding: 60px 0 40px;
+  margin-top: 40px;
+}
+
+.footer-logo-section {
+  margin-bottom: 20px;
+}
+
+.footer-logo {
+  height: 40px;
+  margin-bottom: 20px;
+  filter: brightness(0) invert(1);
+}
+
+.footer-copyright {
+  color: #ccc;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.footer-column {
+  margin-bottom: 20px;
+}
+
+.footer-heading {
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: rgba(235, 19, 19, 1);
+}
+
+/* Mobile responsive adjustments for footer */
+@media (max-width: 768px) {
+  .footer-section {
+    padding: 40px 0 30px;
+  }
+
+  .footer-column {
+    margin-bottom: 30px;
+  }
+
+  .footer-heading {
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
+
+  .footer-links a {
+    font-size: 13px;
+  }
+
+  .footer-copyright {
+    font-size: 13px;
+  }
+}
+
+/* Added styling for List your Joint Venture For Free section */
+.list-venture-section {
+  background-color: white;
+  padding: 60px 0;
+}
+
+.list-venture-content {
+  padding-right: 2rem;
+}
+
+.list-venture-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.list-venture-text {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.list-venture-btn {
+  background-color: #333;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.list-venture-btn:hover {
+  background-color: #555;
+  transform: translateY(-2px);
+}
+
+.list-venture-image img {
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Added styling for Are you a Developer section */
+.developer-section {
+  background-color: rgba(235, 19, 19, 1);
+  /* Reduced padding to decrease red background height */
+  padding: 40px 0;
+  color: white;
+  position: relative;
+  overflow: visible;
+}
+
+.developer-content {
+  padding-left: 2rem;
+}
+
+.developer-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.developer-highlight {
+  color: white;
+  font-weight: 700;
+}
+
+.developer-text {
+  font-size: 1.1rem;
+  color: white;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+}
+
+.developer-btn {
+  border: 2px solid white;
+  color: white;
+  background-color: transparent;
+  padding: 15px 40px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.developer-btn:hover {
+  background-color: white;
+  color: rgba(235, 19, 19, 1);
+  transform: translateY(-2px);
+}
+
+.developer-image {
+  /* Increased height and adjusted positioning for more dramatic overflow effect */
+  height: 180%;
+  overflow: visible;
+  position: relative;
+  top: -40%;
+  /* Reduced width to make image narrower */
+  width: 80%;
+  margin: 0 auto;
+}
+
+.developer-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Added responsive styles for new sections */
+@media (max-width: 992px) {
+  /* Reset image to normal on mobile - no overflow */
+  .developer-image {
+    height: 100%;
+    position: static;
+    top: auto;
+    width: 100%;
+    margin-top: 2rem;
+  }
+
+  .list-venture-content,
+  .developer-content {
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .list-venture-title,
+  .developer-title {
+    font-size: 2rem;
+  }
+
+  .list-venture-text,
+  .developer-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .list-venture-section,
+  .developer-section {
+    padding: 40px 0;
+  }
+
+  .list-venture-title,
+  .developer-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .list-venture-text,
+  .developer-text {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .list-venture-btn,
+  .developer-btn {
+    padding: 12px 30px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .list-venture-title,
+  .developer-title {
+    font-size: 1.5rem;
+  }
+
+  .list-venture-text,
+  .developer-text {
+    font-size: 0.9rem;
+  }
+}
+
+/* Added styling for investment opportunity section */
+.investment-section {
+  background-color: white;
+  padding: 60px 0;
+}
+
+.investment-content {
+  padding-right: 2rem;
+}
+
+.investment-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.investment-text {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.investment-btn {
+  background-color: #333;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.investment-btn:hover {
+  background-color: #555;
+  transform: translateY(-2px);
+}
+
+.investment-image img {
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Added responsive styles for investment section */
+@media (max-width: 992px) {
+  .investment-content {
+    padding-right: 0;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .investment-title {
+    font-size: 2rem;
+  }
+
+  .investment-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .investment-section {
+    padding: 40px 0;
+  }
+
+  .investment-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .investment-text {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .investment-btn {
+    padding: 12px 30px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .investment-title {
+    font-size: 1.5rem;
+  }
+
+  .investment-text {
+    font-size: 0.9rem;
+  }
+
+  .investment-btn {
+    padding: 10px 25px;
+    font-size: 14px;
+  }
+}

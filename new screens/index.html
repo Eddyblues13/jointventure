@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jointventure.ng - Get more value on your property</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Added Montserrat font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="img/Jointventures-logo (1) 2.png" alt="Jointventure.ng" class="logo">
+            </a>
+            
+            <!-- Updated mobile toggle to use placeholder image with arrow -->
+            <div class="mobile-toggle-wrapper">
+                <button class="navbar-toggler custom-toggler-image" type="button" onclick="toggleDropdown()">
+                    <img src="img/Ellipse 77.png" alt="Menu" class="toggle-image">
+                    <span class="toggle-arrow">▼</span>
+                </button>
+                
+                <!-- Added dropdown menu for My Account -->
+                <div class="mobile-dropdown" id="mobileDropdown">
+                    <a href="#" class="dropdown-item">My Account</a>
+                </div>
+            </div>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Desktop navigation -->
+                <ul class="navbar-nav me-auto d-none d-lg-flex">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Joint Venture</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Developers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Investors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Legal / JV Agreements</a>
+                    </li>
+                </ul>
+                
+                <div class="navbar-nav d-none d-lg-flex">
+                    <a class="nav-link" href="#">Post a Joint Venture for <strong>FREE</strong></a>
+                    <button class="btn btn-dark btn-sm ms-2 d-flex align-items-center">
+                        My Account
+                        <div class="profile-icon-wrapper ms-2">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" fill="#333"/>
+                                <path d="M12 14C7.58172 14 4 17.5817 4 22H20C20 17.5817 16.4183 14 12 14Z" fill="#333"/>
+                            </svg>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Added horizontal mobile navigation menu below header -->
+    <div class="mobile-nav-horizontal d-lg-none">
+        <div class="container-fluid px-3">
+            <div class="horizontal-nav-container">
+                <div class="horizontal-nav-scroll" id="horizontalNavItems">
+                    <a href="#" class="horizontal-nav-item">Joint Venture</a>
+                    <a href="#" class="horizontal-nav-item">Developers</a>
+                    <a href="#" class="horizontal-nav-item">Investors</a>
+                    <a href="#" class="horizontal-nav-item">Legal / JV</a>
+                    <a href="#" class="horizontal-nav-item">Post for FREE</a>
+                    <a href="#" class="horizontal-nav-item">Contact</a>
+                    <a href="#" class="horizontal-nav-item">About</a>
+                </div>
+                <button class="horizontal-nav-arrow" onclick="scrollHorizontalNav()">
+                    <span>></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <!-- Updated hero title structure to position arrow below "property" and maintain two-line layout on all screens -->
+                <h1 class="hero-title">
+                    <span class="title-line-1">
+                        Get more value on your <span class="text-red property-with-arrow">property
+                            <img src="img/Vector.png" alt="Arrow" class="red-arrow-image">
+                        </span>
+                    </span>
+                    <br>
+                    <span class="title-line-2">from <span class="text-red">top developers</span></span>
+                </h1>
+                <p class="hero-subtitle">A brand of PHMG Acquisitions Ltd</p>
+            </div>
+
+            <!-- Updated search form with proper 2x2 grid layout and red dropdown arrows -->
+            <div class="search-form-container">
+                <div class="row g-3">
+                    <!-- Changed mobile columns to col-6 for 2x2 layout on mobile -->
+                    <div class="col-md-6 col-6">
+                        <div class="form-group">
+                            <select class="form-select custom-select">
+                                <option>State</option>
+                                <option>Lagos</option>
+                                <option>Abuja</option>
+                                <option>Rivers</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-6">
+                        <div class="form-group">
+                            <select class="form-select custom-select">
+                                <option>City</option>
+                                <option>Ikeja</option>
+                                <option>Victoria Island</option>
+                                <option>Lekki</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-6">
+                        <div class="form-group">
+                            <select class="form-select custom-select">
+                                <option>Land Size</option>
+                                <option>500 sqm</option>
+                                <option>1000 sqm</option>
+                                <option>2000 sqm</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-6">
+                        <div class="form-group">
+                            <select class="form-select custom-select">
+                                <option>Premium</option>
+                                <option>Standard</option>
+                                <option>Luxury</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <button class="btn btn-dark btn-lg search-btn">Search</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Added large hero property image section matching the Figma design -->
+    <!-- Made hero property image section full width with no margins -->
+    <section class="hero-property-section-fullwidth">
+        <div class="hero-property-image-fullwidth">
+            <img src="img/Rectangle 133.png" alt="Modern Property" class="img-fluid w-100">
+        </div>
+    </section>
+
+    <!-- Updated trending section to match design spacing -->
+    <section class="trending-section py-4">
+        <div class="container">
+            <h3 class="trending-title">Trending <span class="text-red">Joint Ventures</span></h3>
+            
+            <!-- Redesigned property cards to match exact Figma design with proper badge positioning and layout -->
+            <div class="row g-4 mt-3">
+                <!-- Property Card 1 -->
+                <div class="col-lg-6 col-md-6 col-12">
+                    <div class="property-card-exact">
+                        <div class="property-image-container">
+                            <img src="img//Rectangle 98.png" alt="Modern Property" class="property-image">
+                            <div class="top-joint-venture-badge">
+                                <!-- Changed star icon to crown icon -->
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm2.7-2h8.6l.9-5.4-2.1 1.8L12 8l-3.1 2.4-2.1-1.8L7.7 14z"/>
+                                </svg>
+                                Top Joint Venture
+                            </div>
+                        </div>
+                        <div class="location-bar">
+                            <div class="location-section">
+                                <div class="location-info">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                    </svg>
+                                    Opebi, Ikeja, Lagos State
+                                </div>
+                            </div>
+                            <div class="premium-badge">Premium</div>
+                        </div>
+                        <div class="property-details-grid">
+                            <div class="detail-row">
+                                <div class="detail-item">
+                                    <span class="detail-label">Land Size:</span>
+                                    <span class="detail-value">1300 Sqmtrs</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Land Value:</span>
+                                    <span class="detail-value">₦450,000,000</span>
+                                </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-item">
+                                    <span class="detail-label">Sharing:</span>
+                                    <span class="detail-value">50/50</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Premium:</span>
+                                    <span class="detail-value">₦10,000,000</span>
+                                </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-item">
+                                    <span class="detail-label">Title:</span>
+                                    <span class="detail-value">Registered Survey</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Proposal:</span>
+                                    <span class="detail-value">4 blocks of semi detached duplexes</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Card 2 -->
+                <div class="col-lg-6 col-md-6 col-12">
+                    <div class="property-card-exact">
+                        <div class="property-image-container">
+                            <img src="img/Rectangle 98.png" alt="Luxury Property" class="property-image">
+                            <div class="top-joint-venture-badge">
+                                <!-- Changed star icon to crown icon -->
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm2.7-2h8.6l.9-5.4-2.1 1.8L12 8l-3.1 2.4-2.1-1.8L7.7 14z"/>
+                                </svg>
+                                Top Joint Venture
+                            </div>
+                        </div>
+                        <div class="location-bar">
+                            <div class="location-section">
+                                <div class="location-info">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                    </svg>
+                                    Opebi, Ikeja, Lagos State
+                                </div>
+                            </div>
+                            <div class="premium-badge">Premium</div>
+                        </div>
+                        <div class="property-details-grid">
+                            <div class="detail-row">
+                                <div class="detail-item">
+                                    <span class="detail-label">Land Size:</span>
+                                    <span class="detail-value">1300 Sqmtrs</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Land Value:</span>
+                                    <span class="detail-value">₦450,000,000</span>
+                                </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-item">
+                                    <span class="detail-label">Sharing:</span>
+                                    <span class="detail-value">50/50</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Premium:</span>
+                                    <span class="detail-value">₦10,000,000</span>
+                                </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-item">
+                                    <span class="detail-label">Title:</span>
+                                    <span class="detail-value">Registered Survey</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Proposal:</span>
+                                    <span class="detail-value">4 blocks of semi detached duplexes</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Card 3 -->
+                <div class="col-lg-6 col-md-6 col-12">
+                    <div class="property-card-exact">
+                        <div class="property-image-container">
+                            <img src="img//Rectangle 98.png" alt="Contemporary Property" class="property-image">
+                            <div class="top-joint-venture-badge">
+                                <!-- Changed star icon to crown icon -->
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm2.7-2h8.6l.9-5.4-2.1 1.8L12 8l-3.1 2.4-2.1-1.8L7.7 14z"/>
+                                </svg>
+                                Top Joint Venture
+                            </div>
+                        </div>
+                        <div class="location-bar">
+                            <div class="location-section">
+                                <div class="location-info">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                    </svg>
+                                    Opebi, Ikeja, Lagos State
+                                </div>
+                            </div>
+                            <div class="premium-badge">Premium</div>
+                        </div>
+                        <div class="property-details-grid">
+                            <div class="detail-row">
+                                <div class="detail-item">
+                                    <span class="detail-label">Land Size:</span>
+                                    <span class="detail-value">1300 Sqmtrs</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Land Value:</span>
+                                    <span class="detail-value">₦450,000,000</span>
+                                </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-item">
+                                    <span class="detail-label">Sharing:</span>
+                                    <span class="detail-value">50/50</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Premium:</span>
+                                    <span class="detail-value">₦10,000,000</span>
+                                </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-item">
+                                    <span class="detail-label">Title:</span>
+                                    <span class="detail-value">Registered Survey</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Proposal:</span>
+                                    <span class="detail-value">4 blocks of semi detached duplexes</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Card 4 -->
+                <div class="col-lg-6 col-md-6 col-12">
+                    <div class="property-card-exact">
+                        <div class="property-image-container">
+                            <img src="img//Rectangle 98.png" alt="Executive Property" class="property-image">
+                            <div class="top-joint-venture-badge">
+                                <!-- Changed star icon to crown icon -->
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm2.7-2h8.6l.9-5.4-2.1 1.8L12 8l-3.1 2.4-2.1-1.8L7.7 14z"/>
+                                </svg>
+                                Top Joint Venture
+                            </div>
+                        </div>
+                        <div class="location-bar">
+                            <div class="location-section">
+                                <div class="location-info">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                    </svg>
+                                    Opebi, Ikeja, Lagos State
+                                </div>
+                            </div>
+                            <div class="premium-badge">Premium</div>
+                        </div>
+                        <div class="property-details-grid">
+                            <div class="detail-row">
+                                <div class="detail-item">
+                                    <span class="detail-label">Land Size:</span>
+                                    <span class="detail-value">1300 Sqmtrs</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Land Value:</span>
+                                    <span class="detail-value">₦450,000,000</span>
+                                </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-item">
+                                    <span class="detail-label">Sharing:</span>
+                                    <span class="detail-value">50/50</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Premium:</span>
+                                    <span class="detail-value">₦10,000,000</span>
+                                </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-item">
+                                    <span class="detail-label">Title:</span>
+                                    <span class="detail-value">Registered Survey</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Proposal:</span>
+                                    <span class="detail-value">4 blocks of semi detached duplexes</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Card 5 -->
+                <div class="col-lg-6 col-md-6 col-12">
+                    <div class="property-card-exact">
+                        <div class="property-image-container">
+                            <img src="img//Rectangle 98.png" alt="Executive Property" class="property-image">
+                            <div class="top-joint-venture-badge">
+                                <!-- Changed star icon to crown icon -->
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm2.7-2h8.6l.9-5.4-2.1 1.8L12 8l-3.1 2.4-2.1-1.8L7.7 14z"/>
+                                </svg>
+                                Top Joint Venture
+                            </div>
+                        </div>
+                        <div class="location-bar">
+                            <div class="location-section">
+                                <div class="location-info">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                    </svg>
+                                    Opebi, Ikeja, Lagos State
+                                </div>
+                            </div>
+                            <div class="premium-badge">Premium</div>
+                        </div>
+                        <div class="property-details-grid">
+                            <div class="detail-row">
+                                <div class="detail-item">
+                                    <span class="detail-label">Land Size:</span>
+                                    <span class="detail-value">1300 Sqmtrs</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Land Value:</span>
+                                    <span class="detail-value">₦450,000,000</span>
+                                </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-item">
+                                    <span class="detail-label">Sharing:</span>
+                                    <span class="detail-value">50/50</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Premium:</span>
+                                    <span class="detail-value">₦10,000,000</span>
+                                </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-item">
+                                    <span class="detail-label">Title:</span>
+                                    <span class="detail-value">Registered Survey</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Proposal:</span>
+                                    <span class="detail-value">4 blocks of semi detached duplexes</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Card 6 -->
+                <div class="col-lg-6 col-md-6 col-12">
+                    <div class="property-card-exact">
+                        <div class="property-image-container">
+                            <img src="img//Rectangle 98.png" alt="Executive Property" class="property-image">
+                            <div class="top-joint-venture-badge">
+                                <!-- Changed star icon to crown icon -->
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm2.7-2h8.6l.9-5.4-2.1 1.8L12 8l-3.1 2.4-2.1-1.8L7.7 14z"/>
+                                </svg>
+                                Top Joint Venture
+                            </div>
+                        </div>
+                        <div class="location-bar">
+                            <div class="location-section">
+                                <div class="location-info">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                    </svg>
+                                    Opebi, Ikeja, Lagos State
+                                </div>
+                            </div>
+                            <div class="premium-badge">Premium</div>
+                        </div>
+                        <div class="property-details-grid">
+                            <div class="detail-row">
+                                <div class="detail-item">
+                                    <span class="detail-label">Land Size:</span>
+                                    <span class="detail-value">1300 Sqmtrs</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Land Value:</span>
+                                    <span class="detail-value">₦450,000,000</span>
+                                </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-item">
+                                    <span class="detail-label">Sharing:</span>
+                                    <span class="detail-value">50/50</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Premium:</span>
+                                    <span class="detail-value">₦10,000,000</span>
+                                </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-item">
+                                    <span class="detail-label">Title:</span>
+                                    <span class="detail-value">Registered Survey</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Proposal:</span>
+                                    <span class="detail-value">4 blocks of semi detached duplexes</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Added View All button section -->
+    <section class="view-all-section py-4">
+        <div class="container">
+            <div class="text-center">
+                <button class="btn btn-outline-dark view-all-btn">View All</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Moved "List your Joint Venture For Free" section to come after View All -->
+    <section class="list-venture-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-12 mb-4 mb-lg-0">
+                    <div class="list-venture-content">
+                        <h2 class="list-venture-title">List your Joint Venture For <span class="text-red">Free</span></h2>
+                        <p class="list-venture-text">
+                            Don't miss out on this opportunity! List your properties for free on our 
+                            platform and let developers discover the untapped potential of your land. 
+                            Start today, and watch your property transform into a profitable venture!
+                        </p>
+                        <button class="btn btn-dark list-venture-btn">Start Listing</button>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="list-venture-image">
+                        <img src="img/Rectangle 134.png" alt="Hand holding house model" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Moved "Are you a Developer?" section to come after View All -->
+    <section class="developer-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-12 mb-4 mb-lg-0">
+                    <div class="developer-image">
+                        <img src="img/Rectangle 136.png" alt="Hands working with architectural plans" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="developer-content">
+                        <h2 class="developer-title">Are you a <span class="developer-highlight">Developer</span> ?</h2>
+                        <p class="developer-text">
+                            On our platform, you can discover opportunities to team up with landowners. By 
+                            working together to develop their properties, you both stand to profit from the 
+                            success of these joint ventures.
+                        </p>
+                        <button class="btn btn-outline-light developer-btn">Register</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Added investment opportunity section after developer section -->
+    <section class="investment-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-12 mb-4 mb-lg-0">
+                    <div class="investment-content">
+                        <h2 class="investment-title">Do you wish to <span class="text-red">invest</span> in a <span class="text-red">developer's project</span>?</h2>
+                        <p class="investment-text">
+                            Seize the opportunity to invest in a developer's project and potentially earn 
+                            over 40% in profit returns Register now to start investing !
+                        </p>
+                        <button class="btn btn-dark investment-btn">Register</button>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="investment-image">
+                        <img src="img/Rectangle 137.png" alt="Business handshake with documents and buildings" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Added footer section matching the Figma design -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <!-- Logo and Copyright -->
+                <div class="col-lg-2 col-md-6 col-12 mb-4">
+                    <div class="footer-logo-section">
+                        <img src="img/Jointventures-logo (1) 2.png" alt="Jointventure.ng" class="footer-logo">
+                        <p class="footer-copyright">Copyright © JointVenture.ng 2023 All Rights Reserved</p>
+                    </div>
+                </div>
+                
+                <!-- Company Links -->
+                <div class="col-lg-2 col-md-6 col-12 mb-4">
+                    <div class="footer-column">
+                        <h5 class="footer-heading">Company</h5>
+                        <ul class="footer-links">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Socials Links -->
+                <div class="col-lg-2 col-md-6 col-12 mb-4">
+                    <div class="footer-column">
+                        <h5 class="footer-heading">Socials</h5>
+                        <ul class="footer-links">
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">LinkedIn</a></li>
+                            <li><a href="#">Instagram</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Legal Links -->
+                <div class="col-lg-3 col-md-6 col-12 mb-4">
+                    <div class="footer-column">
+                        <h5 class="footer-heading">Legal</h5>
+                        <ul class="footer-links">
+                            <li><a href="#">Terms</a></li>
+                            <li><a href="#">Privacy</a></li>
+                            <li><a href="#">Licenses</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-lg-3 col-md-6 col-12 mb-4">
+                    <div class="footer-column">
+                        <h5 class="footer-heading">Quick Links</h5>
+                        <ul class="footer-links">
+                            <li><a href="#">JV in Opebi</a></li>
+                            <li><a href="#">JV in Adeniji Jones</a></li>
+                            <li><a href="#">JV in Ikeja GRA</a></li>
+                            <li><a href="#">JV in Omole</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Added JavaScript for dropdown and horizontal scroll functionality -->
+    <script>
+        function toggleDropdown() {
+            const dropdown = document.getElementById('mobileDropdown');
+            dropdown.classList.toggle('show');
+        }
+
+        let scrollDirection = 1;
+        function scrollHorizontalNav() {
+            const navItems = document.getElementById('horizontalNavItems');
+            const maxScroll = navItems.scrollWidth - navItems.clientWidth;
+            
+            if (navItems.scrollLeft >= maxScroll && scrollDirection === 1) {
+                scrollDirection = -1;
+            } else if (navItems.scrollLeft <= 0 && scrollDirection === -1) {
+                scrollDirection = 1;
+            }
+            
+            navItems.scrollLeft += 150 * scrollDirection;
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('mobileDropdown');
+            const toggler = document.querySelector('.custom-toggler-image');
+            
+            if (!toggler.contains(event.target) && !dropdown.contains(event.target)) {
+                dropdown.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -3,85 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jointventure.ng - Get more value on your property</title>
+    <title>Joint Ventures - Get more value on your property</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Added Montserrat font from Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+    <!-- Header -->
+    <header class="header">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="img/Jointventures-logo (1) 2.png" alt="Jointventure.ng" class="logo">
-            </a>
-            
-            <!-- Updated mobile toggle to use placeholder image with arrow -->
-            <div class="mobile-toggle-wrapper">
-                <button class="navbar-toggler custom-toggler-image" type="button" onclick="toggleDropdown()">
-                    <img src="img/Ellipse 77.png" alt="Menu" class="toggle-image">
-                    <span class="toggle-arrow">▼</span>
-                </button>
-                
-                <!-- Added dropdown menu for My Account -->
-                <div class="mobile-dropdown" id="mobileDropdown">
-                    <a href="#" class="dropdown-item">My Account</a>
-                </div>
-            </div>
-            
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <!-- Desktop navigation -->
-                <ul class="navbar-nav me-auto d-none d-lg-flex">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Joint Venture</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Developers</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Investors</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Legal / JV Agreements</a>
-                    </li>
-                </ul>
-                
-                <div class="navbar-nav d-none d-lg-flex">
-                    <a class="nav-link" href="#">Post a Joint Venture for <strong>FREE</strong></a>
-                    <button class="btn btn-dark btn-sm ms-2 d-flex align-items-center">
-                        My Account
-                        <div class="profile-icon-wrapper ms-2">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" fill="#333"/>
-                                <path d="M12 14C7.58172 14 4 17.5817 4 22H20C20 17.5817 16.4183 14 12 14Z" fill="#333"/>
-                            </svg>
-                        </div>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </nav>
+  
+            <div class="logo">
+       <img src="images/logo.png" alt="Jointventure.ng Logo" class="logo-icon" />
+      
+         </div>
 
-    <!-- Added horizontal mobile navigation menu below header -->
-    <div class="mobile-nav-horizontal d-lg-none">
-        <div class="container-fluid px-3">
-            <div class="horizontal-nav-container">
-                <div class="horizontal-nav-scroll" id="horizontalNavItems">
-                    <a href="#" class="horizontal-nav-item">Joint Venture</a>
-                    <a href="#" class="horizontal-nav-item">Developers</a>
-                    <a href="#" class="horizontal-nav-item">Investors</a>
-                    <a href="#" class="horizontal-nav-item">Legal / JV</a>
-                    <a href="#" class="horizontal-nav-item">Post for FREE</a>
-                    <a href="#" class="horizontal-nav-item">Contact</a>
-                    <a href="#" class="horizontal-nav-item">About</a>
-                </div>
-                <button class="horizontal-nav-arrow" onclick="scrollHorizontalNav()">
-                    <span>></span>
-                </button>
-            </div>
+            
+            <!-- Desktop Navigation -->
+            <nav class="nav-desktop">
+                <a href="#" class="nav-link">Joint Venture</a>
+                <a href="#" class="nav-link">Land for Sale</a>
+                <a href="#" class="nav-link">Developers</a>
+                <a href="#" class="nav-link">Investors</a>
+                <a href="#" class="nav-link">Legal/PV Agreements</a>
+                <a href="#" class="nav-link highlight">Post a Joint Venture for FREE</a>
+                <a href="#" class="nav-link">Log in</a>
+                <button class="btn-register">Register</button>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-    </div>
+
+        <!-- Mobile Navigation -->
+        <nav class="nav-mobile" id="mobileNav">
+            <a href="#" class="nav-link-mobile">Joint Venture</a>
+            <a href="#" class="nav-link-mobile">Land for Sale</a>
+            <a href="#" class="nav-link-mobile">Developers</a>
+            <a href="#" class="nav-link-mobile">Investors</a>
+            <a href="#" class="nav-link-mobile">Legal/PV Agreements</a>
+            <a href="#" class="nav-link-mobile highlight">Post a Joint Venture for FREE</a>
+            <a href="#" class="nav-link-mobile">Log in</a>
+            <button class="btn-register-mobile">Register</button>
+        </nav>
+    </header>
 
     <!-- Hero Section -->
     <section class="hero-section py-5">
@@ -149,7 +119,7 @@
                 </div>
             </div>
         </div>
-    </section>   
+    </section>
 
     <!-- Added large hero property image section matching the Figma design -->
     <!-- Made hero property image section full width with no margins -->

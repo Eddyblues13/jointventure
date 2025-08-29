@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joint Ventures</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+
+    </style>
+</head>
+<body>
+  <!-- Header -->
+    <header class="header">
+        <div class="container">
+  
+            <div class="logo">
+       <img src="images/logo.png" alt="Jointventure.ng Logo" class="logo-icon" />
+      
+         </div>
+
+            
+            <!-- Desktop Navigation -->
+            <nav class="nav-desktop">
+                <a href="#" class="nav-link">Joint Venture</a>
+                <a href="#" class="nav-link">Land for Sale</a>
+                <a href="#" class="nav-link">Developers</a>
+                <a href="#" class="nav-link">Investors</a>
+                <a href="#" class="nav-link">Legal/PV Agreements</a>
+                <a href="#" class="nav-link highlight">Post a Joint Venture for FREE</a>
+                <a href="#" class="nav-link">Log in</a>
+                <button class="btn-register">Register</button>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <nav class="nav-mobile" id="mobileNav">
+            <a href="#" class="nav-link-mobile">Joint Venture</a>
+            <a href="#" class="nav-link-mobile">Land for Sale</a>
+            <a href="#" class="nav-link-mobile">Developers</a>
+            <a href="#" class="nav-link-mobile">Investors</a>
+            <a href="#" class="nav-link-mobile">Legal/PV Agreements</a>
+            <a href="#" class="nav-link-mobile highlight">Post a Joint Venture for FREE</a>
+            <a href="#" class="nav-link-mobile">Log in</a>
+            <button class="btn-register-mobile">Register</button>
+        </nav>
+    </header>
+    <section class="search-section-container">
+    <!-- Mobile Search Bar -->
+    <div class="mobile-search">
+        <div class="container">
+            <div class="d-flex">
+                <input type="text" class="form-control search-input flex-grow-1" placeholder="What are you looking for ?">
+                <button class="btn btn-red">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            
+            <a href="#" class="video-button w-100 justify-content-center">
+                Click here to watch Property's full video
+                <i class="fab fa-youtube youtube-icon"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Desktop Search Section -->
+    <div class="container desktop-search">
+        <div class="search-section">
+            <!-- Search Input -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="input-group">
+                        <span class="input-group-text bg-white border-end-0">
+                            <i class="fas fa-search text-muted"></i>
+                        </span>
+                        <input type="text" class="form-control search-input border-start-0" placeholder="Search for Agent/Landowner">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Filter Dropdowns -->
+            <div class="row mb-4">
+                <div class="col-lg-2 col-md-3 col-6 mb-3">
+                  <div class="form-group">
+                            <select class="form-select custom-select">
+                                <option>Stat</option>
+                                <option>Lagos</option>
+                                <option>Abuja</option>
+                                <option>Rivers</option>
+                            </select>
+                        </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-3 col-6 mb-3">
+                    <div class="form-group">
+                            <select class="form-select custom-select">
+                                <option>City</option>
+                                <option>Ikeja</option>
+                                <option>Victoria Island</option>
+                                <option>Lekki</option>
+                            </select>
+                        </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-3 col-6 mb-3">
+                    <div class="form-group">
+                            <select class="form-select custom-select">
+                                <option>Land Size</option>
+                                <option>500 sqm</option>
+                                <option>1000 sqm</option>
+                                <option>2000 sqm</option>
+                            </select>
+                        </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-3 col-6 mb-3">
+                  <div class="form-group">
+                            <select class="form-select custom-select">
+                                <option>Premium</option>
+                                <option>Standard</option>
+                                <option>Luxury</option>
+                            </select>
+                        </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-12 mb-3">
+                    <button class="btn btn-dark btn-lg search-btn">Search</button>
+                </div>
+            </div>
+            
+            <!-- Video Button -->
+            <div class="row">
+                <div class="col-12">
+                    <a href="#" class="video-button">
+                        Click here to watch Property's full video
+                        <i class="fab fa-youtube youtube-icon"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <section class="property-container">
+        <div class="row">
+            <!-- Property Details Section -->
+            <div class="col-lg-6 col-md-12">
+                   <!-- Property Images -->
+                <div class="property-image-section">
+                    <div class="main-image-container">
+                        <img src="img/Rectangle 134.png" alt="Property Image" class="main-image" id="mainImage">
+                        <button class="carousel-nav prev" onclick="previousImage()">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-nav next" onclick="nextImage()">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="thumbnail-container">
+                        <div class="thumbnail active" onclick="selectImage(0)">
+                            <img src="img/Rectangle 136.png" alt="Thumbnail 1">
+                        </div>
+                        <div class="thumbnail" onclick="selectImage(1)">
+                            <img src="img/Rectangle 136.png" alt="Thumbnail 2">
+                        </div>
+                        <div class="thumbnail" onclick="selectImage(2)">
+                            <img src="img/Rectangle 136.png" alt="Thumbnail 3">
+                        </div>
+                        <div class="thumbnail" onclick="selectImage(3)">
+                            <img src="img/Rectangle 136.png" alt="Thumbnail 4">
+                        </div>
+                    </div>
+                </div>
+                <div class="property-details">
+                    <div class="property-header">
+                        Joint Ventures
+                    </div>
+                    <div class="property-content">
+                        <div class="property-row">
+                            <span class="property-label">Location</span>
+                            <span class="property-value">Opebi, Ikeja, Lagos State</span>
+                        </div>
+                        <div class="property-row">
+                            <span class="property-label">Land Size</span>
+                            <span class="property-value">1300 Sqmtrs</span>
+                        </div>
+                        <div class="property-row">
+                            <span class="property-label">Premium</span>
+                            <span class="property-value">N10 Million</span>
+                        </div>
+                        <div class="property-row">
+                            <span class="property-label">Title</span>
+                            <span class="property-value">Registered Survey/Deed of Assignment</span>
+                        </div>
+                        <div class="property-row">
+                            <span class="property-label">Land Value</span>
+                            <span class="property-value">N450 Million</span>
+                        </div>
+                        <div class="property-row">
+                            <span class="property-label">Proposal</span>
+                            <span class="property-value">4 blocks of 4 bedroom semi detached duplexes</span>
+                        </div>
+                        <div class="property-row">
+                            <span class="property-label">Sharing</span>
+                            <span class="property-value">50/50</span>
+                        </div>
+                        <div class="property-row">
+                            <span class="property-label">Title Owner</span>
+                            <span class="property-value">Alive</span>
+                        </div>
+                        <div class="property-row">
+                            <span class="property-label">Facilitators</span>
+                            <span class="property-value">5% negotiable</span>
+                        </div>
+                        <div class="property-row">
+                            <span class="property-label">Type</span>
+                            <span class="property-value">Build-Operate Transfer</span>
+                        </div>
+                        
+                        <div class="action-buttons">
+                            <button class="btn-link" onclick="handleLinkClick()">Link</button>
+                            <button class="btn-mandate" onclick="handleMandateClick()">Mandate</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Listing Details Section -->
+            <div class="col-lg-6 col-md-12">
+                   <!-- Agent Panel -->
+                <div class="agent-panel">
+                    <div class="agent-header">
+                        Agent
+                    </div>
+                    
+                    <div class="agent-profile">
+                        <div class="agent-avatar">
+                            <i class="fas fa-user" style="color: #999; font-size: 24px;"></i>
+                        </div>
+                        <div class="agent-name">Jolar and co.</div>
+                        <div class="agent-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Agege, Lagos State
+                        </div>
+                    </div>
+
+                    <button class="btn-contact">View Contact</button>
+                    <button class="btn-message">Send Message</button>
+
+                    <a href="#" class="joint-ventures-link">
+                        Click here to view all joint ventures from this agent →
+                    </a>
+
+                    <div class="social-share">
+                        <h6>Share this Joint Venture</h6>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-icon instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-icon whatsapp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="#" class="social-icon twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="feedback-section">
+                        <div class="feedback-header">
+                            <span class="feedback-count">
+                                <i class="fas fa-star"></i> 13 Feedbacks / Reviews
+                            </span>
+                            <a href="#" class="view-all-link">View All</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="listing-details">
+                    <div class="listing-header">
+                        Listing Details
+                    </div>
+                    <div class="listing-content">
+                        <div class="listing-row">
+                            <span class="listing-label">Market Status</span>
+                            <span class="listing-value">Available</span>
+                        </div>
+                        <div class="listing-row">
+                            <span class="listing-label">Ref Number</span>
+                            <span class="listing-value">211005223</span>
+                        </div>
+                        <div class="listing-row">
+                            <span class="listing-label">Date Listed</span>
+                            <span class="listing-value">14 Oct 2023</span>
+                        </div>
+                        <div class="listing-row">
+                            <span class="listing-label">Last Updated</span>
+                            <span class="listing-value">23 Oct 2023</span>
+                        </div>
+                        
+                        <a href="#" class="report-link" onclick="handleReportClick(event)">
+                            Report this Listing Or Agent <i class="fas fa-info-circle"></i>
+                        </a>
+                        
+                        <div class="disclaimer">
+                            <div class="disclaimer-title">Disclaimer</div>
+                            <p class="disclaimer-text">
+                                The information displayed about this property comprises a property advertisement. <strong>JointVenture</strong> cannot guarantee the accuracy or comprehensiveness of the advertisement or any linked or associated information. <strong>JointVenture</strong> has no control over the content. It's important to note that this property listing does not serve as specific property particulars. The information is provided and maintained by <strong>Paymonthly limited</strong>. <strong>JointVenture</strong> shall not in any way be held liable for the actions of any Agent / Property Owner on or off this website.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Property Listings Section -->
+    <section class="property-section">
+        <div class="container">
+            <!-- Desktop Title (hidden on mobile) -->
+            <h2 class="section-title d-none d-md-block">
+                Similar <span class="highlight">Joint Ventures</span>
+            </h2>
+
+            <!-- Property Cards Grid -->
+            <div class="row">
+                <!-- Property Card 1 -->
+                <div class="col-12 col-md-4">
+                    <div class="property-card">
+                        <div class="property-image">
+                            <img src="img/Rectangle 134.png" alt="Modern House">
+                            <div class="location-pin">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="top-badge">
+                                <i class="fas fa-crown"></i>
+                                Top Joint Venture
+                            </div>
+                            <div class="location-badge">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Opebi, Ikeja, Lagos State
+                            </div>
+                        </div>
+                        <div class="property-details">
+                            <div class="details-grid">
+                                <div class="detail-item">
+                                    <div class="detail-label">Land Size:</div>
+                                    <div class="detail-value">1300 Sqmtrs</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Land Value:</div>
+                                    <div class="detail-value">N450,000,000</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Sharing:</div>
+                                    <div class="detail-value">50/50</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Premium:</div>
+                                    <div class="detail-value">N10,000,000</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Title:</div>
+                                    <div class="detail-value">Registered Survey</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Proposal:</div>
+                                    <div class="detail-value">4 blocks of semi detached duplexes</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Card 2 -->
+                <div class="col-12 col-md-4">
+                    <div class="property-card">
+                        <div class="property-image">
+                            <img src="img/Rectangle 134.png" alt="Modern House">
+                            <div class="location-pin">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="top-badge">
+                                <i class="fas fa-crown"></i>
+                                Top Joint Venture
+                            </div>
+                            <div class="location-badge">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Opebi, Ikeja, Lagos State
+                            </div>
+                        </div>
+                        <div class="property-details">
+                            <div class="details-grid">
+                                <div class="detail-item">
+                                    <div class="detail-label">Land Size:</div>
+                                    <div class="detail-value">1300 Sqmtrs</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Land Value:</div>
+                                    <div class="detail-value">N450,000,000</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Sharing:</div>
+                                    <div class="detail-value">50/50</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Premium:</div>
+                                    <div class="detail-value">N10,000,000</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Title:</div>
+                                    <div class="detail-value">Registered Survey</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Proposal:</div>
+                                    <div class="detail-value">4 blocks of semi detached duplexes</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Card 3 -->
+                <div class="col-12 col-md-4">
+                    <div class="property-card">
+                        <div class="property-image">
+                            <img src="img/Rectangle 134.png" alt="Modern House">
+                            <div class="location-pin">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="top-badge">
+                                <i class="fas fa-crown"></i>
+                                Top Joint Venture
+                            </div>
+                            <div class="location-badge">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Opebi, Ikeja, Lagos State
+                            </div>
+                        </div>
+                        <div class="property-details">
+                            <div class="details-grid">
+                                <div class="detail-item">
+                                    <div class="detail-label">Land Size:</div>
+                                    <div class="detail-value">1300 Sqmtrs</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Land Value:</div>
+                                    <div class="detail-value">N450,000,000</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Sharing:</div>
+                                    <div class="detail-value">50/50</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Premium:</div>
+                                    <div class="detail-value">N10,000,000</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Title:</div>
+                                    <div class="detail-value">Registered Survey</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Proposal:</div>
+                                    <div class="detail-value">4 blocks of semi detached duplexes</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- View All Button (desktop only) -->
+            <a href="#" class="view-all-btn d-none d-md-inline-block">View All</a>
+        </div>
+    </section>
+        <!-- Added footer section matching the Figma design -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <!-- Logo and Copyright -->
+                <div class="col-lg-2 col-md-6 col-12 mb-4">
+                    <div class="footer-logo-section">
+                        <img src="img/Jointventures-logo (1) 2.png" alt="Jointventure.ng" class="footer-logo">
+                        <p class="footer-copyright">Copyright © JointVenture.ng 2023 All Rights Reserved</p>
+                    </div>
+                </div>
+                
+                <!-- Company Links -->
+                <div class="col-lg-2 col-md-6 col-12 mb-4">
+                    <div class="footer-column">
+                        <h5 class="footer-heading">Company</h5>
+                        <ul class="footer-links">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Socials Links -->
+                <div class="col-lg-2 col-md-6 col-12 mb-4">
+                    <div class="footer-column">
+                        <h5 class="footer-heading">Socials</h5>
+                        <ul class="footer-links">
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">LinkedIn</a></li>
+                            <li><a href="#">Instagram</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Legal Links -->
+                <div class="col-lg-3 col-md-6 col-12 mb-4">
+                    <div class="footer-column">
+                        <h5 class="footer-heading">Legal</h5>
+                        <ul class="footer-links">
+                            <li><a href="#">Terms</a></li>
+                            <li><a href="#">Privacy</a></li>
+                            <li><a href="#">Licenses</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-lg-3 col-md-6 col-12 mb-4">
+                    <div class="footer-column">
+                        <h5 class="footer-heading">Quick Links</h5>
+                        <ul class="footer-links">
+                            <li><a href="#">JV in Opebi</a></li>
+                            <li><a href="#">JV in Adeniji Jones</a></li>
+                            <li><a href="#">JV in Ikeja GRA</a></li>
+                            <li><a href="#">JV in Omole</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

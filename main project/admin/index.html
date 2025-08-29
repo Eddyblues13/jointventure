@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joint Ventures Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            overflow-x: hidden;
+        }
+        
+        /* Sidebar Styles */
+        .sidebar {
+            background-color: #2c2c2c;
+            min-height: 100vh;
+            width: 280px;
+            position: fixed;
+            left: 0;
+            top: 0;
+            padding: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .sidebar.collapsed {
+            margin-left: -280px;
+        }
+        
+        .sidebar .brand {
+            padding: 20px;
+            border-bottom: 1px solid #404040;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .sidebar .brand h4 {
+            color: white;
+            margin: 0;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+        
+        .sidebar .brand .logo {
+            background-color: #dc3545;
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-right: 8px;
+            position: relative;
+        }
+        
+        .sidebar .brand .logo::after {
+            content: '🏢';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 12px;
+        }
+        
+        .sidebar-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.25rem;
+        }
+        
+        .sidebar-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .sidebar-nav li {
+            border-bottom: 1px solid #404040;
+        }
+        
+        .sidebar-nav a {
+            display: block;
+            padding: 15px 20px;
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .sidebar-nav a:hover,
+        .sidebar-nav a.active {
+            background-color: #404040;
+            color: white;
+        }
+        
+        .sidebar-nav i {
+            width: 20px;
+            margin-right: 10px;
+        }
+        
+        /* Main Content */
+        .main-content {
+            margin-left: 280px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .main-content.expanded {
+            margin-left: 0;
+        }
+        
+        .header {
+            background: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .mobile-header {
+            display: none;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .search-box {
+            position: relative;
+            max-width: 400px;
+            width: 100%;
+        }
+        
+        .search-box input {
+            padding-left: 40px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            width: 100%;
+        }
+        
+        .search-box i {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+        }
+        
+        .stat-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            margin-bottom: 20px;
+            height: 100%;
+        }
+        
+        .stat-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 24px;
+            color: white;
+        }
+        
+        .stat-icon.red { background-color: #dc3545; }
+        .stat-icon.orange { background-color: #fd7e14; }
+        .stat-icon.green { background-color: #198754; }
+        
+        .stat-number {
+            font-size: 24px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .chart-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 25px;
+            height: 100%;
+        }
+        
+        .income-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 25px;
+            height: 100%;
+        }
+        
+        .income-amount {
+            font-size: 32px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .income-label {
+            color: #dc3545;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        .subscription-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .subscription-item:last-child {
+            border-bottom: none;
+        }
+        
+        .subscription-name {
+            color: #333;
+            font-size: 14px;
+        }
+        
+        .subscription-amount {
+            color: #dc3545;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        .users-table {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow-x: auto;
+        }
+        
+        .table-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .view-all-btn {
+            color: #dc3545;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .table th {
+            border: none;
+            color: #666;
+            font-weight: 600;
+            font-size: 14px;
+            padding: 12px;
+            white-space: nowrap;
+        }
+        
+        .table td {
+            border: none;
+            padding: 12px;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+        
+        .status-active {
+            color: #198754;
+            font-weight: 600;
+        }
+        
+        .view-btn {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            color: #666;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            text-decoration: none;
+        }
+        
+        .month-selector {
+            background: none;
+            border: none;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .sidebar {
+                margin-left: -280px;
+            }
+            
+            .sidebar.show {
+                margin-left: 0;
+            }
+            
+            .main-content {
+                margin-left: 0;
+            }
+            
+            .sidebar-toggle {
+                display: block;
+            }
+            
+            .mobile-header {
+                display: flex;
+            }
+            
+            .header {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 15px;
+            }
+            
+            .stat-number {
+                font-size: 20px;
+            }
+            
+            .income-amount {
+                font-size: 24px;
+            }
+            
+            .chart-card, .income-card {
+                padding: 15px;
+            }
+            
+            .users-table {
+                padding: 15px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .search-box {
+                max-width: 100%;
+            }
+            
+            .d-flex.justify-content-center.gap-3 {
+                flex-direction: column;
+                gap: 10px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="brand">
+            <h4>
+                <span class="logo"></span>
+                Jointventure.ng
+            </h4>
+            <button class="sidebar-toggle" id="sidebarToggle">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <ul class="sidebar-nav">
+            <li><a href="#" class="active"><i class="fas fa-th-large"></i> Dashboard</a></li>
+            <li><a href="#"><i class="fas fa-exchange-alt"></i> Transactions</a></li>
+            <li><a href="#"><i class="fas fa-chart-bar"></i> Reports</a></li>
+            <li><a href="#"><i class="fas fa-check-circle"></i> Verifications</a></li>
+            <li><a href="#"><i class="fas fa-users"></i> User Management</a></li>
+            <li><a href="#"><i class="fas fa-list"></i> Listing Management</a></li>
+            <li><a href="#"><i class="fas fa-bell"></i> Notification Management</a></li>
+            <li><a href="#"><i class="fas fa-cog"></i> General Settings</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content" id="mainContent">
+        <!-- Mobile Header -->
+        <div class="mobile-header">
+            <button class="sidebar-toggle" id="mobileSidebarToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" class="form-control" placeholder="Search for anything">
+            </div>
+        </div>
+
+        <!-- Header -->
+        <div class="header">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" class="form-control" placeholder="Search for anything">
+            </div>
+        </div>
+
+        <!-- Statistics Cards -->
+        <div class="row">
+            <div class="col-md-4 col-sm-6 mb-3">
+                <div class="stat-card">
+                    <div class="stat-icon red">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-number">30,000</div>
+                    <div class="stat-label">Agents / Landowners</div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-3">
+                <div class="stat-card">
+                    <div class="stat-icon orange">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <div class="stat-number">25,000</div>
+                    <div class="stat-label">Developers</div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-3">
+                <div class="stat-card">
+                    <div class="stat-icon green">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="stat-number">2,000</div>
+                    <div class="stat-label">Investors</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts and Income Section -->
+        <div class="row">
+            <div class="col-lg-6 col-md-12 mb-3">
+                <div class="chart-card">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h6 class="mb-0">User Statistics in November</h6>
+                        <select class="month-selector">
+                            <option>November</option>
+                        </select>
+                    </div>
+                    <div class="text-center">
+                        <canvas id="userChart" width="300" height="300"></canvas>
+                        <div class="mt-3">
+                            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                                <div><span style="color: #dc3545;">●</span> Agents / Landowners</div>
+                                <div><span style="color: #fd7e14;">●</span> Developers</div>
+                                <div><span style="color: #198754;">●</span> Investors</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 mb-3">
+                <div class="income-card">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div>
+                            <div class="income-amount">₦1,200,000</div>
+                            <div class="income-label">Total Income in November</div>
+                        </div>
+                        <select class="month-selector">
+                            <option>November</option>
+                        </select>
+                    </div>
+                    <div class="subscription-item">
+                        <span class="subscription-name">Standard Subscription</span>
+                        <span class="subscription-amount">₦600,000</span>
+                    </div>
+                    <div class="subscription-item">
+                        <span class="subscription-name">Premium Subscription</span>
+                        <span class="subscription-amount">₦600,000</span>
+                    </div>
+                    <div class="subscription-item">
+                        <span class="subscription-name">Gold Subscription</span>
+                        <span class="subscription-amount">₦600,000</span>
+                    </div>
+                    <div class="subscription-item">
+                        <span class="subscription-name">Platinum Subscription</span>
+                        <span class="subscription-amount">₦600,000</span>
+                    </div>
+                    <div class="subscription-item">
+                        <span class="subscription-name">Mega Boost Ad</span>
+                        <span class="subscription-amount">₦600,000</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Users Table -->
+        <div class="users-table">
+            <div class="table-header">
+                <h6 class="mb-0">Users</h6>
+                <a href="#" class="view-all-btn">View All</a>
+            </div>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>UserID</th>
+                            <th>Date Joined</th>
+                            <th>User Account</th>
+                            <th>User Status</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>paymentliving@gmail.com</td>
+                            <td>23rd Nov 2023</td>
+                            <td>Agent / LandOwner</td>
+                            <td class="status-active">Active</td>
+                            <td><a href="#" class="view-btn">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>paymentliving@gmail.com</td>
+                            <td>23rd Nov 2023</td>
+                            <td>Agent / LandOwner</td>
+                            <td class="status-active">Active</td>
+                            <td><a href="#" class="view-btn">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>paymentliving@gmail.com</td>
+                            <td>23rd Nov 2023</td>
+                            <td>Agent / LandOwner</td>
+                            <td class="status-active">Active</td>
+                            <td><a href="#" class="view-btn">View</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Initialize the pie chart
+        const ctx = document.getElementById('userChart').getContext('2d');
+        const userChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Agents / Landowners', 'Developers', 'Investors'],
+                datasets: [{
+                    data: [30000, 25000, 2000],
+                    backgroundColor: ['#dc3545', '#fd7e14', '#198754'],
+                    borderWidth: 0,
+                    cutout: '60%'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+
+        // Add center text to doughnut chart
+        Chart.register({
+            id: 'centerText',
+            beforeDraw: function(chart) {
+                if (chart.config.type === 'doughnut') {
+                    const ctx = chart.ctx;
+                    const centerX = (chart.chartArea.left + chart.chartArea.right) / 2;
+                    const centerY = (chart.chartArea.top + chart.chartArea.bottom) / 2;
+                    
+                    ctx.save();
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'middle';
+                    ctx.font = 'bold 24px Arial';
+                    ctx.fillStyle = '#333';
+                    ctx.fillText('3,000', centerX, centerY - 10);
+                    ctx.font = '14px Arial';
+                    ctx.fillStyle = '#666';
+                    ctx.fillText('New Users', centerX, centerY + 15);
+                    ctx.restore();
+                }
+            }
+        });
+
+        // Toggle sidebar on mobile
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebar = document.getElementById('sidebar');
+            const mainContent = document.getElementById('mainContent');
+            const sidebarToggle = document.getElementById('sidebarToggle');
+            const mobileSidebarToggle = document.getElementById('mobileSidebarToggle');
+            
+            function toggleSidebar() {
+                sidebar.classList.toggle('show');
+                mainContent.classList.toggle('expanded');
+            }
+            
+            sidebarToggle.addEventListener('click', toggleSidebar);
+            mobileSidebarToggle.addEventListener('click', toggleSidebar);
+            
+            // Adjust chart on window resize
+            window.addEventListener('resize', function() {
+                userChart.resize();
+            });
+        });
+    </script>
+</body>
+</html>

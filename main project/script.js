@@ -46,3 +46,46 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+
+        const images = [
+            'img/Rectangle 136.png',
+            'img/Rectangle 136.png',
+            'img/Rectangle 136.png',
+            'img/Rectangle 136.png'
+        ];
+
+        let currentImageIndex = 0;
+
+        function selectImage(index) {
+            currentImageIndex = index;
+            updateMainImage();
+            updateThumbnails();
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            updateMainImage();
+            updateThumbnails();
+        }
+
+        function previousImage() {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            updateMainImage();
+            updateThumbnails();
+        }
+
+        function updateMainImage() {
+            document.getElementById('mainImage').src = images[currentImageIndex];
+        }
+
+        function updateThumbnails() {
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            thumbnails.forEach((thumb, index) => {
+                thumb.classList.toggle('active', index === currentImageIndex);
+            });
+        }
+
+        // Initialize
+        updateMainImage();
+        updateThumbnails();

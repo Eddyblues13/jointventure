@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joint Ventures - Property Listing</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        .property-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .property-details {
+            background: white;
+            border-radius: 8px;
+            padding: 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .property-header {
+            background: #dc3545;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px 8px 0 0;
+            font-weight: 600;
+            font-size: 16px;
+        }
+        
+        .property-content {
+            padding: 20px;
+        }
+        
+        .property-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .property-row:last-child {
+            border-bottom: none;
+        }
+        
+        .property-label {
+            font-weight: 600;
+            color: #333;
+            font-size: 14px;
+        }
+        
+        .property-value {
+            color: #666;
+            font-size: 14px;
+            text-align: right;
+            max-width: 60%;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 0;
+            margin-top: 20px;
+        }
+        
+        .btn-link, .btn-mandate {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        
+        .btn-link {
+            background: #dc3545;
+            color: white;
+            border-radius: 6px 0 0 6px;
+        }
+        
+        .btn-mandate {
+            background: #dc3545;
+            color: white;
+            border-radius: 0 6px 6px 0;
+            border-left: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .listing-details {
+            background: white;
+            border-radius: 8px;
+            padding: 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .listing-header {
+            background: #dc3545;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px 8px 0 0;
+            font-weight: 600;
+            font-size: 16px;
+        }
+        
+        .listing-content {
+            padding: 20px;
+        }
+        
+        .listing-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .listing-row:last-child {
+            border-bottom: none;
+        }
+        
+        .listing-label {
+            font-weight: 600;
+            color: #333;
+            font-size: 14px;
+        }
+        
+        .listing-value {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .report-link {
+            color: #dc3545;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            margin: 20px 0;
+            display: inline-block;
+        }
+        
+        .report-link:hover {
+            color: #b02a37;
+            text-decoration: underline;
+        }
+        
+        .disclaimer {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 15px;
+            margin-top: 20px;
+        }
+        
+        .disclaimer-title {
+            color: #856404;
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        .disclaimer-text {
+            color: #856404;
+            font-size: 13px;
+            line-height: 1.5;
+            margin: 0;
+        }
+        
+        .disclaimer-text strong {
+            font-weight: 600;
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 767px) {
+            .property-container {
+                padding: 10px;
+            }
+            
+            .property-value {
+                max-width: 70%;
+                font-size: 13px;
+            }
+            
+            .property-label {
+                font-size: 13px;
+            }
+            
+            .listing-label, .listing-value {
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Add your existing nav code here -->
+    
+    <div class="property-container">
+        <div class="row">
+            <!-- Property Details Section -->
+            <div class="col-lg-6 col-md-12">
+                   <!-- Property Images -->
+                <div class="property-image-section">
+                    <div class="main-image-container">
+                        <img src="/placeholder.svg?height=400&width=600" alt="Property Image" class="main-image" id="mainImage">
+                        <button class="carousel-nav prev" onclick="previousImage()">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-nav next" onclick="nextImage()">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="thumbnail-container">
+                        <div class="thumbnail active" onclick="selectImage(0)">
+                            <img src="/placeholder.svg?height=60&width=80" alt="Thumbnail 1">
+                        </div>
+                        <div class="thumbnail" onclick="selectImage(1)">
+                            <img src="/placeholder.svg?height=60&width=80" alt="Thumbnail 2">
+                        </div>
+                        <div class="thumbnail" onclick="selectImage(2)">
+                            <img src="/placeholder.svg?height=60&width=80" alt="Thumbnail 3">
+                        </div>
+                        <div class="thumbnail" onclick="selectImage(3)">
+                            <img src="/placeholder.svg?height=60&width=80" alt="Thumbnail 4">
+                        </div>
+                    </div>
+                </div>
+                <div class="property-details">
+                    <div class="property-header">
+                        Joint Ventures
+                    </div>
+                    <div class="property-content">
+                        <div class="property-row">
+                            <span class="property-label">Location</span>
+                            <span class="property-value">Opebi, Ikeja, Lagos State</span>
+                        </div>
+                        <div class="property-row">
+                            <span class="property-label">Land Size</span>
+                            <span class="property-value">1300 Sqmtrs</span>
+                        </div>
+                        <div class="property-row">
+                            <span class="property-label">Premium</span>
+                            <span class="property-value">N10 Million</span>
+                        </div>
+                        <div class="property-row">
+                            <span class="property-label">Title</span>
+                            <span class="property-value">Registered Survey/Deed of Assignment</span>
+                        </div>
+                        <div class="property-row">
+                            <span class="property-label">Land Value</span>
+                            <span class="property-value">N450 Million</span>
+                        </div>
+                        <div class="property-row">
+                            <span class="property-label">Proposal</span>
+                            <span class="property-value">4 blocks of 4 bedroom semi detached duplexes</span>
+                        </div>
+                        <div class="property-row">
+                            <span class="property-label">Sharing</span>
+                            <span class="property-value">50/50</span>
+                        </div>
+                        <div class="property-row">
+                            <span class="property-label">Title Owner</span>
+                            <span class="property-value">Alive</span>
+                        </div>
+                        <div class="property-row">
+                            <span class="property-label">Facilitators</span>
+                            <span class="property-value">5% negotiable</span>
+                        </div>
+                        <div class="property-row">
+                            <span class="property-label">Type</span>
+                            <span class="property-value">Build-Operate Transfer</span>
+                        </div>
+                        
+                        <div class="action-buttons">
+                            <button class="btn-link" onclick="handleLinkClick()">Link</button>
+                            <button class="btn-mandate" onclick="handleMandateClick()">Mandate</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Listing Details Section -->
+            <div class="col-lg-6 col-md-12">
+                   <!-- Agent Panel -->
+                <div class="agent-panel">
+                    <div class="agent-header">
+                        Agent
+                    </div>
+                    
+                    <div class="agent-profile">
+                        <div class="agent-avatar">
+                            <i class="fas fa-user" style="color: #999; font-size: 24px;"></i>
+                        </div>
+                        <div class="agent-name">Jolar and co.</div>
+                        <div class="agent-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Agege, Lagos State
+                        </div>
+                    </div>
+
+                    <button class="btn-contact">View Contact</button>
+                    <button class="btn-message">Send Message</button>
+
+                    <a href="#" class="joint-ventures-link">
+                        Click here to view all joint ventures from this agent →
+                    </a>
+
+                    <div class="social-share">
+                        <h6>Share this Joint Venture</h6>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-icon instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-icon whatsapp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="#" class="social-icon twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="feedback-section">
+                        <div class="feedback-header">
+                            <span class="feedback-count">
+                                <i class="fas fa-star"></i> 13 Feedbacks / Reviews
+                            </span>
+                            <a href="#" class="view-all-link">View All</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="listing-details">
+                    <div class="listing-header">
+                        Listing Details
+                    </div>
+                    <div class="listing-content">
+                        <div class="listing-row">
+                            <span class="listing-label">Market Status</span>
+                            <span class="listing-value">Available</span>
+                        </div>
+                        <div class="listing-row">
+                            <span class="listing-label">Ref Number</span>
+                            <span class="listing-value">211005223</span>
+                        </div>
+                        <div class="listing-row">
+                            <span class="listing-label">Date Listed</span>
+                            <span class="listing-value">14 Oct 2023</span>
+                        </div>
+                        <div class="listing-row">
+                            <span class="listing-label">Last Updated</span>
+                            <span class="listing-value">23 Oct 2023</span>
+                        </div>
+                        
+                        <a href="#" class="report-link" onclick="handleReportClick(event)">
+                            Report this Listing Or Agent <i class="fas fa-info-circle"></i>
+                        </a>
+                        
+                        <div class="disclaimer">
+                            <div class="disclaimer-title">Disclaimer</div>
+                            <p class="disclaimer-text">
+                                The information displayed about this property comprises a property advertisement. <strong>JointVenture</strong> cannot guarantee the accuracy or comprehensiveness of the advertisement or any linked or associated information. <strong>JointVenture</strong> has no control over the content. It's important to note that this property listing does not serve as specific property particulars. The information is provided and maintained by <strong>Paymonthly limited</strong>. <strong>JointVenture</strong> shall not in any way be held liable for the actions of any Agent / Property Owner on or off this website.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function handleLinkClick() {
+            alert('Link button clicked');
+            // Add your link functionality here
+        }
+        
+        function handleMandateClick() {
+            alert('Mandate button clicked');
+            // Add your mandate functionality here
+        }
+        
+        function handleReportClick(event) {
+            event.preventDefault();
+            alert('Report listing clicked');
+            // Add your report functionality here
+        }
+        
+        // Optional: Add smooth scrolling for mobile
+        window.addEventListener('resize', function() {
+            // Handle any responsive adjustments if needed
+        });
+    </script>
+</body>
+</html>

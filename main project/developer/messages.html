@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages - Joint Ventures</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-6 col-md-3">
+                    <button class="mobile-menu-toggle d-md-none">☰</button>
+                    <a href="#" class="logo">Jointventure.ng</a>
+                </div>
+                <div class="col-md-6 d-none d-md-block">
+                    <nav class="nav-links justify-content-center">
+                        <a href="#">Joint Venture</a>
+                        <a href="#">Developers</a>
+                        <a href="#">Investors</a>
+                        <a href="#">Legal / JV Agreements</a>
+                    </nav>
+                </div>
+                <div class="col-6 col-md-3 text-end">
+                    <div class="user-dropdown">
+                        <button class="dropdown-toggle">
+                            My Account <span class="notification-badge">2</span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="profile.html" class="dropdown-item">
+                                👤 My Profile <span class="notification-badge">2</span>
+                            </a>
+                            <a href="messages.html" class="dropdown-item">
+                                💬 My Messages <span class="notification-badge">3</span>
+                            </a>
+                            <a href="notifications.html" class="dropdown-item">
+                                🔔 Notifications <span class="notification-badge">1</span>
+                            </a>
+                            <a href="request.html" class="dropdown-item">
+                                ➕ Make a Request
+                            </a>
+                            <a href="saved.html" class="dropdown-item">
+                                💾 Saved Joint Ventures
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                🚪 Log Out
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3 p-0">
+                <nav class="sidebar">
+                    <ul class="sidebar-nav">
+                        <li><a href="#" class="active">Dashboard</a></li>
+                        <li><a href="#">Transactions</a></li>
+                        <li><a href="reports.html">Reports</a></li>
+                        <li><a href="#">Verifications</a></li>
+                        <li><a href="#">User Management</a></li>
+                        <li><a href="listings.html">Listing Management</a></li>
+                        <li><a href="#">Notification Management</a></li>
+                        <li><a href="#">General Settings</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-md-9">
+                <div class="main-content">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h2>Messages</h2>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex gap-2 mb-3">
+                                        <button class="btn btn-secondary">New Messages</button>
+                                        <button class="btn btn-outline">All Messages</button>
+                                    </div>
+
+                                    <div class="message-item p-3 border-bottom">
+                                        <div class="d-flex justify-content-between align-items-start">
+                                            <div>
+                                                <div class="d-flex align-items-center gap-2 mb-2">
+                                                    <span class="fw-bold">Lanre & Co.</span>
+                                                    <span class="badge bg-danger">URGENT</span>
+                                                    <span class="badge bg-success">APPROVED</span>
+                                                </div>
+                                                <p class="text-muted mb-2">Good afternoon, I would like to talk about developing this project.</p>
+                                            </div>
+                                            <button class="btn btn-outline btn-sm">View Message</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

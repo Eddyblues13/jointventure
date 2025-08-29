@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verifications - Jointventure.ng</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <a href="#" class="sidebar-brand">
+            <div class="brand-icon">J</div>
+            Jointventure.ng
+        </a>
+        <ul class="sidebar-nav">
+            <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a href="transactions.html"><i class="fas fa-exchange-alt"></i> Transactions</a></li>
+            <li><a href="reports.html"><i class="fas fa-chart-bar"></i> Reports</a></li>
+            <li><a href="verifications.html" class="active"><i class="fas fa-check-circle"></i> Verifications</a></li>
+            <li><a href="user-management.html"><i class="fas fa-users"></i> User Management</a></li>
+            <li><a href="listing-management.html"><i class="fas fa-list"></i> Listing Management</a></li>
+            <li><a href="notification-management.html"><i class="fas fa-bell"></i> Notification Management</a></li>
+            <li><a href="general-settings.html"><i class="fas fa-cog"></i> General Settings</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Top Bar -->
+        <div class="topbar">
+            <button class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="search-box">
+                <input type="text" placeholder="Search for anything">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="user-menu">
+                <div class="dropdown">
+                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                        <i class="fas fa-user"></i> Admin
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-user"></i> Profile</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="content-wrapper">
+            <h1 class="page-title">Verifications</h1>
+
+            <!-- Verification Tabs -->
+            <ul class="nav nav-tabs" id="verificationTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="pending-tab" data-bs-toggle="tab" data-bs-target="#pending" type="button" role="tab">
+                        Pending Verifications
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="approved-tab" data-bs-toggle="tab" data-bs-target="#approved" type="button" role="tab">
+                        Approved Verifications
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="rejected-tab" data-bs-toggle="tab" data-bs-target="#rejected" type="button" role="tab">
+                        Rejected Verifications
+                    </button>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="verificationTabsContent">
+                <!-- Pending Verifications -->
+                <div class="tab-pane fade show active" id="pending" role="tabpanel">
+                    <div class="table-card">
+                        <div class="table-responsive">
+                            <table class="custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>UserID</th>
+                                        <th>Date Submitted</th>
+                                        <th>User Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>paymonthlyng@gmail.com</td>
+                                        <td>22nd Nov 2023</td>
+                                        <td><span class="status-badge status-active">Active</span></td>
+                                        <td><button class="btn btn-outline-primary btn-sm">View</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>paymonthlyng@gmail.com</td>
+                                        <td>22nd Nov 2023</td>
+                                        <td><span class="status-badge status-active">Active</span></td>
+                                        <td><button class="btn btn-outline-primary btn-sm">View</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>paymonthlyng@gmail.com</td>
+                                        <td>22nd Nov 2023</td>
+                                        <td><span class="status-badge status-active">Active</span></td>
+                                        <td><button class="btn btn-outline-primary btn-sm">View</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Approved Verifications -->
+                <div class="tab-pane fade" id="approved" role="tabpanel">
+                    <div class="table-card">
+                        <div class="table-responsive">
+                            <table class="custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>UserID</th>
+                                        <th>Date Approved</th>
+                                        <th>User Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>approveduser@gmail.com</td>
+                                        <td>20th Nov 2023</td>
+                                        <td><span class="status-badge status-active">Active</span></td>
+                                        <td><button class="btn btn-outline-primary btn-sm">View</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rejected Verifications -->
+                <div class="tab-pane fade" id="rejected" role="tabpanel">
+                    <div class="table-card">
+                        <div class="table-responsive">
+                            <table class="custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>UserID</th>
+                                        <th>Date Rejected</th>
+                                        <th>User Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>rejecteduser@gmail.com</td>
+                                        <td>18th Nov 2023</td>
+                                        <td><span class="status-badge status-inactive">Inactive</span></td>
+                                        <td><button class="btn btn-outline-primary btn-sm">View</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

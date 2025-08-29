@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Listing - Jointventure.ng</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <a href="#" class="sidebar-brand">
+            <div class="brand-icon">J</div>
+            Jointventure.ng
+        </a>
+        <ul class="sidebar-nav">
+            <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a href="transactions.html"><i class="fas fa-exchange-alt"></i> Transactions</a></li>
+            <li><a href="reports.html"><i class="fas fa-chart-bar"></i> Reports</a></li>
+            <li><a href="verifications.html"><i class="fas fa-check-circle"></i> Verifications</a></li>
+            <li><a href="user-management.html"><i class="fas fa-users"></i> User Management</a></li>
+            <li><a href="listing-management.html" class="active"><i class="fas fa-list"></i> Listing Management</a></li>
+            <li><a href="notification-management.html"><i class="fas fa-bell"></i> Notification Management</a></li>
+            <li><a href="general-settings.html"><i class="fas fa-cog"></i> General Settings</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Top Bar -->
+        <div class="topbar">
+            <button class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="search-box">
+                <input type="text" placeholder="Search for anything">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="user-menu">
+                <div class="dropdown">
+                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                        <i class="fas fa-user"></i> Admin
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-user"></i> Profile</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="content-wrapper">
+            <a href="listing-management.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Back
+            </a>
+            
+            <h1 class="page-title">Listing Management / View Listings</h1>
+
+            <!-- Property Detail -->
+            <div class="property-detail">
+                <div class="property-header">
+                    <div class="property-info">
+                        <div class="reference-number">Reference Number: JV006223</div>
+                        <div class="user-id">User Id: paymonthlyng@gmail.com</div>
+                        <div class="property-status">Add Description</div>
+                    </div>
+                    <div class="property-actions">
+                        <button class="btn btn-danger">Contact</button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- Property Images -->
+                    <div class="col-lg-6">
+                        <div class="property-gallery">
+                            <img src="/placeholder.svg?height=250&width=400" alt="Property Main Image" class="main-image image-zoom">
+                            <div class="thumbnail-gallery">
+                                <img src="/placeholder.svg?height=60&width=80" alt="Property Image 1" class="thumbnail">
+                                <img src="/placeholder.svg?height=60&width=80" alt="Property Image 2" class="thumbnail">
+                                <img src="/placeholder.svg?height=60&width=80" alt="Property Image 3" class="thumbnail">
+                                <img src="/placeholder.svg?height=60&width=80" alt="Property Image 4" class="thumbnail">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Property Details -->
+                    <div class="col-lg-6">
+                        <div class="property-details">
+                            <div class="detail-section">
+                                <div class="detail-item">
+                                    <span class="detail-label">Location</span>
+                                    <span class="detail-value">Osota, Abuja, Lagos State</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Land Size</span>
+                                    <span class="detail-value">500 Sqmtrs</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Premium</span>
+                                    <span class="detail-value">500 Million</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Title</span>
+                                    <span class="detail-value">Registered Survey (Deed of Assignment)</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Land Value</span>
+                                    <span class="detail-value">₦500 Million</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Proposed</span>
+                                    <span class="detail-value">A factory of 4 bedroom semi detached duplexes</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Sharing</span>
+                                    <span class="detail-value">50/50</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Title Owner</span>
+                                    <span class="detail-value">Alao</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Facilitators</span>
+                                    <span class="detail-value">No negotiable</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Link</span>
+                                    <span class="detail-value">Mandates</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Type</span>
+                                    <span class="detail-value">Build Operate Transfer</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Listing Details Table -->
+                <div class="detail-section">
+                    <h6>Listing Details</h6>
+                    <div class="table-responsive">
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td><strong>Market Status</strong></td>
+                                    <td>Available</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ref Number</strong></td>
+                                    <td>JV006223</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Date Listed</strong></td>
+                                    <td>15 Oct 2023</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Last Updated</strong></td>
+                                    <td>23 Oct 2023</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Views</strong></td>
+                                    <td>203</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Reports Section -->
+                <div class="reports-section">
+                    <div class="reports-header">REPORTS (2)</div>
+                    
+                    <div class="report-item">
+                        <div class="report-header">
+                            <div class="report-date">YESTERDAY - 09 NOV, 2022</div>
+                            <button class="btn btn-outline-primary btn-sm">View Report</button>
+                        </div>
+                        <div class="report-meta">
+                            <span class="report-reference">Reference Number: JV006223</span> | 
+                            <span class="report-type">Offensive Content or Picture</span>
+                        </div>
+                        <div class="report-content">
+                            This property is false, its a lie... i went to inspect the land and it doesn't even exist, why did he post it... he must be a scammer
+                        </div>
+                    </div>
+
+                    <div class="report-item">
+                        <div class="report-header">
+                            <div class="report-date">YESTERDAY - 09 NOV, 2022</div>
+                            <button class="btn btn-outline-primary btn-sm">View Report</button>
+                        </div>
+                        <div class="report-meta">
+                            <span class="report-reference">Reference Number: JV006223</span> | 
+                            <span class="report-type">Offensive Content or Picture</span>
+                        </div>
+                        <div class="report-content">
+                            This property is false, its a lie... i went to inspect the land and it doesn't even exist, why did he post it... he must be a scammer
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joint Ventures Property Listings</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .property-section {
+            padding: 40px 0;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .section-title .highlight {
+            color: #dc3545;
+        }
+
+        .property-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .property-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .property-image {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .property-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .top-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #dc3545;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .location-badge {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            background: #dc3545;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .property-details {
+            padding: 20px;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .detail-item {
+            margin-bottom: 12px;
+        }
+
+        .detail-label {
+            font-size: 13px;
+            color: #666;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .detail-value {
+            font-size: 14px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .view-all-btn {
+            background: white;
+            border: 2px solid #e9ecef;
+            color: #666;
+            padding: 12px 40px;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: block;
+            margin: 40px auto 0;
+            text-decoration: none;
+        }
+
+        .view-all-btn:hover {
+            border-color: #dc3545;
+            color: #dc3545;
+            text-decoration: none;
+        }
+
+        .location-pin {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            width: 30px;
+            height: 30px;
+            background: #dc3545;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+        }
+
+        /* Mobile specific styles */
+        @media (max-width: 767px) {
+            .section-title {
+                display: none;
+            }
+            
+            .view-all-btn {
+                display: none;
+            }
+            
+            .property-section {
+                padding: 20px 0;
+            }
+        }
+
+        /* Desktop specific styles */
+        @media (min-width: 768px) {
+            .property-card {
+                margin-bottom: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Property Listings Section -->
+    <section class="property-section">
+        <div class="container">
+            <!-- Desktop Title (hidden on mobile) -->
+            <h2 class="section-title d-none d-md-block">
+                Similar <span class="highlight">Joint Ventures</span>
+            </h2>
+
+            <!-- Property Cards Grid -->
+            <div class="row">
+                <!-- Property Card 1 -->
+                <div class="col-12 col-md-4">
+                    <div class="property-card">
+                        <div class="property-image">
+                            <img src="/placeholder.svg?height=250&width=400" alt="Modern House">
+                            <div class="location-pin">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="top-badge">
+                                <i class="fas fa-crown"></i>
+                                Top Joint Venture
+                            </div>
+                            <div class="location-badge">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Opebi, Ikeja, Lagos State
+                            </div>
+                        </div>
+                        <div class="property-details">
+                            <div class="details-grid">
+                                <div class="detail-item">
+                                    <div class="detail-label">Land Size:</div>
+                                    <div class="detail-value">1300 Sqmtrs</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Land Value:</div>
+                                    <div class="detail-value">N450,000,000</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Sharing:</div>
+                                    <div class="detail-value">50/50</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Premium:</div>
+                                    <div class="detail-value">N10,000,000</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Title:</div>
+                                    <div class="detail-value">Registered Survey</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Proposal:</div>
+                                    <div class="detail-value">4 blocks of semi detached duplexes</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Card 2 -->
+                <div class="col-12 col-md-4">
+                    <div class="property-card">
+                        <div class="property-image">
+                            <img src="/placeholder.svg?height=250&width=400" alt="Modern House">
+                            <div class="location-pin">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="top-badge">
+                                <i class="fas fa-crown"></i>
+                                Top Joint Venture
+                            </div>
+                            <div class="location-badge">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Opebi, Ikeja, Lagos State
+                            </div>
+                        </div>
+                        <div class="property-details">
+                            <div class="details-grid">
+                                <div class="detail-item">
+                                    <div class="detail-label">Land Size:</div>
+                                    <div class="detail-value">1300 Sqmtrs</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Land Value:</div>
+                                    <div class="detail-value">N450,000,000</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Sharing:</div>
+                                    <div class="detail-value">50/50</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Premium:</div>
+                                    <div class="detail-value">N10,000,000</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Title:</div>
+                                    <div class="detail-value">Registered Survey</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Proposal:</div>
+                                    <div class="detail-value">4 blocks of semi detached duplexes</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Card 3 -->
+                <div class="col-12 col-md-4">
+                    <div class="property-card">
+                        <div class="property-image">
+                            <img src="/placeholder.svg?height=250&width=400" alt="Modern House">
+                            <div class="location-pin">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="top-badge">
+                                <i class="fas fa-crown"></i>
+                                Top Joint Venture
+                            </div>
+                            <div class="location-badge">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Opebi, Ikeja, Lagos State
+                            </div>
+                        </div>
+                        <div class="property-details">
+                            <div class="details-grid">
+                                <div class="detail-item">
+                                    <div class="detail-label">Land Size:</div>
+                                    <div class="detail-value">1300 Sqmtrs</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Land Value:</div>
+                                    <div class="detail-value">N450,000,000</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Sharing:</div>
+                                    <div class="detail-value">50/50</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Premium:</div>
+                                    <div class="detail-value">N10,000,000</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Title:</div>
+                                    <div class="detail-value">Registered Survey</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">Proposal:</div>
+                                    <div class="detail-value">4 blocks of semi detached duplexes</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- View All Button (desktop only) -->
+            <a href="#" class="view-all-btn d-none d-md-inline-block">View All</a>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Add smooth hover animations and interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            const propertyCards = document.querySelectorAll('.property-card');
+            
+            propertyCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+
+            // View All button click handler
+            const viewAllBtn = document.querySelector('.view-all-btn');
+            if (viewAllBtn) {
+                viewAllBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    // Add your navigation logic here
+                    console.log('View All clicked');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

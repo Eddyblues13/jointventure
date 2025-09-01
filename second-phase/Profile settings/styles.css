@@ -1,0 +1,738 @@
+/* Custom CSS for Jointventure.ng Profile */
+
+:root {
+  --primary-red: rgba(235, 19, 19, 1);
+  --dark-gray: #363636;
+  --light-gray: #f7f7f7;
+  --border-gray: #d9d9d9;
+  --text-gray: #807d7d;
+}
+
+body {
+  background-color: var(--light-gray);
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 15px;
+  background-color: white;
+}
+
+/* Navigation */
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  height: 40px;
+}
+
+.nav-link {
+  color: #333 !important;
+  font-weight: 500;
+}
+
+.btn-dark {
+  background-color: #333;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 14px;
+}
+
+/* Updated mobile toggle to use image with arrow design */
+.custom-toggler-image {
+  border: none;
+  padding: 8px 12px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.custom-toggler-image:focus {
+  box-shadow: none;
+}
+
+.toggle-image {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.toggle-arrow {
+  font-size: 16px;
+  color: #333;
+  font-weight: bold;
+}
+
+.btn-outline-danger {
+  color: var(--primary-red);
+  border-color: var(--primary-red);
+  background-color: transparent;
+}
+
+.btn-outline-danger:hover {
+  background-color: var(--primary-red);
+  border-color: var(--primary-red);
+  color: white;
+}
+
+.btn-danger {
+  background-color: var(--primary-red);
+  border-color: var(--primary-red);
+}
+
+.btn-danger:hover {
+  background-color: rgba(200, 16, 16, 1);
+  border-color: rgba(200, 16, 16, 1);
+}
+
+/* Main Content */
+.main-content {
+  max-width: calc(100% - 320px);
+}
+
+/* Profile Card */
+.profile-avatar {
+  width: 96px;
+  height: 96px;
+  background-color: var(--border-gray);
+  border-radius: 50%;
+  position: relative;
+}
+
+.profile-avatar-large {
+  width: 120px;
+  height: 120px;
+  background-color: var(--border-gray);
+  border-radius: 50%;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+.profile-avatar + .position-absolute {
+  width: 24px;
+  height: 24px;
+  border: 2px solid white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.verification-badge-btn {
+  background: linear-gradient(135deg, var(--primary-red) 0%, #d10f0f 100%);
+  border: none;
+  padding: 8px 16px;
+  font-weight: 500;
+  position: relative;
+}
+
+.verification-badge-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' class='bi bi-shield-check' viewBox='0 0 16 16'%3E%3Cpath d='M5.338 1.59a61.44 61.44 0 0 0-2.837.856.481.481 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.725 10.725 0 0 0 2.287 2.233c.346.244.652.42.893.533.12.057.218.095.293.118a.55.55 0 0 0 .101.025.615.615 0 0 0 .1-.025c.076-.023.174-.061.294-.118.24-.113.547-.29.893-.533a10.726 10.726 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.775 11.775 0 0 1-2.517 2.453 7.159 7.159 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7.158 7.158 0 0 1-1.048-.625 11.777 11.777 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 62.456 62.456 0 0 1 5.072.56z'/%3E%3Cpath d='M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 8px center;
+  background-size: 16px 16px;
+  opacity: 0.3;
+  border-radius: inherit;
+}
+
+.verification-badge-btn:hover::before {
+  opacity: 0.2;
+}
+
+.save-changes-btn {
+  min-width: 200px;
+  max-width: 300px;
+  font-weight: 600;
+}
+
+.profile-card-header {
+  margin-left: 12.5%;
+  margin-right: 12.5%;
+}
+
+/* Added desktop and mobile visibility controls for About company text */
+.about-company-desktop {
+  display: flex;
+}
+
+.about-company-mobile {
+  display: none;
+}
+
+/* Verification Modal Styling */
+.verification-modal {
+  border: 3px solid #00bcd4;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.verification-modal-title {
+  color: #00bcd4;
+  font-weight: 600;
+  font-size: 18px;
+  margin: 0;
+}
+
+.verification-text {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.5;
+}
+
+.verification-instruction {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.5;
+}
+
+.file-upload-area {
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #fafafa;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.file-upload-area:hover {
+  border-color: #00bcd4;
+  background-color: #f0f9ff;
+}
+
+.file-upload-area.drag-over {
+  border-color: #00bcd4;
+  background-color: #e6f7ff;
+  transform: scale(1.02);
+}
+
+.file-upload-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.file-upload-icon {
+  margin-bottom: 16px;
+}
+
+.file-upload-text {
+  font-size: 16px;
+  color: #666;
+  margin: 0;
+}
+
+.verification-process-text {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+}
+
+.modal-dialog {
+  max-width: 600px;
+}
+
+.modal-header .btn-close {
+  margin: 0;
+  padding: 8px;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 320px;
+  background-color: var(--dark-gray);
+  min-height: 100vh;
+}
+
+.sidebar-avatar {
+  width: 40px;
+  height: 40px;
+  background-color: var(--border-gray);
+  border-radius: 50%;
+}
+
+.profile-percentage {
+  width: 28px;
+  height: 28px;
+  background-color: var(--primary-red);
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+/* Added progress circle styling for 60% red arc indicator */
+.progress-circle {
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+
+.progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 10px;
+  font-weight: bold;
+  color: var(--primary-red);
+}
+
+/* Updated My Profile section styling to handle active/inactive states */
+.my-profile-section {
+  transition: all 0.2s ease;
+}
+
+/* Made the inactive styling more specific to override all text colors */
+.my-profile-section.inactive,
+.my-profile-section.inactive *,
+.my-profile-section.inactive .text-dark,
+.my-profile-section.inactive .text-muted,
+.my-profile-section.inactive h6,
+.my-profile-section.inactive p,
+.my-profile-section.inactive span {
+  color: white !important;
+}
+
+.sidebar-link {
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+  margin-bottom: 4px;
+  border-radius: 8px;
+}
+
+.sidebar-link:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: white !important;
+}
+
+/* Added active state styling for sidebar links */
+.sidebar-link.active {
+  background-color: white !important;
+  color: var(--dark-gray) !important;
+}
+
+.sidebar-link.active:hover {
+  background-color: white !important;
+  color: var(--dark-gray) !important;
+}
+
+.sidebar-nav {
+  margin-top: 16px;
+}
+
+.sidebar-nav .sidebar-link {
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Notification Badge */
+.notification-badge {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--primary-red);
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main-content {
+    max-width: 100%;
+    margin-left: 0;
+    padding: 16px;
+  }
+
+  /* Hide desktop About company text and show mobile version on mobile */
+  .about-company-desktop {
+    display: none !important;
+  }
+
+  .about-company-mobile {
+    display: flex !important;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--dark-gray);
+  }
+
+  /* Mobile sidebar as overlay drawer */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 280px;
+    height: 100vh;
+    z-index: 1050;
+    transition: left 0.3s ease;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .sidebar.show {
+    left: 0;
+  }
+
+  /* Mobile overlay backdrop */
+  .sidebar-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
+    display: none;
+  }
+
+  .sidebar-backdrop.show {
+    display: block;
+  }
+
+  /* Mobile header adjustments */
+  .navbar {
+    padding: 8px 16px;
+  }
+
+  .navbar-brand {
+    font-size: 18px;
+  }
+
+  /* Mobile profile card adjustments */
+  .profile-card-header {
+    margin-left: 0;
+    margin-right: 0;
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .profile-avatar-large {
+    width: 100px;
+    height: 100px;
+  }
+
+  /* Mobile form adjustments */
+  .row > .col-md-6 {
+    margin-bottom: 16px;
+  }
+
+  .form-control {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+
+  /* Mobile button adjustments */
+  .save-changes-btn {
+    width: 100%;
+    max-width: none;
+    margin-top: 24px;
+  }
+
+  .verification-badge-btn {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+
+  /* Mobile navigation toggle */
+  .navbar-toggler {
+    border: none;
+    padding: 4px 8px;
+  }
+
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
+
+  /* Mobile dropdown menu */
+  .navbar-collapse {
+    background-color: white;
+    border-radius: 8px;
+    margin-top: 8px;
+    padding: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar-nav .nav-link {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border-gray);
+  }
+
+  .navbar-nav .nav-link:last-child {
+    border-bottom: none;
+  }
+
+  /* Mobile spacing adjustments */
+  .container-fluid {
+    padding: 0;
+  }
+
+  .card {
+    margin: 0 16px 24px 16px;
+    border-radius: 12px;
+  }
+
+  .card-body {
+    padding: 24px 20px;
+  }
+
+  /* Mobile typography adjustments */
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .btn {
+    font-size: 14px;
+  }
+
+  /* Mobile profile section in sidebar */
+  .sidebar .profile-section {
+    padding: 20px 16px;
+  }
+
+  .sidebar .sidebar-nav {
+    margin-top: 8px;
+  }
+
+  .sidebar .sidebar-link {
+    padding: 14px 16px;
+    font-size: 15px;
+  }
+
+  /* Mobile responsive styles for verification modal */
+  .verification-modal {
+    margin: 20px;
+  }
+
+  .modal-dialog {
+    max-width: calc(100% - 40px);
+    margin: 20px auto;
+  }
+
+  .file-upload-area {
+    padding: 30px 15px;
+    min-height: 150px;
+  }
+
+  .verification-text,
+  .verification-instruction {
+    font-size: 14px;
+  }
+}
+
+/* Extra small devices adjustments */
+@media (max-width: 576px) {
+  .profile-card-header {
+    padding: 16px;
+  }
+
+  .verification-badge-btn {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  .form-control {
+    height: 44px;
+    padding: 10px 14px;
+  }
+
+  .card-body {
+    padding: 20px 16px;
+  }
+
+  .btn {
+    padding: 10px 16px;
+  }
+}
+
+/* Custom form styling */
+.position-relative .bi-pencil {
+  pointer-events: none;
+  font-size: 14px;
+}
+
+.form-control {
+  height: 48px;
+  border-radius: 8px;
+  border: 1px solid var(--border-gray);
+  padding: 12px 16px;
+  font-size: 14px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-control:focus {
+  border-color: var(--primary-red);
+  box-shadow: 0 0 0 0.2rem rgba(235, 19, 19, 0.25);
+}
+
+/* Custom textarea styling */
+.custom-textarea {
+  height: auto;
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Card styling */
+.card {
+  border: 1px solid var(--border-gray);
+  box-shadow: none;
+}
+
+/* Text colors */
+.text-muted {
+  color: var(--text-gray) !important;
+}
+
+.text-dark {
+  color: var(--dark-gray) !important;
+}
+
+.mobile-nav-horizontal {
+  width: 100%;
+  background-color: white;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.horizontal-nav-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.horizontal-nav-scroll {
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  flex: 1;
+  gap: 20px;
+  padding: 0 10px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.horizontal-nav-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.horizontal-nav-item {
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: color 0.3s ease;
+}
+
+.horizontal-nav-item:hover {
+  color: rgba(235, 19, 19, 1);
+  text-decoration: none;
+}
+
+.horizontal-nav-arrow {
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 8px 12px;
+  margin-left: 10px;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.horizontal-nav-arrow:hover {
+  color: rgba(235, 19, 19, 1);
+}
+
+/* Added dropdown menu styling for mobile toggle */
+.mobile-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  min-width: 150px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.mobile-dropdown.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.mobile-dropdown .dropdown-item {
+  display: block;
+  padding: 12px 16px;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.mobile-dropdown .dropdown-item:hover {
+  background-color: #f8f9fa;
+  color: rgba(235, 19, 19, 1);
+}
+
+.mobile-toggle-wrapper {
+  position: relative;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .navbar-nav .nav-link {
+    padding: 0.5rem 0;
+  }
+  .col-6 {
+    margin-bottom: 1rem;
+  }
+
+  /* Adjusted mobile toggle image sizing */
+  .toggle-image {
+    width: 36px;
+    height: 36px;
+  }
+
+  .toggle-arrow {
+    font-size: 14px;
+  }
+}
+
+.text-reddy {
+  color: rgba(235, 19, 19, 1);
+}
+
+/* Added bg-reddy class to match text-reddy color */
+.bg-reddy {
+  background-color: rgba(235, 19, 19, 1) !important;
+}

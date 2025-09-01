@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - Jointventure.ng</title>
+    <!-- Added Montserrat font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+        <div class="container-fluid ">
+            <a class="navbar-brand" href="#">
+                <img src="../img/Jointventures-logo (1) 2.png" alt="Jointventure.ng" class="logo">
+            </a>
+            
+            <!-- Updated mobile toggle to use placeholder image with arrow -->
+            <div class="mobile-toggle-wrapper">
+                <button class="navbar-toggler custom-toggler-image" type="button" onclick="toggleDropdown()">
+                    <img src="../img/Ellipse 77.png" alt="Menu" class="toggle-image">
+                    <span class="toggle-arrow">▼</span>
+                </button>
+                
+                <!-- Added dropdown menu for My Account -->
+                <div class="mobile-dropdown" id="mobileDropdown">
+                    <a href="#" class="dropdown-item">My Account</a>
+                </div>
+            </div>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Desktop navigation -->
+                <ul class="navbar-nav me-auto d-none d-lg-flex">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Joint Venture</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Developers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Investors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Legal / JV Agreements</a>
+                    </li>
+                </ul>
+                
+                <div class="navbar-nav d-none d-lg-flex">
+                    <a class="nav-link" href="#">Post a Joint Venture for <strong>FREE</strong></a>
+                    <button class="btn btn-dark btn-sm ms-2 d-flex align-items-center">
+                        My Account
+                        <div class="profile-icon-wrapper ms-2">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" fill="#fff"/>
+                                <path d="M12 14C7.58172 14 4 17.5817 4 22H20C20 17.5817 16.4183 14 12 14Z" fill="#fff"/>
+                            </svg>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Added horizontal mobile navigation menu below header -->
+    <div class="mobile-nav-horizontal d-lg-none">
+        <div class="container-fluid px-3">
+            <div class="horizontal-nav-container">
+                <div class="horizontal-nav-scroll" id="horizontalNavItems">
+                    <a href="#" class="horizontal-nav-item">Joint Venture</a>
+                    <a href="#" class="horizontal-nav-item">Developers</a>
+                    <a href="#" class="horizontal-nav-item">Investors</a>
+                    <a href="#" class="horizontal-nav-item">Legal / JV</a>
+                    <a href="#" class="horizontal-nav-item">Post for FREE</a>
+                    <a href="#" class="horizontal-nav-item">Contact</a>
+                    <a href="#" class="horizontal-nav-item">About</a>
+                </div>
+                <button class="horizontal-nav-arrow" onclick="scrollHorizontalNav()">
+                    <span>></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex container-fluid">
+        <!-- Main Content -->
+        <main class="flex-grow-1 p-4 main-content">
+            <div class="mb-4 d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-link text-decoration-none p-0 d-flex align-items-center gap-2">
+                        <i class="bi bi-arrow-left text-danger"></i>
+                        <span class="text-dark">Back to Listings</span>
+                    </button>
+                </div>
+                <button class="btn btn-outline-secondary d-flex align-items-center gap-2">
+                    <i class="bi bi-rocket"></i>
+                    Boost
+                </button>
+            </div>
+
+            <h1 class="fs-2 fw-semibold text-dark mb-4">
+                <span class="d-none d-lg-block">My Listings</span>
+                <span class="d-lg-none">Listing Statistics</span>
+            </h1>
+
+            <!-- Main View Listing Content -->
+            <div class="row g-4">
+                <!-- Left Column - Image Gallery and Listing Details -->
+                <div class="col-lg-6">
+                    <!-- Image Gallery -->
+                    <div class="card border-light-subtle mb-4">
+                        <div class="card-body p-0">
+                            <!-- Main Image -->
+                            <div class="position-relative">
+                                <img src="../img/Rectangle 52.png" alt="Property Image" class="w-100" style="height: 300px; object-fit: cover;">
+                                <button class="btn btn-dark position-absolute top-50 start-0 translate-middle-y ms-2 rounded-circle" style="width: 40px; height: 40px;">
+                                    <i class="bi bi-chevron-left"></i>
+                                </button>
+                                <button class="btn btn-dark position-absolute top-50 end-0 translate-middle-y me-2 rounded-circle" style="width: 40px; height: 40px;">
+                                    <i class="bi bi-chevron-right"></i>
+                                </button>
+                            </div>
+                            
+                            <!-- Thumbnail Images -->
+                            <div class="d-flex gap-2 p-3">
+                                <div class="position-relative">
+                                    <img src="../img/Rectangle 52.png" alt="Thumbnail" class="rounded" style="width: 80px; height: 60px; object-fit: cover;">
+                                    <button class="btn btn-danger btn-sm position-absolute top-0 end-0 d-lg-none" style="width: 20px; height: 20px; padding: 0; font-size: 10px; transform: translate(50%, -50%);">
+                                        <i class="bi bi-trash3"></i>
+                                    </button>
+                                </div>
+                                <div class="position-relative">
+                                    <img src="../img/Rectangle 52.png" alt="Thumbnail" class="rounded" style="width: 80px; height: 60px; object-fit: cover;">
+                                    <button class="btn btn-danger btn-sm position-absolute top-0 end-0 d-lg-none" style="width: 20px; height: 20px; padding: 0; font-size: 10px; transform: translate(50%, -50%);">
+                                        <i class="bi bi-trash3"></i>
+                                    </button>
+                                </div>
+                                <div class="d-lg-none border border-2 border-dashed border-secondary rounded d-flex align-items-center justify-content-center" style="width: 80px; height: 60px;">
+                                    <div class="text-center">
+                                        <i class="bi bi-camera text-secondary" style="font-size: 16px;"></i>
+                                        <div class="text-secondary" style="font-size: 10px;">Add Photos</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Listing Details -->
+                    <div class="card border-light-subtle">
+                        <div class="card-header bg-reddy text-white">
+                            <h5 class="mb-0">Listing Details</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3">
+                                <div class="col-6">
+                                    <label class="form-label fw-semibold">Market Status</label>
+                                    <p class="mb-0">Available</p>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label fw-semibold">Ref Number</label>
+                                    <p class="mb-0">211005223</p>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label fw-semibold">Date Listed</label>
+                                    <p class="mb-0">14 Oct 2023</p>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label fw-semibold">Last Updated</label>
+                                    <p class="mb-0">23 Oct 2023</p>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label fw-semibold">Views</label>
+                                    <p class="mb-0">203</p>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label fw-semibold">Mega Boost</label>
+                                    <p class="mb-0">1</p>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-semibold">Expires in</label>
+                                    <p class="mb-0 text-danger">110 days</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column - Full Description (View Only) -->
+                <div class="col-lg-6">
+                    <div class="card border-light-subtle">
+                        <div class="card-header bg-reddy text-white">
+                            <h5 class="mb-0">Full Description</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <label class="form-label fw-semibold">Location</label>
+                                    <p class="mb-0">Opebi, Ikeja, Lagos State</p>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-semibold">Land Size</label>
+                                    <p class="mb-0">1300 Sqmtrs</p>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-semibold">Premium</label>
+                                    <p class="mb-0">N10 Million</p>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-semibold">Title</label>
+                                    <p class="mb-0">Registered Survey / Deed of Assignment</p>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-semibold">Land Value</label>
+                                    <p class="mb-0">N450 Million</p>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-semibold">Proposal</label>
+                                    <p class="mb-0">4 blocks of 4 bedroom semi detached duplexes</p>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-semibold">Sharing</label>
+                                    <p class="mb-0">50/50</p>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-semibold">Title Owner</label>
+                                    <p class="mb-0">Alive</p>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-semibold">Facilitators</label>
+                                    <p class="mb-0">5% negotiable</p>
+                                </div>
+                                <div class="col-12">
+                                    <div class="d-lg-none bg-reddy text-white p-2 rounded">
+                                        <label class="form-label fw-semibold mb-1 text-white">Link</label>
+                                        <p class="mb-0">Mandate</p>
+                                    </div>
+                                    <div class="d-none d-lg-block">
+                                        <label class="form-label fw-semibold">Link</label>
+                                        <p class="mb-0">Mandate</p>
+                                    </div>
+                                </div>
+                                <div class="col-12 d-none d-lg-block">
+                                    <label class="form-label fw-semibold">Type</label>
+                                    <p class="mb-0">Build-Operate Transfer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Right Sidebar -->
+        <aside class="sidebar p-4">
+            <!-- Profile Info -->
+            <div class="bg-white rounded p-3 mb-4 d-flex align-items-center justify-content-between active-profile">
+                <div class="d-flex align-items-center gap-3">
+                    <a href="my-profile.html" class="text-decoration-none">
+                        <i class="bi bi-person-circle text-muted" style="font-size: 24px;"></i>
+                        <span class="text-dark fw-medium">My Profile</span>
+                    </a>
+                </div>
+                <div class="progress-circle">
+                    <svg width="40" height="40" viewBox="0 0 40 40">
+                        <circle cx="20" cy="20" r="16" fill="none" stroke="#f0f0f0" stroke-width="3"/>
+                        <circle cx="20" cy="20" r="16" fill="none" stroke="#eb1313" stroke-width="3" 
+                                stroke-dasharray="60.32" stroke-dashoffset="36.19" 
+                                stroke-linecap="round" transform="rotate(-90 20 20)"/>
+                    </svg>
+                    <div class="progress-text">60%</div>
+                </div>
+            </div>
+
+            <!-- Menu Items -->
+            <nav class="sidebar-nav">
+                <a href="post-jv.html" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2" onclick="setActiveProfile(this)">
+                    <i class="bi bi-file-earmark-plus"></i>
+                    <span>Post a Joint Venture</span>
+                </a>
+                <a href="post-land.html" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2" onclick="setActiveProfile(this)">
+                    <i class="bi bi-house"></i>
+                    <span>Post Land For Sale</span>
+                </a>
+                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2" onclick="setActiveProfile(this)">
+                    <i class="bi bi-bar-chart"></i>
+                    <span>My Listings</span>
+                </a>
+                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2" onclick="setActiveProfile(this)">
+                    <i class="bi bi-file-text"></i>
+                    <span>My Page</span>
+                </a>
+                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2" onclick="setActiveProfile(this)">
+                    <i class="bi bi-credit-card"></i>
+                    <span>My Subscriptions</span>
+                </a>
+                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2 position-relative" onclick="setActiveProfile(this)">
+                    <i class="bi bi-chat-square"></i>
+                    <span>My Messages</span>
+                    <span class="notification-badge">1</span>
+                </a>
+                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2 position-relative" onclick="setActiveProfile(this)">
+                    <i class="bi bi-bell"></i>
+                    <span>Notifications</span>
+                    <span class="notification-badge">1</span>
+                </a>
+                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded" onclick="setActiveProfile(this)">
+                    <i class="bi bi-box-arrow-right"></i>
+                    <span>Log Out</span>
+                </a>
+            </nav>
+        </aside>
+    </div>
+
+    <!-- Verification Modal -->
+    <div class="modal fade" id="verificationModal" tabindex="-1" aria-labelledby="verificationModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content verification-modal">
+                <div class="modal-header border-0 pb-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body px-4 pb-4">
+                    <div class="text-center mb-4">
+                        <p class="verification-text mb-3">
+                            A verified badge shows that you are registered as a trusted 
+                            <span class="text-danger fw-bold">Agent / LandOwner</span>
+                        </p>
+                        <p class="verification-instruction mb-4">
+                            To get verified, kindly attach a govt issued 
+                            <span class="text-danger fw-bold">ID card or CAC certificate</span>
+                        </p>
+                    </div>
+                    
+                    <!-- File Upload Area -->
+                    <div class="file-upload-area" id="fileUploadArea">
+                        <div class="file-upload-content">
+                            <div class="file-upload-icon mb-3">
+                                <i class="bi bi-image" style="font-size: 48px; color: #666;"></i>
+                            </div>
+                            <p class="file-upload-text mb-0">
+                                Drop image or <span class="text-danger fw-bold" style="cursor: pointer;" onclick="document.getElementById('verificationFileInput').click()">browse files</span>
+                            </p>
+                        </div>
+                        <input type="file" id="verificationFileInput" accept="image/*,.pdf" style="display: none;">
+                    </div>
+                    
+                    <div class="text-center mt-4">
+                        <p class="verification-process-text mb-0">Verification process takes 72 hours</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+    <!-- Added JavaScript for dropdown and horizontal scroll functionality -->
+    <script>
+
+        // Handle avatar upload and preview
+        document.getElementById('avatarUpload').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const avatar = document.querySelector('.profile-avatar-large');
+                    avatar.style.backgroundImage = `url(${e.target.result})`;
+                    
+                    // Here you would typically send the image to your server
+                    console.log('Avatar image selected:', file.name);
+                    // uploadToServer(file); // You would implement this function
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Handle verification badge button click
+        document.querySelector('.verification-badge-btn').addEventListener('click', function() {
+            const verificationModal = new bootstrap.Modal(document.getElementById('verificationModal'));
+            verificationModal.show();
+        });
+
+        // Handle file upload for verification
+        document.getElementById('verificationFileInput').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const uploadArea = document.getElementById('fileUploadArea');
+                const fileName = file.name;
+                const fileSize = (file.size / 1024 / 1024).toFixed(2); // Convert to MB
+                
+                // Update upload area to show selected file
+                uploadArea.innerHTML = `
+                    <div class="file-upload-content">
+                        <div class="file-upload-icon mb-3">
+                            <i class="bi bi-file-earmark-check" style="font-size: 48px; color: #28a745;"></i>
+                        </div>
+                        <p class="file-upload-text mb-1">
+                            <strong>${fileName}</strong>
+                        </p>
+                        <p class="text-muted small mb-0">${fileSize} MB</p>
+                        <button class="btn btn-sm btn-outline-danger mt-2" onclick="clearFileUpload()">Remove</button>
+                    </div>
+                `;
+                
+                console.log('Verification file selected:', fileName);
+                // Here you would typically upload the file to your server
+                // uploadVerificationFile(file);
+            }
+        });
+
+        // Function to clear file upload
+        function clearFileUpload() {
+            const uploadArea = document.getElementById('fileUploadArea');
+            uploadArea.innerHTML = `
+                <div class="file-upload-content">
+                    <div class="file-upload-icon mb-3">
+                        <i class="bi bi-image" style="font-size: 48px; color: #666;"></i>
+                    </div>
+                    <p class="file-upload-text mb-0">
+                        Drop image or <span class="text-danger fw-bold" style="cursor: pointer;" onclick="document.getElementById('verificationFileInput').click()">browse files</span>
+                    </p>
+                </div>
+            `;
+            document.getElementById('verificationFileInput').value = '';
+        }
+
+        // Handle drag and drop for file upload
+        const fileUploadArea = document.getElementById('fileUploadArea');
+        
+        fileUploadArea.addEventListener('dragover', function(e) {
+            e.preventDefault();
+            fileUploadArea.classList.add('drag-over');
+        });
+        
+        fileUploadArea.addEventListener('dragleave', function(e) {
+            e.preventDefault();
+            fileUploadArea.classList.remove('drag-over');
+        });
+        
+        fileUploadArea.addEventListener('drop', function(e) {
+            e.preventDefault();
+            fileUploadArea.classList.remove('drag-over');
+            
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                const file = files[0];
+                // Trigger the same logic as file input change
+                document.getElementById('verificationFileInput').files = files;
+                document.getElementById('verificationFileInput').dispatchEvent(new Event('change'));
+            }
+        });
+
+        function toggleDropdown() {
+            const dropdown = document.getElementById('mobileDropdown');
+            dropdown.classList.toggle('show');
+        }
+
+        let scrollDirection = 1;
+        function scrollHorizontalNav() {
+            const navItems = document.getElementById('horizontalNavItems');
+            const maxScroll = navItems.scrollWidth - navItems.clientWidth;
+            
+            if (navItems.scrollLeft >= maxScroll && scrollDirection === 1) {
+                scrollDirection = -1;
+            } else if (navItems.scrollLeft <= 0 && scrollDirection === -1) {
+                scrollDirection = 1;
+            }
+            
+            navItems.scrollLeft += 150 * scrollDirection;
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('mobileDropdown');
+            const toggler = document.querySelector('.custom-toggler-image');
+            
+            if (!toggler.contains(event.target) && !dropdown.contains(event.target)) {
+                dropdown.classList.remove('show');
+            }
+        });
+
+        // Tab functionality for Edit Profile and Security buttons
+        document.getElementById('editProfileTab').addEventListener('click', function() {
+            document.getElementById('editProfileContent').style.display = 'block';
+            document.getElementById('securityContent').style.display = 'none';
+        });
+
+        document.getElementById('securityTab').addEventListener('click', function() {
+            document.getElementById('editProfileContent').style.display = 'none';
+            document.getElementById('securityContent').style.display = 'block';
+        });
+
+        function setActiveProfile(clickedLink) {
+            // Remove active class from all sidebar links
+            const sidebarLinks = document.querySelectorAll(".sidebar-link")
+            sidebarLinks.forEach((link) => link.classList.remove("active"))
+            
+            // Remove active class from profile section
+            const profileSection = document.querySelector('.active-profile')
+            if (profileSection) {
+                profileSection.classList.remove('bg-white')
+                profileSection.classList.add('text-white')
+            }
+            
+            // Add active class to clicked link
+            clickedLink.classList.add("active")
+            
+            console.log(`[v0] Navigating to: ${clickedLink.textContent.trim()}`)
+        }
+
+        document.querySelector('.active-profile').addEventListener('click', function() {
+            // Remove active class from all sidebar links
+            const sidebarLinks = document.querySelectorAll(".sidebar-link")
+            sidebarLinks.forEach((link) => link.classList.remove("active"))
+            
+            // Ensure profile section has white background
+            this.classList.add('bg-white')
+            this.classList.remove('text-white')
+            
+            console.log('[v0] Navigating to: My Profile')
+        })
+    </script>
+</body>
+</html>

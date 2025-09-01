@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Successful</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .success-container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            padding: 60px 40px;
+            text-align: center;
+            max-width: 650px;
+            width: 100%;
+        }
+        
+        .success-title {
+            color: #6c757d;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 40px;
+            letter-spacing: 0.5px;
+        }
+        
+        .success-icon-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 40px;
+        }
+        
+        .success-icon-bg {
+            width: 120px;
+            height: 120px;
+            background: #fce7e6;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .success-icon {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border: 3px solid #dc3545;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .checkmark {
+            width: 24px;
+            height: 24px;
+            stroke: #dc3545;
+            stroke-width: 3;
+            fill: none;
+        }
+        
+        .success-message {
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+        
+        /* Added mobile-specific text styling with red highlight */
+        .success-message-mobile {
+            display: none;
+        }
+        
+        .success-message-mobile .highlight {
+            color: #dc3545;
+        }
+        
+        .go-to-listings-btn {
+            background: white;
+            border: 1px solid #333;
+            color: #333;
+            font-weight: 500;
+            font-size: 16px;
+            padding: 15px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            width: 80%;
+            max-width: 500px;
+            min-width: 200px;
+        }
+        
+        .go-to-listings-btn:hover {
+            background: #333;
+            color: white;
+            transform: translateY(-1px);
+        }
+        
+        @media (max-width: 576px) {
+            .success-container {
+                padding: 40px 30px;
+            }
+            
+            /* Hide desktop message and show mobile version */
+            .success-message {
+                display: none;
+            }
+            
+            .success-message-mobile {
+                display: block;
+                color: #333;
+                font-size: 20px;
+                font-weight: 600;
+                margin-bottom: 50px;
+                line-height: 1.4;
+            }
+            
+            .success-icon-bg {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .success-icon {
+                width: 50px;
+                height: 50px;
+                background: white;
+                border: 2px solid #dc3545;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+            }
+            
+            .checkmark {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="success-container">
+        <div class="success-title">Registration Successful</div>
+        
+        <div class="success-icon-container">
+            <div class="success-icon-bg">
+                <div class="success-icon">
+                    <svg class="checkmark" viewBox="0 0 24 24">
+                        <polyline points="20,6 9,17 4,12"></polyline>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        
+        <div class="success-message">
+            Your Joint Venture was Successfully Uploaded
+        </div>
+        
+        <!-- Added mobile-specific message with red highlight -->
+        <div class="success-message-mobile fs-5">
+            Your Joint Venture was<br>
+            <span class="highlight">Successfully uploaded</span>
+        </div>
+        
+        <a href="#" class="go-to-listings-btn">Go to Listings</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

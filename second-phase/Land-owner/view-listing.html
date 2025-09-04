@@ -90,134 +90,166 @@
     <div class="d-flex container-fluid">
         <!-- Main Content -->
         <main class="flex-grow-1 p-4 main-content">
-            <div class="mb-4">
-                <h1 class="fs-2 fw-semibold text-dark mb-3">My Profile</h1>
-                <div class="d-flex gap-3">
-                    <button class="btn btn-dark d-flex align-items-center gap-2">
-                        <i class="bi bi-pencil"></i>
-                        Edit Profile
-                    </button>
-                    <button class="btn btn-outline-secondary d-flex align-items-center gap-2">
-                        <i class="bi bi-shield"></i>
-                        Security
+            <div class="mb-4 d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-link text-decoration-none p-0 d-flex align-items-center gap-2">
+                        <i class="bi bi-arrow-left text-danger"></i>
+                        <span class="text-dark">Back to Listings</span>
                     </button>
                 </div>
+                <button class="btn btn-outline-secondary d-flex align-items-center gap-2">
+                    <i class="bi bi-rocket"></i>
+                    Boost
+                </button>
             </div>
 
-            <!-- Profile Card -->
-            <div class="card border-light-subtle mb-4">
-                <div class="card-body p-4">
-                    <!-- Updated profile card to horizontal layout matching Figma design -->
-                    <div class="profile-card-header d-flex align-items-center justify-content-between">
-                        <!-- Left: About your company with pencil - hidden on mobile -->
-                        <div class="d-flex align-items-center gap-2 about-company-desktop text-small">
-                            <span class="text-muted"><small>About your company</small></span>
-                            <i class="bi bi-pencil text-muted"></i>
-                        </div>
-                        
-                        <!-- Center: Profile avatar with pencil overlay -->
-                        <div class="position-relative">
-                            <div class="profile-avatar-large mx-2"></div>
-                            <!-- Hidden file input for avatar upload -->
-                            <input type="file" id="avatarUpload" accept="image/*" style="display: none;">       
-                            <div class="position-absolute bottom-0 end-0 bg-white rounded-circle p-1" style="cursor: pointer;" onclick="document.getElementById('avatarUpload').click()">
-                                <i class="bi bi-pencil text-danger" style="font-size: 14px;"></i>
-                            </div>
-                        </div>
-                        
-                        <!-- Right: Get Verification Badge button -->
-                        <button class="btn btn-danger verification-badge-btn d-flex align-items-center gap-2">
-                            <i class="bi bi-shield-check"></i>
-                            <small>Get Verification Badge</small> 
-                        </button>
-                    </div>
+            <h1 class="fs-2 fw-semibold text-dark mb-4">
+                <span class="d-none d-lg-block">My Listings</span>
+                <span class="d-lg-none">Listing Statistics</span>
+            </h1>
 
-                    <!-- Updated textarea container with mobile-specific About your company label -->
-                    <div class="row justify-content-center mb-4">
-                        <div class="col-md-8">
-                            <!-- Mobile-only About your company label -->
-                            <div class="d-flex align-items-center gap-2 mb-2 about-company-mobile">
-                                <span class="text-muted d-md-none">About your company</span>
-                                <i class="bi bi-pencil text-muted d-md-none"></i>
-                            </div>
-                            <textarea class="form-control custom-textarea" rows="3" placeholder="Tell us about your company..."></textarea>
-                        </div>
-                    </div>
-
-                    <!-- Form Fields -->
-                    <div class="row g-4 justify-content-center">
-                        <div class="col-md-5">
-                            <label class="form-label text-dark fw-medium">Full Name</label>
-                            <input type="text" class="form-control" value="Abubakar Quadri">
-                        </div>
-                        <div class="col-md-5">
-                            <label class="form-label text-dark fw-medium">Company's Name</label>
+            <!-- Main View Listing Content -->
+            <div class="row g-4">
+                <!-- Left Column - Image Gallery and Listing Details -->
+                <div class="col-lg-6">
+                    <!-- Image Gallery -->
+                    <div class="card border-light-subtle mb-4">
+                        <div class="card-body p-0">
+                            <!-- Main Image -->
                             <div class="position-relative">
-                                <input type="text" class="form-control" value="paymonthly.ng">
-                                <i class="bi bi-pencil position-absolute top-50 end-0 translate-middle-y me-3 text-muted"></i>
+                                <img src="../img/Rectangle 52.png" alt="Property Image" class="w-100" style="height: 300px; object-fit: cover;">
+                                <button class="btn btn-dark position-absolute top-50 start-0 translate-middle-y ms-2 rounded-circle" style="width: 40px; height: 40px;">
+                                    <i class="bi bi-chevron-left"></i>
+                                </button>
+                                <button class="btn btn-dark position-absolute top-50 end-0 translate-middle-y me-2 rounded-circle" style="width: 40px; height: 40px;">
+                                    <i class="bi bi-chevron-right"></i>
+                                </button>
                             </div>
-                        </div>
-                        <div class="col-md-5">
-                            <label class="form-label text-dark fw-medium">WhatsApp Number *</label>
-                            <div class="position-relative">
-                                <input type="text" class="form-control" value="09013322187">
-                                <i class="bi bi-pencil position-absolute top-50 end-0 translate-middle-y me-3 text-muted"></i>
-                            </div>
-                        </div>
-                        <div class="col-md-5">
-                            <label class="form-label text-dark fw-medium">Website Link *</label>
-                            <div class="position-relative">
-                                <input type="text" class="form-control" value="www.paymonthly.ng.com">
-                                <i class="bi bi-pencil position-absolute top-50 end-0 translate-middle-y me-3 text-muted"></i>
-                            </div>
-                        </div>
-                        <div class="col-md-5">
-                            <label class="form-label text-dark fw-medium">Address *</label>
-                            <div class="position-relative">
-                                <input type="text" class="form-control" value="14, Akinwale Street, Ogba, Ikeja">
-                                <i class="bi bi-pencil position-absolute top-50 end-0 translate-middle-y me-3 text-muted"></i>
-                            </div>
-                        </div>
-                        <div class="col-md-5">
-                            <label class="form-label text-dark fw-medium">Facebook Link</label>
-                            <div class="position-relative">
-                                <input type="text" class="form-control">
-                                <i class="bi bi-pencil position-absolute top-50 end-0 translate-middle-y me-3 text-muted"></i>
-                            </div>
-                        </div>
-                        <div class="col-md-5">
-                            <label class="form-label text-dark fw-medium">YouTube Link</label>
-                            <div class="position-relative">
-                                <input type="text" class="form-control">
-                                <i class="bi bi-pencil position-absolute top-50 end-0 translate-middle-y me-3 text-muted"></i>
-                            </div>
-                        </div>
-                        <div class="col-md-5">
-                            <label class="form-label text-dark fw-medium">Twitter Link</label>
-                            <div class="position-relative">
-                                <input type="text" class="form-control">
-                                <i class="bi bi-pencil position-absolute top-50 end-0 translate-middle-y me-3 text-muted"></i>
-                            </div>
-                        </div>
-                        <div class="col-md-5">
-                            <label class="form-label text-dark fw-medium">LinkedIn Link</label>
-                            <div class="position-relative">
-                                <input type="text" class="form-control">
-                                <i class="bi bi-pencil position-absolute top-50 end-0 translate-middle-y me-3 text-muted"></i>
-                            </div>
-                        </div>
-                        <div class="col-md-5">
-                            <label class="form-label text-dark fw-medium">Instagram Link</label>
-                            <div class="position-relative">
-                                <input type="text" class="form-control">
-                                <i class="bi bi-pencil position-absolute top-50 end-0 translate-middle-y me-3 text-muted"></i>
+                            
+                            <!-- Thumbnail Images -->
+                            <div class="d-flex gap-2 p-3">
+                                <div class="position-relative">
+                                    <img src="../img/Rectangle 52.png" alt="Thumbnail" class="rounded" style="width: 80px; height: 60px; object-fit: cover;">
+                                    <button class="btn btn-danger btn-sm position-absolute top-0 end-0 d-lg-none" style="width: 20px; height: 20px; padding: 0; font-size: 10px; transform: translate(50%, -50%);">
+                                        <i class="bi bi-trash3"></i>
+                                    </button>
+                                </div>
+                                <div class="position-relative">
+                                    <img src="../img/Rectangle 52.png" alt="Thumbnail" class="rounded" style="width: 80px; height: 60px; object-fit: cover;">
+                                    <button class="btn btn-danger btn-sm position-absolute top-0 end-0 d-lg-none" style="width: 20px; height: 20px; padding: 0; font-size: 10px; transform: translate(50%, -50%);">
+                                        <i class="bi bi-trash3"></i>
+                                    </button>
+                                </div>
+                                <div class="d-lg-none border border-2 border-dashed border-secondary rounded d-flex align-items-center justify-content-center" style="width: 80px; height: 60px;">
+                                    <div class="text-center">
+                                        <i class="bi bi-camera text-secondary" style="font-size: 16px;"></i>
+                                        <div class="text-secondary" style="font-size: 10px;">Add Photos</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Made save button centered and not full width -->
-                    <div class="mt-4 text-center">
-                        <button class="btn btn-danger save-changes-btn py-3 px-5">Save Changes</button>
+                    <!-- Listing Details -->
+                    <div class="card border-light-subtle">
+                        <div class="card-header bg-reddy text-white">
+                            <h5 class="mb-0">Listing Details</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3">
+                                <div class="col-6">
+                                    <label class="form-label fw-semibold">Market Status</label>
+                                    <p class="mb-0">Available</p>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label fw-semibold">Ref Number</label>
+                                    <p class="mb-0">211005223</p>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label fw-semibold">Date Listed</label>
+                                    <p class="mb-0">14 Oct 2023</p>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label fw-semibold">Last Updated</label>
+                                    <p class="mb-0">23 Oct 2023</p>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label fw-semibold">Views</label>
+                                    <p class="mb-0">203</p>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label fw-semibold">Mega Boost</label>
+                                    <p class="mb-0">1</p>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-semibold">Expires in</label>
+                                    <p class="mb-0 text-danger">110 days</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column - Full Description (View Only) -->
+                <div class="col-lg-6">
+                    <div class="card border-light-subtle">
+                        <div class="card-header bg-reddy text-white">
+                            <h5 class="mb-0">Full Description</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <label class="form-label fw-semibold">Location</label>
+                                    <p class="mb-0">Opebi, Ikeja, Lagos State</p>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-semibold">Land Size</label>
+                                    <p class="mb-0">1300 Sqmtrs</p>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-semibold">Premium</label>
+                                    <p class="mb-0">N10 Million</p>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-semibold">Title</label>
+                                    <p class="mb-0">Registered Survey / Deed of Assignment</p>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-semibold">Land Value</label>
+                                    <p class="mb-0">N450 Million</p>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-semibold">Proposal</label>
+                                    <p class="mb-0">4 blocks of 4 bedroom semi detached duplexes</p>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-semibold">Sharing</label>
+                                    <p class="mb-0">50/50</p>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-semibold">Title Owner</label>
+                                    <p class="mb-0">Alive</p>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-semibold">Facilitators</label>
+                                    <p class="mb-0">5% negotiable</p>
+                                </div>
+                                <div class="col-12">
+                                    <div class="d-lg-none bg-reddy text-white p-2 rounded">
+                                        <label class="form-label fw-semibold mb-1 text-white">Link</label>
+                                        <p class="mb-0">Mandate</p>
+                                    </div>
+                                    <div class="d-none d-lg-block">
+                                        <label class="form-label fw-semibold">Link</label>
+                                        <p class="mb-0">Mandate</p>
+                                    </div>
+                                </div>
+                                <div class="col-12 d-none d-lg-block">
+                                    <label class="form-label fw-semibold">Type</label>
+                                    <p class="mb-0">Build-Operate Transfer</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -226,10 +258,12 @@
         <!-- Right Sidebar -->
         <aside class="sidebar p-4">
             <!-- Profile Info -->
-            <div class="bg-white rounded p-3 mb-4 d-flex align-items-center justify-content-between">
+            <div class="bg-white rounded p-3 mb-4 d-flex align-items-center justify-content-between active-profile">
                 <div class="d-flex align-items-center gap-3">
-                    <i class="bi bi-person-circle text-muted" style="font-size: 24px;"></i>
-                    <span class="text-dark fw-medium">My Profile</span>
+                    <a href="my-profile.html" class="text-decoration-none">
+                        <i class="bi bi-person-circle text-muted" style="font-size: 24px;"></i>
+                        <span class="text-dark fw-medium">My Profile</span>
+                    </a>
                 </div>
                 <div class="progress-circle">
                     <svg width="40" height="40" viewBox="0 0 40 40">
@@ -244,37 +278,37 @@
 
             <!-- Menu Items -->
             <nav class="sidebar-nav">
-                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2">
+                <a href="post-jv.html" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2" onclick="setActiveProfile(this)">
                     <i class="bi bi-file-earmark-plus"></i>
                     <span>Post a Joint Venture</span>
                 </a>
-                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2">
+                <a href="post-land.html" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2" onclick="setActiveProfile(this)">
                     <i class="bi bi-house"></i>
                     <span>Post Land For Sale</span>
                 </a>
-                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2">
+                <a href="my-listing.html" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2" onclick="setActiveProfile(this)">
                     <i class="bi bi-bar-chart"></i>
                     <span>My Listings</span>
                 </a>
-                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2">
+                <a href="my-page.html" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2" onclick="setActiveProfile(this)">
                     <i class="bi bi-file-text"></i>
                     <span>My Page</span>
                 </a>
-                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2">
+                <a href="my-sub.html" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2" onclick="setActiveProfile(this)">
                     <i class="bi bi-credit-card"></i>
                     <span>My Subscriptions</span>
                 </a>
-                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2 position-relative">
+                <a href="my-message.html" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2 position-relative" onclick="setActiveProfile(this)">
                     <i class="bi bi-chat-square"></i>
                     <span>My Messages</span>
                     <span class="notification-badge">1</span>
                 </a>
-                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2 position-relative">
+                <a href="notification.html" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2 position-relative" onclick="setActiveProfile(this)">
                     <i class="bi bi-bell"></i>
                     <span>Notifications</span>
                     <span class="notification-badge">1</span>
                 </a>
-                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded">
+                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded" onclick="setActiveProfile(this)">
                     <i class="bi bi-box-arrow-right"></i>
                     <span>Log Out</span>
                 </a>
@@ -292,16 +326,12 @@
                 <div class="modal-body px-4 pb-4">
                     <div class="text-center mb-4">
                         <p class="verification-text mb-3">
-                            <small>
-                                A verified badge shows that you are registered as a trusted 
-                            <span class="text-reddy fw-bold">Agent / LandOwner</span>
-                            </small>
+                            A verified badge shows that you are registered as a trusted 
+                            <span class="text-danger fw-bold">Agent / LandOwner</span>
                         </p>
-                        <p class="verification-instruction mb-4 fs-6">
-                          <small>
+                        <p class="verification-instruction mb-4">
                             To get verified, kindly attach a govt issued 
-                            <span class="text-reddy fw-bold">ID card or CAC certificate</span>
-                          </small>  
+                            <span class="text-danger fw-bold">ID card or CAC certificate</span>
                         </p>
                     </div>
                     
@@ -311,8 +341,8 @@
                             <div class="file-upload-icon mb-3">
                                 <i class="bi bi-image" style="font-size: 48px; color: #666;"></i>
                             </div>
-                            <p class="file-upload-text mb-0 fs-6">
-                                Drop image or <span class="text-reddy fw-bold" style="cursor: pointer;" onclick="document.getElementById('verificationFileInput').click()">browse files</span>
+                            <p class="file-upload-text mb-0">
+                                Drop image or <span class="text-danger fw-bold" style="cursor: pointer;" onclick="document.getElementById('verificationFileInput').click()">browse files</span>
                             </p>
                         </div>
                         <input type="file" id="verificationFileInput" accept="image/*,.pdf" style="display: none;">
@@ -454,6 +484,47 @@
                 dropdown.classList.remove('show');
             }
         });
+
+        // Tab functionality for Edit Profile and Security buttons
+        document.getElementById('editProfileTab').addEventListener('click', function() {
+            document.getElementById('editProfileContent').style.display = 'block';
+            document.getElementById('securityContent').style.display = 'none';
+        });
+
+        document.getElementById('securityTab').addEventListener('click', function() {
+            document.getElementById('editProfileContent').style.display = 'none';
+            document.getElementById('securityContent').style.display = 'block';
+        });
+
+        function setActiveProfile(clickedLink) {
+            // Remove active class from all sidebar links
+            const sidebarLinks = document.querySelectorAll(".sidebar-link")
+            sidebarLinks.forEach((link) => link.classList.remove("active"))
+            
+            // Remove active class from profile section
+            const profileSection = document.querySelector('.active-profile')
+            if (profileSection) {
+                profileSection.classList.remove('bg-white')
+                profileSection.classList.add('text-white')
+            }
+            
+            // Add active class to clicked link
+            clickedLink.classList.add("active")
+            
+            console.log(`[v0] Navigating to: ${clickedLink.textContent.trim()}`)
+        }
+
+        document.querySelector('.active-profile').addEventListener('click', function() {
+            // Remove active class from all sidebar links
+            const sidebarLinks = document.querySelectorAll(".sidebar-link")
+            sidebarLinks.forEach((link) => link.classList.remove("active"))
+            
+            // Ensure profile section has white background
+            this.classList.add('bg-white')
+            this.classList.remove('text-white')
+            
+            console.log('[v0] Navigating to: My Profile')
+        })
     </script>
 </body>
 </html>

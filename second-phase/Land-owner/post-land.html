@@ -180,8 +180,13 @@
                             <!-- Row 2: Premium, Title, Land Value -->
                             <div class="row g-4 mb-4">
                                 <div class="col-md-4">
-                                    <label class="form-label text-dark fw-medium">Premium <span class="text-danger">(optional)</span></label>
-                                    <input type="text" class="form-control" placeholder="E.g 5 million">
+                                    <label class="form-label text-dark fw-medium">Price <span class="text-danger">*</span></label>
+                                    <select class="form-select">
+                                        <option selected>Please Select</option>
+                                        <option value="1">N2,000,000</option>
+                                        <option value="2">N3,000,000</option>
+                                        <option value="3">N4,000,000</option>
+                                    </select>
                                 </div>
                                 <div class="col-md-4">
                                     <label class="form-label text-dark fw-medium">Title <span class="text-danger">*</span></label>
@@ -193,73 +198,8 @@
                                     </select>
                                 </div>
                                 <div class="col-md-4">
-                                    <label class="form-label text-dark fw-medium">Land Value <span class="text-danger">*</span></label>
+                                    <label class="form-label text-dark fw-medium">Youtube Link<span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" placeholder="E.g 5 million">
-                                </div>
-                            </div>
-
-                            <!-- Row 3: Proposal, Sharing, Title Owner -->
-                            <div class="row g-4 mb-4">
-                                <div class="col-md-4">
-                                    <label class="form-label text-dark fw-medium">Proposal <span class="text-danger">*</span></label>
-                                    <textarea class="form-control" rows="3" placeholder="E.g 3 bedroom semi detached duplex"></textarea>
-                                </div>
-                                <div class="col-md-4">
-                                    <label class="form-label text-dark fw-medium">Sharing <span class="text-danger">*</span></label>
-                                    <select class="form-select">
-                                        <option selected>Select Sharing</option>
-                                        <option value="50-50">50/50</option>
-                                        <option value="60-40">60/40</option>
-                                        <option value="70-30">70/30</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-4">
-                                    <label class="form-label text-dark fw-medium">Title Owner <span class="text-danger">*</span></label>
-                                    <select class="form-select">
-                                        <option selected>Please Select</option>
-                                        <option value="landowner">Land Owner</option>
-                                        <option value="developer">Developer</option>
-                                        <option value="investor">Investor</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <!-- Row 4: Link, Type, Facilitators -->
-                            <div class="row g-4 mb-4">
-                                <div class="col-md-4">
-                                    <label class="form-label text-dark fw-medium">Link <span class="text-danger">*</span></label>
-                                    <select class="form-select">
-                                        <option selected>Please Select</option>
-                                        <option value="website">Website</option>
-                                        <option value="social">Social Media</option>
-                                        <option value="other">Other</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-4">
-                                    <label class="form-label text-dark fw-medium">Type <span class="text-danger">*</span></label>
-                                    <select class="form-select">
-                                        <option selected>Please Select</option>
-                                        <option value="residential">Residential</option>
-                                        <option value="commercial">Commercial</option>
-                                        <option value="mixed">Mixed Use</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-4">
-                                    <label class="form-label text-dark fw-medium">Facilitators <span class="text-danger">*</span></label>
-                                    <select class="form-select">
-                                        <option selected>Please Select</option>
-                                        <option value="agent">Real Estate Agent</option>
-                                        <option value="lawyer">Lawyer</option>
-                                        <option value="consultant">Consultant</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <!-- Row 5: YouTube Video Link -->
-                            <div class="row g-4 mb-4">
-                                <div class="col-4">
-                                    <label class="form-label text-dark fw-medium">Youtube Video Link <span class="text-danger">*</span></label>
-                                    <input type="url" class="form-control" placeholder="">
                                 </div>
                             </div>
 
@@ -284,7 +224,7 @@
 
                             <!-- Submit Button -->
                             <div class="text-center mt-4">
-                                <button type="submit" class="btn btn-danger px-5 py-3 fw-medium" style="background-color: #eb1313; border-color: #eb1313; font-size: 16px;">Post Joint Venture</button>
+                                <button type="submit" class="btn btn-danger px-5 py-3 fw-medium" style="background-color: #eb1313; border-color: #eb1313; font-size: 16px;">Post Land For Sale</button>
                             </div>
                         </form>
                     </div>
@@ -295,10 +235,12 @@
         <!-- Right Sidebar -->
         <aside class="sidebar p-4">
             <!-- Profile Info -->
-            <div class="bg-white rounded p-3 mb-4 d-flex align-items-center justify-content-between">
+            <div class="bg-white rounded p-3 mb-4 d-flex align-items-center justify-content-between active-profile">
                 <div class="d-flex align-items-center gap-3">
-                    <i class="bi bi-person-circle text-muted" style="font-size: 24px;"></i>
-                    <span class="text-dark fw-medium">My Profile</span>
+                    <a href="my-profile.html" class="text-decoration-none">
+                        <i class="bi bi-person-circle text-muted" style="font-size: 24px;"></i>
+                        <span class="text-dark fw-medium">My Profile</span>
+                    </a>
                 </div>
                 <div class="progress-circle">
                     <svg width="40" height="40" viewBox="0 0 40 40">
@@ -313,37 +255,37 @@
 
             <!-- Menu Items -->
             <nav class="sidebar-nav">
-                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2">
+                <a href="post-jv.html" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2" onclick="setActiveProfile(this)">
                     <i class="bi bi-file-earmark-plus"></i>
                     <span>Post a Joint Venture</span>
                 </a>
-                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2">
+                <a href="post-land.html" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2" onclick="setActiveProfile(this)">
                     <i class="bi bi-house"></i>
                     <span>Post Land For Sale</span>
                 </a>
-                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2">
+                <a href="my-listing.html" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2" onclick="setActiveProfile(this)">
                     <i class="bi bi-bar-chart"></i>
                     <span>My Listings</span>
                 </a>
-                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2">
+                <a href="my-page.html" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2" onclick="setActiveProfile(this)">
                     <i class="bi bi-file-text"></i>
                     <span>My Page</span>
                 </a>
-                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2">
+                <a href="my-sub.html" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2" onclick="setActiveProfile(this)">
                     <i class="bi bi-credit-card"></i>
                     <span>My Subscriptions</span>
                 </a>
-                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2 position-relative">
+                <a href="my-message.html" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2 position-relative" onclick="setActiveProfile(this)">
                     <i class="bi bi-chat-square"></i>
                     <span>My Messages</span>
                     <span class="notification-badge">1</span>
                 </a>
-                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2 position-relative">
+                <a href="notification.html" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2 position-relative" onclick="setActiveProfile(this)">
                     <i class="bi bi-bell"></i>
                     <span>Notifications</span>
                     <span class="notification-badge">1</span>
                 </a>
-                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded">
+                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded" onclick="setActiveProfile(this)">
                     <i class="bi bi-box-arrow-right"></i>
                     <span>Log Out</span>
                 </a>

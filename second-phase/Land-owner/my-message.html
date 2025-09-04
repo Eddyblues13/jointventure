@@ -90,143 +90,73 @@
     <div class="d-flex container-fluid">
         <!-- Main Content -->
         <main class="flex-grow-1 p-4 main-content">
+            <!-- Updated header to be dynamic based on active tab -->
             <div class="mb-4">
-                <h1 class="fs-2 fw-semibold text-dark mb-4">
-                    Post a <span style="color: #eb1313;">Joint Venture</span>
-                </h1>
-                
-                <!-- Updated subscription section to match screenshot design with proper width, styling, and red line -->
-                <div class="subscription-section" style="max-width: 600px;">
-                    <!-- Subscription Status Bar -->
-                    <div class="subscription-status-bar bg-dark text-white p-3 d-flex justify-content-between align-items-center" style="border-radius: 8px 8px 0 0;">
-                        <span class="fw-medium">Current Subscription - FREE</span>
-                        <button class="btn btn-light text-warning fw-medium px-3 py-1" style="background-color: #f8f9fa; color: #f39c12 !important; border: none; font-size: 14px;">Upgrade Subscription</button>
-                    </div>
-                    
-                    <!-- Added red line after dark background -->
-                    <div style="height: 3px; background-color: #eb1313;"></div>
-                    
-                    <!-- Updated usage statistics layout to match screenshot -->
-                    <div class="usage-stats bg-light p-3" style="border-radius: 0 0 8px 8px;">
-                        <div class="row g-0 mb-2">
-                            <div class="col-4">
-                                <div class="d-flex justify-content-between pe-3">
-                                    <span class="text-muted small">Publish Allowed</span>
-                                    <span class="fw-medium small">5</span>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="d-flex justify-content-between px-3">
-                                    <span class="text-muted small">Mega Boost Allowed</span>
-                                    <span class="fw-medium small">0</span>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="d-flex justify-content-between ps-3">
-                                    <span class="text-muted small">Other Features</span>
-                                    <span class="fw-medium small">Unavailable</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row g-0">
-                            <div class="col-4">
-                                <div class="d-flex justify-content-between pe-3">
-                                    <span class="text-muted small">Publish Used</span>
-                                    <span class="fw-medium small">0</span>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="d-flex justify-content-between px-3">
-                                    <span class="text-muted small">Mega Boost Used</span>
-                                    <span class="fw-medium small">0</span>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <!-- Empty column for alignment -->
-                            </div>
-                        </div>
+                <h1 class="fs-4 fw-semibold text-dark mb-0" id="messagesHeader">My Messages</h1>
+            </div>
+
+            <!-- Message Tabs -->
+            <div class="mb-3">
+                <div class="d-flex gap-3">
+                    <button class="btn btn-dark px-4 py-2 rounded-pill" id="newNotificationsTab">
+                        New Messages
+                    </button>
+                    <button class="btn btn-outline-secondary px-4 py-2 rounded-pill" id="allMessagesTab">
+                        All Messages
+                    </button>
+                </div>
+            </div>
+
+            <!-- Added content containers for different tab views -->
+            <!-- New Messages Content (Empty State) -->
+            <div id="newMessagesContent">
+                <div class="mb-4">
+                    <p class="mb-0" style="font-size: 1rem; color: #666;">
+                        You currently have no <span class="text-reddy">new messages</span>
+                    </p>
+                </div>
+
+                <!-- Empty State Illustration -->
+                <div class="text-center py-4">
+                    <div class="d-flex justify-content-center align-items-end mb-4">
+                        <img src="../img/empty-vector.png" alt="No messages illustration" style="max-width: 300px; height: auto;">
                     </div>
                 </div>
             </div>
 
-            <!-- Profile Card -->
-            <div class="card border-light-subtle mb-4">
-                <div class="card-body p-4">
-                    <!-- Added Edit Profile content wrapper -->
-                    <div id="editProfileContent">
-                        <!-- Updated profile card to horizontal layout matching Figma design -->
-                        <form>
-                            <!-- Row 1: State, City, Land Size -->
-                            <div class="row g-4 mb-4">
-                                <div class="col-md-4">
-                                    <label class="form-label text-dark fw-medium">State <span class="text-danger">*</span></label>
-                                    <select class="form-select">
-                                        <option selected>Select State</option>
-                                        <option value="lagos">Lagos</option>
-                                        <option value="abuja">Abuja</option>
-                                        <option value="ogun">Ogun</option>
-                                    </select>
+            <!-- All Messages Content (Message List) -->
+            <div id="allMessagesContent" style="display: none;">
+                <div class="message-list">
+                    <!-- Message Card 1 -->
+                    <div class="card mb-3 p-4" style="border: 1px solid #e0e0e0; border-radius: 8px;">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div class="flex-grow-1">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <h6 class="mb-0 fw-semibold">Lanre & co.</h6>
+                                    <span class="badge bg-danger text-white px-2 py-1 rounded-pill" style="font-size: 0.75rem;">2hrs ago</span>
                                 </div>
-                                <div class="col-md-4">
-                                    <label class="form-label text-dark fw-medium">City <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" placeholder="">
-                                </div>
-                                <div class="col-md-4">
-                                    <label class="form-label text-dark fw-medium">Land Size <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" placeholder="E.g 600sqmtrs">
-                                </div>
+                                <p class="mb-0 text-muted" style="font-size: 0.9rem;">
+                                    Good afternoon, I would like to talk about developing this project
+                                </p>
                             </div>
+                            <button class="btn btn-outline-secondary btn-sm ms-3">View Message</button>
+                        </div>
+                    </div>
 
-                            <!-- Row 2: Premium, Title, Land Value -->
-                            <div class="row g-4 mb-4">
-                                <div class="col-md-4">
-                                    <label class="form-label text-dark fw-medium">Price <span class="text-danger">*</span></label>
-                                    <select class="form-select">
-                                        <option selected>Please Select</option>
-                                        <option value="1">N2,000,000</option>
-                                        <option value="2">N3,000,000</option>
-                                        <option value="3">N4,000,000</option>
-                                    </select>
+                    <!-- Message Card 2 -->
+                    <div class="card mb-3 p-4" style="border: 1px solid #e0e0e0; border-radius: 8px;">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div class="flex-grow-1">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <h6 class="mb-0 fw-semibold">Lanre & co.</h6>
+                                    <span class="badge bg-danger text-white px-2 py-1 rounded-pill" style="font-size: 0.75rem;">2hrs ago</span>
                                 </div>
-                                <div class="col-md-4">
-                                    <label class="form-label text-dark fw-medium">Title <span class="text-danger">*</span></label>
-                                    <select class="form-select">
-                                        <option selected>Select Title</option>
-                                        <option value="c-of-o">Certificate of Occupancy</option>
-                                        <option value="deed">Deed of Assignment</option>
-                                        <option value="survey">Survey Plan</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-4">
-                                    <label class="form-label text-dark fw-medium">Youtube Link<span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" placeholder="E.g 5 million">
-                                </div>
+                                <p class="mb-0 text-muted" style="font-size: 0.9rem;">
+                                    You: Good afternoon, I would like to talk about developing this project
+                                </p>
                             </div>
-
-                            <!-- Row 6: Attach Images -->
-                            <div class="row g-4 mb-4">
-                                <div class="col-12">
-                                    <label class="form-label text-dark fw-medium">Attach Images <span class="text-danger">*</span></label>
-                                    <div class="file-upload-area border border-2 border-dashed rounded p-5 text-center" style="border-color: #ddd !important; background-color: #fafafa;">
-                                        <div class="file-upload-content">
-                                            <div class="file-upload-icon mb-3">
-                                                <i class="bi bi-image" style="font-size: 48px; color: #999;"></i>
-                                            </div>
-                                            <p class="file-upload-text mb-2">
-                                                Drop images or <span class="text-danger fw-bold" style="cursor: pointer;" onclick="document.getElementById('imageUploadInput').click()">browse files</span>
-                                            </p>
-                                            <p class="text-muted small mb-0">JPG, PNG</p>
-                                        </div>
-                                        <input type="file" id="imageUploadInput" accept="image/*" multiple style="display: none;">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Submit Button -->
-                            <div class="text-center mt-4">
-                                <button type="submit" class="btn btn-danger px-5 py-3 fw-medium" style="background-color: #eb1313; border-color: #eb1313; font-size: 16px;">Post Land For Sale</button>
-                            </div>
-                        </form>
+                            <button class="btn btn-outline-secondary btn-sm ms-3">View Message</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -235,10 +165,12 @@
         <!-- Right Sidebar -->
         <aside class="sidebar p-4">
             <!-- Profile Info -->
-            <div class="bg-white rounded p-3 mb-4 d-flex align-items-center justify-content-between">
+            <div class="bg-white rounded p-3 mb-4 d-flex align-items-center justify-content-between active-profile">
                 <div class="d-flex align-items-center gap-3">
-                    <i class="bi bi-person-circle text-muted" style="font-size: 24px;"></i>
-                    <span class="text-dark fw-medium">My Profile</span>
+                    <a href="my-profile.html" class="text-decoration-none">
+                        <i class="bi bi-person-circle text-muted" style="font-size: 24px;"></i>
+                        <span class="text-dark fw-medium">My Profile</span>
+                    </a>
                 </div>
                 <div class="progress-circle">
                     <svg width="40" height="40" viewBox="0 0 40 40">
@@ -253,37 +185,37 @@
 
             <!-- Menu Items -->
             <nav class="sidebar-nav">
-                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2">
+                <a href="post-jv.html" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2" onclick="setActiveProfile(this)">
                     <i class="bi bi-file-earmark-plus"></i>
                     <span>Post a Joint Venture</span>
                 </a>
-                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2">
+                <a href="post-land.html" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2" onclick="setActiveProfile(this)">
                     <i class="bi bi-house"></i>
                     <span>Post Land For Sale</span>
                 </a>
-                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2">
+                <a href="my-listing.html" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2" onclick="setActiveProfile(this)">
                     <i class="bi bi-bar-chart"></i>
                     <span>My Listings</span>
                 </a>
-                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2">
+                <a href="my-page.html" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2" onclick="setActiveProfile(this)">
                     <i class="bi bi-file-text"></i>
                     <span>My Page</span>
                 </a>
-                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2">
+                <a href="my-sub.html" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2" onclick="setActiveProfile(this)">
                     <i class="bi bi-credit-card"></i>
                     <span>My Subscriptions</span>
                 </a>
-                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2 position-relative">
+                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2 position-relative" onclick="setActiveProfile(this)">
                     <i class="bi bi-chat-square"></i>
                     <span>My Messages</span>
                     <span class="notification-badge">1</span>
                 </a>
-                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2 position-relative">
+                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2 position-relative" onclick="setActiveProfile(this)">
                     <i class="bi bi-bell"></i>
                     <span>Notifications</span>
                     <span class="notification-badge">1</span>
                 </a>
-                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded">
+                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded" onclick="setActiveProfile(this)">
                     <i class="bi bi-box-arrow-right"></i>
                     <span>Log Out</span>
                 </a>
@@ -460,13 +392,47 @@
             }
         });
 
-        // Tab functionality for Edit Profile and Security buttons
-        document.getElementById('editProfileTab').addEventListener('click', function() {
-            document.getElementById('editProfileContent').style.display = 'block';
+        function setActiveProfile(clickedLink) {
+            // Remove active class from all sidebar links
+            const sidebarLinks = document.querySelectorAll(".sidebar-link")
+            sidebarLinks.forEach((link) => link.classList.remove("active"))
+            
+            // Remove active class from profile section
+            const profileSection = document.querySelector('.active-profile')
+            if (profileSection) {
+                profileSection.classList.remove('bg-white')
+                profileSection.classList.add('text-white')
+            }
+            
+            // Add active class to clicked link
+            clickedLink.classList.add("active")
+            
+            console.log(`[v0] Navigating to: ${clickedLink.textContent.trim()}`)
+        }
+
+        document.querySelector('.active-profile').addEventListener('click', function() {
+            // Remove active class from all sidebar links
+            const sidebarLinks = document.querySelectorAll(".sidebar-link")
+            sidebarLinks.forEach((link) => link.classList.remove("active"))
+            
+            // Ensure profile section has white background
+            this.classList.add('bg-white')
+            this.classList.remove('text-white')
+            
+            console.log('[v0] Navigating to: My Profile')
+        })
+
+        // Tab functionality for New Messages and All Messages
+        document.getElementById('newNotificationsTab').addEventListener('click', function() {
+            document.getElementById('newMessagesContent').style.display = 'block';
+            document.getElementById('allMessagesContent').style.display = 'none';
+            document.getElementById('messagesHeader').textContent = 'My Messages';
         });
 
-        document.getElementById('securityTab').addEventListener('click', function() {
-            document.getElementById('editProfileContent').style.display = 'none';
+        document.getElementById('allMessagesTab').addEventListener('click', function() {
+            document.getElementById('newMessagesContent').style.display = 'none';
+            document.getElementById('allMessagesContent').style.display = 'block';
+            document.getElementById('messagesHeader').textContent = 'All Messages';
         });
     </script>
 </body>

@@ -536,6 +536,118 @@ body {
   .verification-instruction {
     font-size: 14px;
   }
+
+  /* Mobile subscription plans layout */
+  .subscription-plans-container .row {
+    flex-direction: column;
+  }
+
+  .subscription-plans-container .col-md-6 {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    margin-bottom: 20px;
+  }
+
+  .subscription-card {
+    margin: 0 16px;
+    border-radius: 12px;
+  }
+
+  .mega-boost-card {
+    margin: 0 16px;
+    border-radius: 12px;
+  }
+
+  /* Mobile typography adjustments for subscription plans */
+  .subscription-card h5 {
+    font-size: 1.1rem;
+    margin-bottom: 16px;
+  }
+
+  .subscription-card .text-reddy {
+    font-size: 1.5rem !important;
+  }
+
+  .subscription-card .card-text {
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+  }
+
+  /* Mobile mega boost styling */
+  .mega-boost-card h5 {
+    font-size: 1.1rem;
+  }
+
+  .mega-boost-card .text-reddy {
+    font-size: 1.5rem !important;
+  }
+
+  .mega-boost-card .card-text {
+    font-size: 0.85rem;
+  }
+
+  /* Mobile header adjustments for subscription page */
+  .subscription-header {
+    margin: 0 16px 24px 16px;
+  }
+
+  .subscription-header h2 {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+  }
+
+  /* Mobile-specific styling for Mega Boost section to create 2x2 grid layout */
+  .mega-boost-card .row.align-items-center {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-bottom: 24px !important;
+  }
+
+  .mega-boost-card .row.align-items-center .col-md-8 {
+    width: auto !important;
+    max-width: none !important;
+    flex: 0 0 auto !important;
+    margin-bottom: 0 !important;
+  }
+
+  .mega-boost-card .row.align-items-center .col-md-4 {
+    width: auto !important;
+    max-width: none !important;
+    flex: 0 0 auto !important;
+    text-align: right !important;
+    margin-bottom: 0 !important;
+  }
+
+  .mega-boost-card .row:not(.align-items-center) {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16px !important;
+    margin: 0 !important;
+  }
+
+  .mega-boost-card .row:not(.align-items-center) .col-md-6 {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .mega-boost-card .list-unstyled {
+    margin: 0 !important;
+  }
+
+  .mega-boost-card .list-unstyled li {
+    margin-bottom: 12px !important;
+    font-size: 0.85rem;
+  }
+
+  .mega-boost-card .d-flex.align-items-center.mb-4 {
+    justify-content: flex-start !important;
+    margin-bottom: 0 !important;
+  }
 }
 
 /* Extra small devices adjustments */
@@ -560,6 +672,20 @@ body {
 
   .btn {
     padding: 10px 16px;
+  }
+
+  .subscription-card,
+  .mega-boost-card {
+    margin: 0 12px;
+  }
+
+  .subscription-header {
+    margin: 0 12px 20px 12px;
+  }
+
+  .subscription-card .card-body,
+  .mega-boost-card .card-body {
+    padding: 20px 16px;
   }
 }
 
@@ -708,24 +834,24 @@ body {
   position: relative;
 }
 
-/* Mobile Responsive */
-@media (max-width: 768px) {
-  .navbar-nav .nav-link {
-    padding: 0.5rem 0;
-  }
-  .col-6 {
-    margin-bottom: 1rem;
-  }
+/* Enhanced box shadows for subscription plan cards to make them more prominent */
+.subscription-card {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.3s ease;
+}
 
-  /* Adjusted mobile toggle image sizing */
-  .toggle-image {
-    width: 36px;
-    height: 36px;
-  }
+.subscription-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
 
-  .toggle-arrow {
-    font-size: 14px;
-  }
+/* Enhanced box shadow for mega boost card to match subscription cards */
+.mega-boost-card {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.3s ease;
+}
+
+.mega-boost-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 .text-reddy {

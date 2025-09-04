@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/edit%20listing-7ndfWGbmBm2BBoNAGqH1AIUM1fLAxl.png",
     "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop",
     "https://images.unsplash.com/photo-1570129477492-440113cc3d00?w=800&h=600&fit=crop",
-    "https://images.unsplash.com/photo-1605146769289-45c003edd2be?w=800&h=600&fit=crop",
+    "https://images.unsplash.com/photo-1605146769289-45c00027ffc6?w=800&h=600&fit=crop",
   ]
 
   let currentImageIndex = 0
@@ -449,6 +449,49 @@ document.addEventListener("DOMContentLoaded", () => {
   window.galleryImages = galleryImages
   window.currentImageIndex = currentImageIndex
   window.updateGallery = updateGallery
+
+  // Handle message tab functionality
+  const newNotificationsTab = document.getElementById("newNotificationsTab")
+  const allMessagesTab = document.getElementById("allMessagesTab")
+  const newMessagesContent = document.getElementById("newMessagesContent")
+  const allMessagesContent = document.getElementById("allMessagesContent")
+  const messagesHeader = document.getElementById("messagesHeader")
+
+  // Handle New Messages tab click
+  if (newNotificationsTab) {
+    newNotificationsTab.addEventListener("click", function () {
+      // Update tab styles
+      this.className = "btn btn-dark px-4 py-2 rounded-pill"
+      allMessagesTab.className = "btn btn-outline-secondary px-4 py-2 rounded-pill"
+
+      // Show/hide content
+      newMessagesContent.style.display = "block"
+      allMessagesContent.style.display = "none"
+
+      // Update header
+      messagesHeader.textContent = "My Messages"
+
+      console.log("[v0] Switched to New Messages tab")
+    })
+  }
+
+  // Handle All Messages tab click
+  if (allMessagesTab) {
+    allMessagesTab.addEventListener("click", function () {
+      // Update tab styles
+      this.className = "btn btn-dark px-4 py-2 rounded-pill"
+      newNotificationsTab.className = "btn btn-outline-secondary px-4 py-2 rounded-pill"
+
+      // Show/hide content
+      newMessagesContent.style.display = "none"
+      allMessagesContent.style.display = "block"
+
+      // Update header
+      messagesHeader.textContent = "Messages"
+
+      console.log("[v0] Switched to All Messages tab")
+    })
+  }
 })
 
 // Function to remove image from gallery

@@ -91,17 +91,61 @@
         <!-- Main Content -->
         <main class="flex-grow-1 p-4 main-content">
             <div class="mb-4">
-                <h1 class="fs-2 fw-semibold text-dark mb-3">My Profile</h1>
-                <div class="d-flex gap-3">
-                    <!-- Added tab functionality to Edit Profile and Security buttons -->
-                    <button class="btn btn-dark d-flex align-items-center gap-2" id="editProfileTab">
-                        <i class="bi bi-pencil"></i>
-                        Edit Profile
-                    </button>
-                    <button class="btn btn-outline-secondary d-flex align-items-center gap-2" id="securityTab">
-                        <i class="bi bi-shield"></i>
-                        Security
-                    </button>
+                <h1 class="fs-2 fw-semibold text-dark mb-4">
+                    Post a <span style="color: #eb1313;">Joint Venture</span>
+                </h1>
+                
+                <!-- Updated subscription section to match screenshot design with proper width, styling, and red line -->
+                <div class="subscription-section" style="max-width: 600px;">
+                    <!-- Subscription Status Bar -->
+                    <div class="subscription-status-bar bg-dark text-white p-3 d-flex justify-content-between align-items-center" style="border-radius: 8px 8px 0 0;">
+                        <span class="fw-medium">Current Subscription - FREE</span>
+                        <button class="btn btn-light text-warning fw-medium px-3 py-1" style="background-color: #f8f9fa; color: #f39c12 !important; border: none; font-size: 14px;">Upgrade Subscription</button>
+                    </div>
+                    
+                    <!-- Added red line after dark background -->
+                    <div style="height: 3px; background-color: #eb1313;"></div>
+                    
+                    <!-- Updated usage statistics layout to match screenshot -->
+                    <div class="usage-stats bg-light p-3" style="border-radius: 0 0 8px 8px;">
+                        <div class="row g-0 mb-2">
+                            <div class="col-4">
+                                <div class="d-flex justify-content-between pe-3">
+                                    <span class="text-muted small">Publish Allowed</span>
+                                    <span class="fw-medium small">5</span>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="d-flex justify-content-between px-3">
+                                    <span class="text-muted small">Mega Boost Allowed</span>
+                                    <span class="fw-medium small">0</span>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="d-flex justify-content-between ps-3">
+                                    <span class="text-muted small">Other Features</span>
+                                    <span class="fw-medium small">Unavailable</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row g-0">
+                            <div class="col-4">
+                                <div class="d-flex justify-content-between pe-3">
+                                    <span class="text-muted small">Publish Used</span>
+                                    <span class="fw-medium small">0</span>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="d-flex justify-content-between px-3">
+                                    <span class="text-muted small">Mega Boost Used</span>
+                                    <span class="fw-medium small">0</span>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <!-- Empty column for alignment -->
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -111,192 +155,138 @@
                     <!-- Added Edit Profile content wrapper -->
                     <div id="editProfileContent">
                         <!-- Updated profile card to horizontal layout matching Figma design -->
-                        <div class="profile-card-header d-flex align-items-center justify-content-between">
-                            <!-- Left: About your company with pencil - hidden on mobile -->
-                            <div class="d-flex align-items-center gap-2 about-company-desktop text-small">
-                                <span class="text-muted"><small>About your company</small></span>
-                                <i class="bi bi-pencil text-muted"></i>
-                            </div>
-                            
-                            <!-- Center: Profile avatar with pencil overlay -->
-                            <div class="position-relative">
-                                <div class="profile-avatar-large mx-2"></div>
-                                <!-- Hidden file input for avatar upload -->
-                                <input type="file" id="avatarUpload" accept="image/*" style="display: none;">       
-                                <div class="position-absolute bottom-0 end-0 bg-white rounded-circle p-1" style="cursor: pointer;" onclick="document.getElementById('avatarUpload').click()">
-                                    <i class="bi bi-pencil text-danger" style="font-size: 14px;"></i>
+                        <form>
+                            <!-- Row 1: State, City, Land Size -->
+                            <div class="row g-4 mb-4">
+                                <div class="col-md-4">
+                                    <label class="form-label text-dark fw-medium">State <span class="text-danger">*</span></label>
+                                    <select class="form-select">
+                                        <option selected>Select State</option>
+                                        <option value="lagos">Lagos</option>
+                                        <option value="abuja">Abuja</option>
+                                        <option value="ogun">Ogun</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label text-dark fw-medium">City <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" placeholder="">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label text-dark fw-medium">Land Size <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" placeholder="E.g 600sqmtrs">
                                 </div>
                             </div>
-                            
-                            <!-- Right: Get Verification Badge button -->
-                            <button class="btn btn-danger verification-badge-btn d-flex align-items-center gap-2">
-                                <i class="bi bi-shield-check"></i>
-                                <small>Get Verification Badge</small> 
-                            </button>
-                        </div>
 
-                        <!-- Updated textarea container with mobile-specific About your company label -->
-                        <div class="row justify-content-center mb-4">
-                            <div class="col-md-8">
-                                <!-- Mobile-only About your company label -->
-                                <div class="d-flex align-items-center gap-2 mb-2 about-company-mobile">
-                                    <span class="text-muted d-md-none">About your company</span>
-                                    <i class="bi bi-pencil text-muted d-md-none"></i>
+                            <!-- Row 2: Premium, Title, Land Value -->
+                            <div class="row g-4 mb-4">
+                                <div class="col-md-4">
+                                    <label class="form-label text-dark fw-medium">Premium <span class="text-danger">(optional)</span></label>
+                                    <input type="text" class="form-control" placeholder="E.g 5 million">
                                 </div>
-                                <textarea class="form-control custom-textarea" rows="3" placeholder="Tell us about your company..."></textarea>
+                                <div class="col-md-4">
+                                    <label class="form-label text-dark fw-medium">Title <span class="text-danger">*</span></label>
+                                    <select class="form-select">
+                                        <option selected>Select Title</option>
+                                        <option value="c-of-o">Certificate of Occupancy</option>
+                                        <option value="deed">Deed of Assignment</option>
+                                        <option value="survey">Survey Plan</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label text-dark fw-medium">Land Value <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" placeholder="E.g 5 million">
+                                </div>
                             </div>
-                        </div>
 
-                        <!-- Form Fields -->
-                        <div class="row g-4 justify-content-center">
-                            <div class="col-md-5">
-                                <label class="form-label text-dark fw-medium">Full Name</label>
-                                <input type="text" class="form-control" value="Abubakar Quadri">
-                            </div>
-                            <div class="col-md-5">
-                                <label class="form-label text-dark fw-medium">Company's Name</label>
-                                <div class="position-relative">
-                                    <input type="text" class="form-control" value="paymonthly.ng">
-                                    <i class="bi bi-pencil position-absolute top-50 end-0 translate-middle-y me-3 text-muted"></i>
+                            <!-- Row 3: Proposal, Sharing, Title Owner -->
+                            <div class="row g-4 mb-4">
+                                <div class="col-md-4">
+                                    <label class="form-label text-dark fw-medium">Proposal <span class="text-danger">*</span></label>
+                                    <textarea class="form-control" rows="3" placeholder="E.g 3 bedroom semi detached duplex"></textarea>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label text-dark fw-medium">Sharing <span class="text-danger">*</span></label>
+                                    <select class="form-select">
+                                        <option selected>Select Sharing</option>
+                                        <option value="50-50">50/50</option>
+                                        <option value="60-40">60/40</option>
+                                        <option value="70-30">70/30</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label text-dark fw-medium">Title Owner <span class="text-danger">*</span></label>
+                                    <select class="form-select">
+                                        <option selected>Please Select</option>
+                                        <option value="landowner">Land Owner</option>
+                                        <option value="developer">Developer</option>
+                                        <option value="investor">Investor</option>
+                                    </select>
                                 </div>
                             </div>
-                            <div class="col-md-5">
-                                <label class="form-label text-dark fw-medium">WhatsApp Number *</label>
-                                <div class="position-relative">
-                                    <input type="text" class="form-control" value="09013322187">
-                                    <i class="bi bi-pencil position-absolute top-50 end-0 translate-middle-y me-3 text-muted"></i>
-                                </div>
-                            </div>
-                            <div class="col-md-5">
-                                <label class="form-label text-dark fw-medium">Website Link *</label>
-                                <div class="position-relative">
-                                    <input type="text" class="form-control" value="www.paymonthly.ng.com">
-                                    <i class="bi bi-pencil position-absolute top-50 end-0 translate-middle-y me-3 text-muted"></i>
-                                </div>
-                            </div>
-                            <div class="col-md-5">
-                                <label class="form-label text-dark fw-medium">Address *</label>
-                                <div class="position-relative">
-                                    <input type="text" class="form-control" value="14, Akinwale Street, Ogba, Ikeja">
-                                    <i class="bi bi-pencil position-absolute top-50 end-0 translate-middle-y me-3 text-muted"></i>
-                                </div>
-                            </div>
-                            <div class="col-md-5">
-                                <label class="form-label text-dark fw-medium">Facebook Link</label>
-                                <div class="position-relative">
-                                    <input type="text" class="form-control">
-                                    <i class="bi bi-pencil position-absolute top-50 end-0 translate-middle-y me-3 text-muted"></i>
-                                </div>
-                            </div>
-                            <div class="col-md-5">
-                                <label class="form-label text-dark fw-medium">YouTube Link</label>
-                                <div class="position-relative">
-                                    <input type="text" class="form-control">
-                                    <i class="bi bi-pencil position-absolute top-50 end-0 translate-middle-y me-3 text-muted"></i>
-                                </div>
-                            </div>
-                            <div class="col-md-5">
-                                <label class="form-label text-dark fw-medium">Twitter Link</label>
-                                <div class="position-relative">
-                                    <input type="text" class="form-control">
-                                    <i class="bi bi-pencil position-absolute top-50 end-0 translate-middle-y me-3 text-muted"></i>
-                                </div>
-                            </div>
-                            <div class="col-md-5">
-                                <label class="form-label text-dark fw-medium">LinkedIn Link</label>
-                                <div class="position-relative">
-                                    <input type="text" class="form-control">
-                                    <i class="bi bi-pencil position-absolute top-50 end-0 translate-middle-y me-3 text-muted"></i>
-                                </div>
-                            </div>
-                            <div class="col-md-5">
-                                <label class="form-label text-dark fw-medium">Instagram Link</label>
-                                <div class="position-relative">
-                                    <input type="text" class="form-control">
-                                    <i class="bi bi-pencil position-absolute top-50 end-0 translate-middle-y me-3 text-muted"></i>
-                                </div>
-                            </div>
-                        </div>
 
-                        <!-- Made save button centered and not full width -->
-                        <div class="mt-4 text-center text-end">
-                            <button class="btn btn-danger save-changes-btn py-3 px-5">Save Changes</button>
-                        </div>
-                    </div>
-
-                    <!-- Added Security content that shows when Security tab is clicked -->
-                    <div id="securityContent" style="display: none;">
-                        <!-- Change Email Address Section -->
-                        <div class="security-section mb-5">
-                            <h5 class="text-reddy fw-bold mb-4">Change Email Address</h5>
-                            <div class="row g-4">
-                                <div class="col-md-6">
-                                    <label class="form-label text-dark fw-medium">Email Address</label>
-                                    <div class="position-relative">
-                                        <input type="email" class="form-control" value="paymonthly@gmail.com" readonly>
-                                        <i class="bi bi-pencil position-absolute top-50 end-0 translate-middle-y me-3 text-muted"></i>
-                                    </div>
+                            <!-- Row 4: Link, Type, Facilitators -->
+                            <div class="row g-4 mb-4">
+                                <div class="col-md-4">
+                                    <label class="form-label text-dark fw-medium">Link <span class="text-danger">*</span></label>
+                                    <select class="form-select">
+                                        <option selected>Please Select</option>
+                                        <option value="website">Website</option>
+                                        <option value="social">Social Media</option>
+                                        <option value="other">Other</option>
+                                    </select>
                                 </div>
-                                <div class="col-md-6">
-                                    <label class="form-label text-dark fw-medium">New Email Address</label>
-                                    <div class="position-relative">
-                                        <input type="email" class="form-control" placeholder="Enter New Email">
-                                        <i class="bi bi-pencil position-absolute top-50 end-0 translate-middle-y me-3 text-muted"></i>
+                                <div class="col-md-4">
+                                    <label class="form-label text-dark fw-medium">Type <span class="text-danger">*</span></label>
+                                    <select class="form-select">
+                                        <option selected>Please Select</option>
+                                        <option value="residential">Residential</option>
+                                        <option value="commercial">Commercial</option>
+                                        <option value="mixed">Mixed Use</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label text-dark fw-medium">Facilitators <span class="text-danger">*</span></label>
+                                    <select class="form-select">
+                                        <option selected>Please Select</option>
+                                        <option value="agent">Real Estate Agent</option>
+                                        <option value="lawyer">Lawyer</option>
+                                        <option value="consultant">Consultant</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Row 5: YouTube Video Link -->
+                            <div class="row g-4 mb-4">
+                                <div class="col-4">
+                                    <label class="form-label text-dark fw-medium">Youtube Video Link <span class="text-danger">*</span></label>
+                                    <input type="url" class="form-control" placeholder="">
+                                </div>
+                            </div>
+
+                            <!-- Row 6: Attach Images -->
+                            <div class="row g-4 mb-4">
+                                <div class="col-12">
+                                    <label class="form-label text-dark fw-medium">Attach Images <span class="text-danger">*</span></label>
+                                    <div class="file-upload-area border border-2 border-dashed rounded p-5 text-center" style="border-color: #ddd !important; background-color: #fafafa;">
+                                        <div class="file-upload-content">
+                                            <div class="file-upload-icon mb-3">
+                                                <i class="bi bi-image" style="font-size: 48px; color: #999;"></i>
+                                            </div>
+                                            <p class="file-upload-text mb-2">
+                                                Drop images or <span class="text-danger fw-bold" style="cursor: pointer;" onclick="document.getElementById('imageUploadInput').click()">browse files</span>
+                                            </p>
+                                            <p class="text-muted small mb-0">JPG, PNG</p>
+                                        </div>
+                                        <input type="file" id="imageUploadInput" accept="image/*" multiple style="display: none;">
                                     </div>
                                 </div>
                             </div>
-                            <div class="mt-3 text-end">
-                                <button class="btn btn-danger px-4 py-2">Save Changes</button>
-                            </div>
-                        </div>
 
-                        <!-- Change Phone Number Section -->
-                        <div class="security-section mb-5">
-                            <h5 class="text-reddy fw-bold mb-4">Change Phone Number</h5>
-                            <div class="row g-4">
-                                <div class="col-md-6">
-                                    <label class="form-label text-dark fw-medium">Phone Number</label>
-                                    <div class="position-relative">
-                                        <input type="tel" class="form-control" value="09********76" readonly>
-                                        <i class="bi bi-pencil position-absolute top-50 end-0 translate-middle-y me-3 text-muted"></i>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label text-dark fw-medium">New Phone Number</label>
-                                    <div class="position-relative">
-                                        <input type="tel" class="form-control" placeholder="Enter New Phone Number">
-                                        <i class="bi bi-pencil position-absolute top-50 end-0 translate-middle-y me-3 text-muted"></i>
-                                    </div>
-                                </div>
+                            <!-- Submit Button -->
+                            <div class="text-center mt-4">
+                                <button type="submit" class="btn btn-danger px-5 py-3 fw-medium" style="background-color: #eb1313; border-color: #eb1313; font-size: 16px;">Post Joint Venture</button>
                             </div>
-                            <div class="mt-3 text-end">
-                                <button class="btn btn-danger px-4 py-2">Save Changes</button>
-                            </div>
-                        </div>
-
-                        <!-- Change Password Section -->
-                        <div class="security-section mb-4">
-                            <h5 class="text-reddy fw-bold mb-4">Change Password</h5>
-                            <div class="row g-4">
-                                <div class="col-md-6">
-                                    <label class="form-label text-dark fw-medium">New Password</label>
-                                    <div class="position-relative">
-                                        <input type="password" class="form-control" placeholder="Enter New Password">
-                                        <i class="bi bi-pencil position-absolute top-50 end-0 translate-middle-y me-3 text-muted"></i>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label text-dark fw-medium">Re-Type New Password</label>
-                                    <div class="position-relative">
-                                        <input type="password" class="form-control" placeholder="Enter New Password">
-                                        <i class="bi bi-pencil position-absolute top-50 end-0 translate-middle-y me-3 text-muted"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mt-3 text-end">
-                                <button class="btn btn-danger px-4 py-2">Save Changes</button>
-                            </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -333,24 +323,24 @@
                     <i class="bi bi-house"></i>
                     <span>Post Land For Sale</span>
                 </a>
-                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2" onclick="setActiveProfile(this)">
+                <a href="my-listing.html" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2" onclick="setActiveProfile(this)">
                     <i class="bi bi-bar-chart"></i>
                     <span>My Listings</span>
                 </a>
-                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2" onclick="setActiveProfile(this)">
+                <a href="my-page.html" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2" onclick="setActiveProfile(this)">
                     <i class="bi bi-file-text"></i>
                     <span>My Page</span>
                 </a>
-                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2" onclick="setActiveProfile(this)">
+                <a href="my-sub.html" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2" onclick="setActiveProfile(this)">
                     <i class="bi bi-credit-card"></i>
                     <span>My Subscriptions</span>
                 </a>
-                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2 position-relative" onclick="setActiveProfile(this)">
+                <a href="my-message.html" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2 position-relative" onclick="setActiveProfile(this)">
                     <i class="bi bi-chat-square"></i>
                     <span>My Messages</span>
                     <span class="notification-badge">1</span>
                 </a>
-                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2 position-relative" onclick="setActiveProfile(this)">
+                <a href="notification.html" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2 position-relative" onclick="setActiveProfile(this)">
                     <i class="bi bi-bell"></i>
                     <span>Notifications</span>
                     <span class="notification-badge">1</span>
@@ -535,43 +525,11 @@
         // Tab functionality for Edit Profile and Security buttons
         document.getElementById('editProfileTab').addEventListener('click', function() {
             document.getElementById('editProfileContent').style.display = 'block';
-            document.getElementById('securityContent').style.display = 'none';
         });
 
         document.getElementById('securityTab').addEventListener('click', function() {
             document.getElementById('editProfileContent').style.display = 'none';
-            document.getElementById('securityContent').style.display = 'block';
         });
-
-        function setActiveProfile(clickedLink) {
-            // Remove active class from all sidebar links
-            const sidebarLinks = document.querySelectorAll(".sidebar-link")
-            sidebarLinks.forEach((link) => link.classList.remove("active"))
-            
-            // Remove active class from profile section
-            const profileSection = document.querySelector('.active-profile')
-            if (profileSection) {
-                profileSection.classList.remove('bg-white')
-                profileSection.classList.add('text-white')
-            }
-            
-            // Add active class to clicked link
-            clickedLink.classList.add("active")
-            
-            console.log(`[v0] Navigating to: ${clickedLink.textContent.trim()}`)
-        }
-
-        document.querySelector('.active-profile').addEventListener('click', function() {
-            // Remove active class from all sidebar links
-            const sidebarLinks = document.querySelectorAll(".sidebar-link")
-            sidebarLinks.forEach((link) => link.classList.remove("active"))
-            
-            // Ensure profile section has white background
-            this.classList.add('bg-white')
-            this.classList.remove('text-white')
-            
-            console.log('[v0] Navigating to: My Profile')
-        })
     </script>
 </body>
 </html>

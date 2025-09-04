@@ -90,191 +90,78 @@
     <div class="d-flex container-fluid">
         <!-- Main Content -->
         <main class="flex-grow-1 p-4 main-content">
-            <div class="mb-4 d-flex justify-content-between align-items-center">
-                <div class="d-flex align-items-center gap-3">
-                    <button class="btn btn-link text-decoration-none p-0 d-flex align-items-center gap-2">
-                        <i class="bi bi-arrow-left text-danger"></i>
-                        <span class="text-dark">Back to Listings</span>
-                    </button>
-                </div>
-                <button class="btn btn-outline-secondary d-flex align-items-center gap-2">
-                    <i class="bi bi-rocket"></i>
-                    Boost
-                </button>
-            </div>
-
-            <h1 class="fs-2 fw-semibold text-dark mb-4">My Listings</h1>
-
-            <!-- Main Edit Listing Content -->
-            <div class="row g-4">
-                <!-- Left Column - Image Gallery and Listing Details -->
-                <div class="col-lg-6">
-                    <!-- Image Gallery -->
-                    <div class="card border-light-subtle mb-4">
-                        <div class="card-body p-0">
-                            <!-- Main Image -->
-                            <div class="position-relative">
-                                <img src="../img/Rectangle 52.png" alt="Property Image" class="w-100" style="height: 300px; object-fit: cover;">
-                                <button class="btn btn-dark position-absolute top-50 start-0 translate-middle-y ms-2 rounded-circle" style="width: 40px; height: 40px;">
-                                    <i class="bi bi-chevron-left"></i>
-                                </button>
-                                <button class="btn btn-dark position-absolute top-50 end-0 translate-middle-y me-2 rounded-circle" style="width: 40px; height: 40px;">
-                                    <i class="bi bi-chevron-right"></i>
-                                </button>
-                            </div>
-                            
-                            <!-- Thumbnail Images -->
-                            <div class="d-flex gap-2 p-3">
-                                <div class="position-relative">
-                                    <img src="../img/Rectangle 52.png" alt="Thumbnail" class="rounded" style="width: 80px; height: 60px; object-fit: cover;">
-                                    <button class="btn btn-danger btn-sm position-absolute top-0 end-0 rounded-circle" style="width: 20px; height: 20px; font-size: 10px;">
-                                        <i class="bi bi-trash"></i>
-                                    </button>
-                                </div>
-                                <div class="position-relative">
-                                    <img src="../img/Rectangle 52.png" alt="Thumbnail" class="rounded" style="width: 80px; height: 60px; object-fit: cover;">
-                                    <button class="btn btn-danger btn-sm position-absolute top-0 end-0 rounded-circle" style="width: 20px; height: 20px; font-size: 10px;">
-                                        <i class="bi bi-trash"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Image Upload Area -->
-                    <div class="card border-light-subtle mb-4">
-                        <div class="card-body text-center py-5" id="imageUploadArea" style="cursor: pointer; transition: all 0.3s ease;">
-                            <i class="bi bi-cloud-upload text-muted mb-3" style="font-size: 48px;"></i>
-                            <p class="mb-2">Drop images or <span class="text-danger fw-bold" style="cursor: pointer;">browse files</span></p>
-                            <small class="text-muted">JPG, PNG</small>
-                            <!-- Ensured file input is properly configured -->
-                            <input type="file" id="imageFileInput" accept="image/jpeg,image/jpg,image/png" multiple style="display: none;">
-                        </div>
-                    </div>
-
-                    <!-- Listing Details -->
-                    <div class="card border-light-subtle">
-                        <div class="card-header bg-reddy text-white">
-                            <h5 class="mb-0">Listing Details</h5>
-                        </div>
-                        <div class="card-body">
-                            <div class="row g-3">
-                                <div class="col-6">
-                                    <label class="form-label fw-semibold">Market Status</label>
-                                    <p class="mb-0">Available</p>
-                                </div>
-                                <div class="col-6">
-                                    <label class="form-label fw-semibold">Ref Number</label>
-                                    <p class="mb-0">211005223</p>
-                                </div>
-                                <div class="col-6">
-                                    <label class="form-label fw-semibold">Date Listed</label>
-                                    <p class="mb-0">14 Oct 2023</p>
-                                </div>
-                                <div class="col-6">
-                                    <label class="form-label fw-semibold">Last Updated</label>
-                                    <p class="mb-0">23 Oct 2023</p>
-                                </div>
-                                <div class="col-6">
-                                    <label class="form-label fw-semibold">Views</label>
-                                    <p class="mb-0">203</p>
-                                </div>
-                                <div class="col-6">
-                                    <label class="form-label fw-semibold">Mega Boost</label>
-                                    <p class="mb-0">1</p>
-                                </div>
-                                <div class="col-12">
-                                    <label class="form-label fw-semibold">Expires in</label>
-                                    <p class="mb-0 text-danger">110 days</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Column - Full Description Form -->
-                <div class="col-lg-6">
-                    <div class="card border-light-subtle">
-                        <div class="card-header bg-reddy text-white">
-                            <h5 class="mb-0">Full Description</h5>
-                        </div>
-                        <div class="card-body">
-                            <form>
-                                <div class="row g-3">
-                                    <div class="col-12">
-                                        <label class="form-label fw-semibold">Location</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" value="Opebi, Ikeja, Lagos State">
-                                            <button class="btn btn-danger" type="button">
-                                                <i class="bi bi-pencil"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <label class="form-label fw-semibold">Land Size</label>
-                                        <input type="text" class="form-control" value="1300 Sqmtrs">
-                                    </div>
-                                    <div class="col-12">
-                                        <label class="form-label fw-semibold">Premium</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" value="N10 Million">
-                                            <button class="btn btn-danger" type="button">
-                                                <i class="bi bi-pencil"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <label class="form-label fw-semibold">Title</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" value="Registered Survey / Deed of Assignment">
-                                            <button class="btn btn-danger" type="button">
-                                                <i class="bi bi-pencil"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <label class="form-label fw-semibold">Land Value</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" value="N450 Million">
-                                            <button class="btn btn-danger" type="button">
-                                                <i class="bi bi-pencil"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <label class="form-label fw-semibold">Proposal</label>
-                                        <input type="text" class="form-control" value="4 blocks of 4 bedroom semi detached duplexes">
-                                    </div>
-                                    <div class="col-12">
-                                        <label class="form-label fw-semibold">Sharing</label>
-                                        <input type="text" class="form-control" value="50/50">
-                                    </div>
-                                    <div class="col-12">
-                                        <label class="form-label fw-semibold">Title Owner</label>
-                                        <input type="text" class="form-control" value="Alive">
-                                    </div>
-                                    <div class="col-12">
-                                        <label class="form-label fw-semibold">Facilitators</label>
-                                        <input type="text" class="form-control" value="5% negotiable">
-                                    </div>
-                                    <div class="col-12">
-                                        <label class="form-label fw-semibold">Link</label>
-                                        <input type="text" class="form-control" value="Mandate">
-                                    </div>
-                                    <div class="col-12">
-                                        <label class="form-label fw-semibold">Type</label>
-                                        <input type="text" class="form-control" value="Build-Operate Transfer">
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+            <div class="mb-4">
+                <h1 class="fs-2 fw-semibold text-dark mb-3">My Listings</h1>
+                <div class="d-flex justify-content-between align-items-center">
+                    <select class="form-select" style="width: auto;">
+                        <option selected>This month</option>
+                        <option>Last month</option>
+                        <option>Last 3 months</option>
+                        <option>All time</option>
+                    </select>
                 </div>
             </div>
 
-            <!-- Save Changes Button -->
-            <div class="text-center mt-4">
-                <button class="btn btn-danger btn-lg px-5">Save Changes</button>
+            <!-- Note about listing expiration -->
+            <div class="mb-4">
+                <p class="text-reddy mb-0 text-end"><strong>Note:</strong> All listings expire after 180 days</p>
+            </div>
+
+            <!-- Listing Card -->
+            <div class="card border-light-subtle mb-4">
+                <div class="card-body p-4">
+                    <div class="d-flex flex-column flex-md-row justify-content-between align-items-start">
+                        <!-- Left side: Date, Title, Location -->
+                        <div class="mb-3 mb-md-0">
+                            <p class="text-muted mb-2">23rd Oct 2023</p>
+                            <h5 class="fw-semibold text-dark mb-2">2 bedroom duplex terrace</h5>
+                            <div class="d-flex align-items-center gap-2 text-muted">
+                                <i class="bi bi-geo-alt text-reddy"></i>
+                                <span>Ogba, Ikeja.</span>
+                            </div>
+                        </div>
+
+                        <!-- Right side: Views and Action Buttons -->
+                        <div class="d-flex flex-column align-items-end gap-3">
+                            <!-- Desktop layout: Combined views and action buttons -->
+                            <div class="d-none d-md-flex flex-row align-items-center gap-3 w-100">
+                                <!-- Views -->
+                                <div class="d-flex align-items-center gap-2 text-muted">
+                                    <i class="bi bi-eye"></i>
+                                    <span>203 Views</span>
+                                </div>
+
+                                <!-- Action Buttons -->
+                                <div class="d-flex flex-wrap gap-2">
+                                    <button class="btn btn-outline-secondary btn-sm d-flex align-items-center gap-1">
+                                        <i class="bi bi-pencil"></i>
+                                        Edit
+                                    </button>
+                                    <button class="btn btn-outline-secondary btn-sm d-flex align-items-center gap-1">
+                                        <i class="bi bi-rocket"></i>
+                                        Boost
+                                    </button>
+                                    <button class="btn btn-outline-secondary btn-sm">
+                                        View Joint Venture
+                                    </button>
+                                    <button class="btn btn-danger btn-sm">
+                                        Close this JV
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Mobile layout: Only show View Joint Venture and Close this JV buttons -->
+                            <div class="d-flex d-md-none gap-2 w-100 justify-content-end">
+                                <button class="btn btn-outline-secondary btn-sm">
+                                    View Joint Venture
+                                </button>
+                                <button class="btn btn-danger btn-sm">
+                                    Close this JV
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
 
@@ -309,24 +196,24 @@
                     <i class="bi bi-house"></i>
                     <span>Post Land For Sale</span>
                 </a>
-                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2" onclick="setActiveProfile(this)">
+                <a href="my-listing.html" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2" onclick="setActiveProfile(this)">
                     <i class="bi bi-bar-chart"></i>
                     <span>My Listings</span>
                 </a>
-                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2" onclick="setActiveProfile(this)">
+                <a href="my-page.html" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2" onclick="setActiveProfile(this)">
                     <i class="bi bi-file-text"></i>
                     <span>My Page</span>
                 </a>
-                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2" onclick="setActiveProfile(this)">
+                <a href="my-sub.html" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2" onclick="setActiveProfile(this)">
                     <i class="bi bi-credit-card"></i>
                     <span>My Subscriptions</span>
                 </a>
-                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2 position-relative" onclick="setActiveProfile(this)">
+                <a href="my-message.html" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2 position-relative" onclick="setActiveProfile(this)">
                     <i class="bi bi-chat-square"></i>
                     <span>My Messages</span>
                     <span class="notification-badge">1</span>
                 </a>
-                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2 position-relative" onclick="setActiveProfile(this)">
+                <a href="notification.html" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2 position-relative" onclick="setActiveProfile(this)">
                     <i class="bi bi-bell"></i>
                     <span>Notifications</span>
                     <span class="notification-badge">1</span>

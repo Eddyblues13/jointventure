@@ -90,164 +90,161 @@
     <div class="d-flex container-fluid">
         <!-- Main Content -->
         <main class="flex-grow-1 p-4 main-content">
-            <div class="mb-4 d-flex justify-content-between align-items-center">
-                <div class="d-flex align-items-center gap-3">
-                    <button class="btn btn-link text-decoration-none p-0 d-flex align-items-center gap-2">
-                        <i class="bi bi-arrow-left text-danger"></i>
-                        <span class="text-dark">Back to Listings</span>
-                    </button>
+            <!-- Updated header and subscription plans to match Figma design exactly -->
+            <div class="mb-4">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h1 class="fs-4 fw-semibold text-dark mb-0">Subscription <span class="text-reddy">Plans</span></h1>
+                    <button class="btn btn-outline-secondary px-4 py-2">Upgrade Subscription</button>
                 </div>
-                <button class="btn btn-outline-secondary d-flex align-items-center gap-2">
-                    <i class="bi bi-rocket"></i>
-                    Boost
-                </button>
             </div>
 
-            <h1 class="fs-2 fw-semibold text-dark mb-4">
-                <span class="d-none d-lg-block">My Listings</span>
-                <span class="d-lg-none">Listing Statistics</span>
-            </h1>
-
-            <!-- Main View Listing Content -->
-            <div class="row g-4">
-                <!-- Left Column - Image Gallery and Listing Details -->
-                <div class="col-lg-6">
-                    <!-- Image Gallery -->
-                    <div class="card border-light-subtle mb-4">
-                        <div class="card-body p-0">
-                            <!-- Main Image -->
-                            <div class="position-relative">
-                                <img src="../img/Rectangle 52.png" alt="Property Image" class="w-100" style="height: 300px; object-fit: cover;">
-                                <button class="btn btn-dark position-absolute top-50 start-0 translate-middle-y ms-2 rounded-circle" style="width: 40px; height: 40px;">
-                                    <i class="bi bi-chevron-left"></i>
-                                </button>
-                                <button class="btn btn-dark position-absolute top-50 end-0 translate-middle-y me-2 rounded-circle" style="width: 40px; height: 40px;">
-                                    <i class="bi bi-chevron-right"></i>
-                                </button>
+            <!-- Subscription Plans Grid -->
+            <div class="row g-4 mb-5">
+                <!-- Standard Plan -->
+                <div class="col-md-6">
+                    <div class="card h-100 subscription-card border-0 position-relative" style="border-radius: 12px;">
+                        <div class="card-body p-4">
+                            <h5 class="fw-semibold text-dark mb-4" style="font-size: 1.1rem;">Standard Plan</h5>
+                            <div class="mb-4">
+                                <span class="text-reddy fw-bold" style="font-size: 1.75rem;">₦3,000</span>
+                                <span class="text-muted fs-6"> / month</span>
                             </div>
-                            
-                            <!-- Thumbnail Images -->
-                            <div class="d-flex gap-2 p-3">
-                                <div class="position-relative">
-                                    <img src="../img/Rectangle 52.png" alt="Thumbnail" class="rounded" style="width: 80px; height: 60px; object-fit: cover;">
-                                    <button class="btn btn-danger btn-sm position-absolute top-0 end-0 d-lg-none" style="width: 20px; height: 20px; padding: 0; font-size: 10px; transform: translate(50%, -50%);">
-                                        <i class="bi bi-trash3"></i>
-                                    </button>
-                                </div>
-                                <div class="position-relative">
-                                    <img src="../img/Rectangle 52.png" alt="Thumbnail" class="rounded" style="width: 80px; height: 60px; object-fit: cover;">
-                                    <button class="btn btn-danger btn-sm position-absolute top-0 end-0 d-lg-none" style="width: 20px; height: 20px; padding: 0; font-size: 10px; transform: translate(50%, -50%);">
-                                        <i class="bi bi-trash3"></i>
-                                    </button>
-                                </div>
-                                <div class="d-lg-none border border-2 border-dashed border-secondary rounded d-flex align-items-center justify-content-center" style="width: 80px; height: 60px;">
-                                    <div class="text-center">
-                                        <i class="bi bi-camera text-secondary" style="font-size: 16px;"></i>
-                                        <div class="text-secondary" style="font-size: 10px;">Add Photos</div>
-                                    </div>
-                                </div>
-                            </div>
+                            <ul class="list-unstyled mb-0">
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-check-lg text-success me-3" style="font-size: 1rem;"></i>
+                                    <span style="font-size: 0.9rem;">10 joint venture listing per month</span>
+                                </li>
+                            </ul>
                         </div>
-                    </div>
-
-                    <!-- Listing Details -->
-                    <div class="card border-light-subtle">
-                        <div class="card-header bg-reddy text-white">
-                            <h5 class="mb-0">Listing Details</h5>
-                        </div>
-                        <div class="card-body">
-                            <div class="row g-3">
-                                <div class="col-6">
-                                    <label class="form-label fw-semibold">Market Status</label>
-                                    <p class="mb-0">Available</p>
-                                </div>
-                                <div class="col-6">
-                                    <label class="form-label fw-semibold">Ref Number</label>
-                                    <p class="mb-0">211005223</p>
-                                </div>
-                                <div class="col-6">
-                                    <label class="form-label fw-semibold">Date Listed</label>
-                                    <p class="mb-0">14 Oct 2023</p>
-                                </div>
-                                <div class="col-6">
-                                    <label class="form-label fw-semibold">Last Updated</label>
-                                    <p class="mb-0">23 Oct 2023</p>
-                                </div>
-                                <div class="col-6">
-                                    <label class="form-label fw-semibold">Views</label>
-                                    <p class="mb-0">203</p>
-                                </div>
-                                <div class="col-6">
-                                    <label class="form-label fw-semibold">Mega Boost</label>
-                                    <p class="mb-0">1</p>
-                                </div>
-                                <div class="col-12">
-                                    <label class="form-label fw-semibold">Expires in</label>
-                                    <p class="mb-0 text-danger">110 days</p>
-                                </div>
-                            </div>
-                        </div>
+                        <div class="position-absolute bottom-0 start-0 w-100" style="height: 5px; background-color: #e9ecef; border-radius: 0 0 12px 12px;"></div>
                     </div>
                 </div>
 
-                <!-- Right Column - Full Description (View Only) -->
-                <div class="col-lg-6">
-                    <div class="card border-light-subtle">
-                        <div class="card-header bg-reddy text-white">
-                            <h5 class="mb-0">Full Description</h5>
+                <!-- Premium Plan -->
+                <div class="col-md-6">
+                    <div class="card h-100 subscription-card border-0 position-relative" style="border-radius: 12px;">
+                        <div class="card-body p-4">
+                            <h5 class="fw-semibold text-dark mb-4" style="font-size: 1.1rem;">Premium Plan</h5>
+                            <div class="mb-4">
+                                <span class="text-reddy fw-bold" style="font-size: 1.75rem;">₦5,000</span>
+                                <span class="text-muted fs-6"> / month</span>
+                            </div>
+                            <ul class="list-unstyled mb-0">
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-check-lg text-success me-3" style="font-size: 1rem;"></i>
+                                    <span style="font-size: 0.9rem;">20 joint venture listing per month</span>
+                                </li>
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-check-lg text-success me-3" style="font-size: 1rem;"></i>
+                                    <span style="font-size: 0.9rem;">Direct message to Developers</span>
+                                </li>
+                            </ul>
                         </div>
-                        <div class="card-body">
-                            <div class="row g-3">
-                                <div class="col-12">
-                                    <label class="form-label fw-semibold">Location</label>
-                                    <p class="mb-0">Opebi, Ikeja, Lagos State</p>
+                        <div class="position-absolute bottom-0 start-0 w-100" style="height: 5px; background-color: #28a745; border-radius: 0 0 12px 12px;"></div>
+                    </div>
+                </div>
+
+                <!-- Gold Plan -->
+                <div class="col-md-6">
+                    <div class="card h-100 subscription-card border-0 position-relative" style="border-radius: 12px;">
+                        <div class="card-body p-4">
+                            <h5 class="fw-semibold text-dark mb-4" style="font-size: 1.1rem;">Gold Plan</h5>
+                            <div class="mb-4">
+                                <span class="text-reddy fw-bold" style="font-size: 1.75rem;">₦10,000</span>
+                                <span class="text-muted fs-6"> / month</span>
+                            </div>
+                            <ul class="list-unstyled mb-0">
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-check-lg text-success me-3" style="font-size: 1rem;"></i>
+                                    <span style="font-size: 0.9rem;">3 Mega Boost</span>
+                                </li>
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-check-lg text-success me-3" style="font-size: 1rem;"></i>
+                                    <span style="font-size: 0.9rem;">20 joint venture listing per month</span>
+                                </li>
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-check-lg text-success me-3" style="font-size: 1rem;"></i>
+                                    <span style="font-size: 0.9rem;">Direct message to Developers</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="position-absolute bottom-0 start-0 w-100" style="height: 5px; background-color: #ffc107; border-radius: 0 0 12px 12px;"></div>
+                    </div>
+                </div>
+
+                <!-- Platinum Plan -->
+                <div class="col-md-6">
+                    <div class="card h-100 subscription-card border-0 position-relative" style="border-radius: 12px;">
+                        <div class="card-body p-4">
+                            <h5 class="fw-semibold text-dark mb-4" style="font-size: 1.1rem;">Platinum Plan</h5>
+                            <div class="mb-4">
+                                <span class="text-reddy fw-bold" style="font-size: 1.75rem;">₦20,000</span>
+                                <span class="text-muted fs-6"> / month</span>
+                            </div>
+                            <ul class="list-unstyled mb-0">
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-check-lg text-success me-3" style="font-size: 1rem;"></i>
+                                    <span style="font-size: 0.9rem;">Unlimited Listing</span>
+                                </li>
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-check-lg text-success me-3" style="font-size: 1rem;"></i>
+                                    <span style="font-size: 0.9rem;">10 Premium Boost</span>
+                                </li>
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-check-lg text-success me-3" style="font-size: 1rem;"></i>
+                                    <span style="font-size: 0.9rem;">Direct message to Investors</span>
+                                </li>
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-check-lg text-success me-3" style="font-size: 1rem;"></i>
+                                    <span style="font-size: 0.9rem;">Direct message to Developers</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="position-absolute bottom-0 start-0 w-100" style="height: 5px; background-color: #dc3545; border-radius: 0 0 12px 12px;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mega Boost AD Section -->
+            <div class="card mega-boost-card border-0" style="border-radius: 12px;">
+                <div class="card-body p-4">
+                    <div class="row align-items-center">
+                        <div class="col-md-8">
+                            <div class="d-flex align-items-center mb-4">
+                                <h5 class="fw-semibold text-dark mb-0 me-3" style="font-size: 1.1rem;">Mega <span class="text-reddy">Boost</span> AD</h5>
+                                <i class="bi bi-rocket-takeoff text-dark" style="font-size: 1.6rem;"></i>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul class="list-unstyled mb-0">
+                                        <li class="d-flex align-items-center mb-3">
+                                            <i class="bi bi-check-lg text-success me-3" style="font-size: 1rem;"></i>
+                                            <span style="font-size: 0.9rem;">Top ads in search result</span>
+                                        </li>
+                                        <li class="d-flex align-items-center mb-3">
+                                            <i class="bi bi-check-lg text-success me-3" style="font-size: 1rem;"></i>
+                                            <span style="font-size: 0.9rem;">10X views</span>
+                                        </li>
+                                    </ul>
                                 </div>
-                                <div class="col-12">
-                                    <label class="form-label fw-semibold">Land Size</label>
-                                    <p class="mb-0">1300 Sqmtrs</p>
+                                <div class="col-md-6">
+                                    <ul class="list-unstyled mb-0">
+                                        <li class="d-flex align-items-center mb-3">
+                                            <i class="bi bi-check-lg text-success me-3" style="font-size: 1rem;"></i>
+                                            <span style="font-size: 0.9rem;">Email Newsletter</span>
+                                        </li>
+                                        <li class="d-flex align-items-center mb-3">
+                                            <i class="bi bi-check-lg text-success me-3" style="font-size: 1rem;"></i>
+                                            <span style="font-size: 0.9rem;">Social media promotion</span>
+                                        </li>
+                                    </ul>
                                 </div>
-                                <div class="col-12">
-                                    <label class="form-label fw-semibold">Premium</label>
-                                    <p class="mb-0">N10 Million</p>
-                                </div>
-                                <div class="col-12">
-                                    <label class="form-label fw-semibold">Title</label>
-                                    <p class="mb-0">Registered Survey / Deed of Assignment</p>
-                                </div>
-                                <div class="col-12">
-                                    <label class="form-label fw-semibold">Land Value</label>
-                                    <p class="mb-0">N450 Million</p>
-                                </div>
-                                <div class="col-12">
-                                    <label class="form-label fw-semibold">Proposal</label>
-                                    <p class="mb-0">4 blocks of 4 bedroom semi detached duplexes</p>
-                                </div>
-                                <div class="col-12">
-                                    <label class="form-label fw-semibold">Sharing</label>
-                                    <p class="mb-0">50/50</p>
-                                </div>
-                                <div class="col-12">
-                                    <label class="form-label fw-semibold">Title Owner</label>
-                                    <p class="mb-0">Alive</p>
-                                </div>
-                                <div class="col-12">
-                                    <label class="form-label fw-semibold">Facilitators</label>
-                                    <p class="mb-0">5% negotiable</p>
-                                </div>
-                                <div class="col-12">
-                                    <div class="d-lg-none bg-reddy text-white p-2 rounded">
-                                        <label class="form-label fw-semibold mb-1 text-white">Link</label>
-                                        <p class="mb-0">Mandate</p>
-                                    </div>
-                                    <div class="d-none d-lg-block">
-                                        <label class="form-label fw-semibold">Link</label>
-                                        <p class="mb-0">Mandate</p>
-                                    </div>
-                                </div>
-                                <div class="col-12 d-none d-lg-block">
-                                    <label class="form-label fw-semibold">Type</label>
-                                    <p class="mb-0">Build-Operate Transfer</p>
-                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 text-md-end">
+                            <div class="mt-3 mt-md-0">
+                                <span class="text-reddy fw-bold" style="font-size: 1.75rem;">₦5,000</span>
+                                <span class="text-muted fs-6"> / week</span>
                             </div>
                         </div>
                     </div>
@@ -286,24 +283,24 @@
                     <i class="bi bi-house"></i>
                     <span>Post Land For Sale</span>
                 </a>
-                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2" onclick="setActiveProfile(this)">
+                <a href="my-listing.html" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2" onclick="setActiveProfile(this)">
                     <i class="bi bi-bar-chart"></i>
                     <span>My Listings</span>
                 </a>
-                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2" onclick="setActiveProfile(this)">
+                <a href="my-page.html" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2" onclick="setActiveProfile(this)">
                     <i class="bi bi-file-text"></i>
                     <span>My Page</span>
                 </a>
-                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2" onclick="setActiveProfile(this)">
+                <a href="my-sub.html" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2" onclick="setActiveProfile(this)">
                     <i class="bi bi-credit-card"></i>
                     <span>My Subscriptions</span>
                 </a>
-                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2 position-relative" onclick="setActiveProfile(this)">
+                <a href="my-message.html" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2 position-relative" onclick="setActiveProfile(this)">
                     <i class="bi bi-chat-square"></i>
                     <span>My Messages</span>
                     <span class="notification-badge">1</span>
                 </a>
-                <a href="#" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2 position-relative" onclick="setActiveProfile(this)">
+                <a href="notification.html" class="sidebar-link d-flex align-items-center gap-3 text-white p-3 rounded mb-2 position-relative" onclick="setActiveProfile(this)">
                     <i class="bi bi-bell"></i>
                     <span>Notifications</span>
                     <span class="notification-badge">1</span>
